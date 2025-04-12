@@ -19,4 +19,15 @@ public class DTOAltaUsuario
     public string Password { get; set; }
 
     public RolUsuario Rol { get; set; }
+    
+    public DTOAltaUsuario(string nombre, string apellido, string email, string password, RolUsuario rol)
+    {
+        Nombre = nombre;
+        Apellido = apellido;
+        Email = email;
+        Password = password;
+        Rol = rol;
+    }
+
+    public DTOAltaUsuario(){ }
 }
