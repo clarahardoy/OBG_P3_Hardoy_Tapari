@@ -1,5 +1,0 @@
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.LogicaAccesoDatos\obj\Debug\net8.0\Empresa.LogicaAccesoDatos.csproj.AssemblyReference.cache
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.LogicaAccesoDatos\obj\Debug\net8.0\Empresa.LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.LogicaAccesoDatos\obj\Debug\net8.0\Empresa.LogicaAccesoDatos.AssemblyInfoInputs.cache
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.LogicaAccesoDatos\obj\Debug\net8.0\Empresa.LogicaAccesoDatos.AssemblyInfo.cs
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.LogicaAccesoDatos\obj\Debug\net8.0\Empresa.LogicaAccesoDatos.csproj.CoreCompileInputs.cache

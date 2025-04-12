@@ -1,8 +1,10 @@
+using System;
 using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.DTOs.Mappers;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Agencia.LogicaNegocio.Entidades;
+using Agencia.LogicaNegocio.Enumerados.AuditoriaEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
 
 namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario;
@@ -27,13 +29,13 @@ public class CUAltaUsuario : ICUAltaUsuario
 
             Usuario nuevoUsuario = MapperUsuario.ToUsuario(dto);
             int entidadId = _repositorioUsuario.Add(nuevoUsuario);
-            Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, "ALTA", "EXITO", nuevoUsuario.GetType().Name,
+            Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ALTA, "EXITO", nuevoUsuario.GetType().Name,
                 entidadId.ToString(), "Alta correcta");
             _repositorioAuditoria.Auditar(aud);
         }
         catch (Exception ex)
         {
-            Auditoria aud = Utilidades.Auditor.Auditar(null, "ALTA", "ERROR", null, null, null);
+            Auditoria aud = Utilidades.Auditor.Auditar(null, Acciones.ALTA, "ERROR", null, null, null);
            _repositorioAuditoria.Auditar(aud);
             throw ex;
         }

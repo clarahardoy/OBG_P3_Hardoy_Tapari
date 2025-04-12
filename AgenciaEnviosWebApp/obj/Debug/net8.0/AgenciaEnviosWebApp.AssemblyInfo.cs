@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgenciaEnviosWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3817ca9a96734d8efe0f32c7ffbde3ac6b89b1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f809511cbe480e25a0bd6efde670240a626229b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgenciaEnviosWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgenciaEnviosWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

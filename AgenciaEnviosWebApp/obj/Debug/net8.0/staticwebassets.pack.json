@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/AgenciaEnviosWebApp/obj/Debug/net8.0/scopedcss/projectbundle/AgenciaEnviosWebApp.bundle.scp.css",
-      "PackagePath": "staticwebassets/AgenciaEnviosWebApp.bundle.scp.css"
+      "PackagePath": "staticwebassets/AgenciaEnviosWebApp.ljwpdcrt4s.bundle.scp.css"
     },
     {
       "Id": "/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/AgenciaEnviosWebApp/wwwroot/css/site.css",
@@ -243,6 +243,10 @@
     {
       "Id": "/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/AgenciaEnviosWebApp/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.AgenciaEnviosWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.AgenciaEnviosWebApp.Microsoft.AspNetCore.StaticWebAssets.props",

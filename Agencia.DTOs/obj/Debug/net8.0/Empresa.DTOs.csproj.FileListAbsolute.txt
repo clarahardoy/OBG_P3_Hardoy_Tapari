@@ -1,4 +1,0 @@
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.DTOs\obj\Debug\net8.0\Empresa.DTOs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.DTOs\obj\Debug\net8.0\Empresa.DTOs.AssemblyInfoInputs.cache
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.DTOs\obj\Debug\net8.0\Empresa.DTOs.AssemblyInfo.cs
-C:\Users\valen\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Desktop\P3\PrimeraEntrega_Hardoy_Tapari\AgenciaEnviosWebApp\Agencia.DTOs\obj\Debug\net8.0\Empresa.DTOs.csproj.CoreCompileInputs.cache

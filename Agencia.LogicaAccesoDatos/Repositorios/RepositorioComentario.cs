@@ -30,7 +30,7 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             throw new NotImplementedException();
         }
 
-        public void Update(Comentario obj)
+        public int Update(Comentario obj)
         {
             throw new NotImplementedException();
         }
