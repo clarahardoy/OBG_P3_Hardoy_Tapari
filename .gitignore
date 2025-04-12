@@ -1,2 +1,32 @@
 .idea
 **/.DS_Store
+
+# Build results
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Rider (JetBrains)
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# DLLs y PDBs (opcional, si no estás usando binarios externos)
+*.dll
+*.pdb
+
+# Archivos de NuGet
+project.lock.json
+project.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+*.assets.cache
+
+# Otros
+*.sourcelink.json
