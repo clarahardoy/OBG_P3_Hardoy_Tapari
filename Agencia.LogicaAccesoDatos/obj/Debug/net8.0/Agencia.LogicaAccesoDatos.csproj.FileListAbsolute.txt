@@ -1,0 +1,35 @@
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.csproj.AssemblyReference.cache
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.AssemblyInfoInputs.cache
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.AssemblyInfo.cs
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.csproj.CoreCompileInputs.cache
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.deps.json
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.runtimeconfig.json
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.dll
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.pdb
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaNegocio.dll
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaNegocio.pdb
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia..6F21F8EB.Up2Date
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.dll
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/refint/Agencia.LogicaAccesoDatos.dll
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.pdb
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.genruntimeconfig.cache
+C:/Users/valen/OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay/Desktop/P3/PrimeraEntrega_Hardoy_Tapari/AgenciaEnviosWebApp/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/ref/Agencia.LogicaAccesoDatos.dll
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.deps.json
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.runtimeconfig.json
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.dll
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaAccesoDatos.pdb
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaNegocio.dll
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/bin/Debug/net8.0/Agencia.LogicaNegocio.pdb
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.csproj.AssemblyReference.cache
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.AssemblyInfoInputs.cache
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.AssemblyInfo.cs
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.csproj.CoreCompileInputs.cache
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.sourcelink.json
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia..6F21F8EB.Up2Date
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.dll
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/refint/Agencia.LogicaAccesoDatos.dll
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.pdb
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/Agencia.LogicaAccesoDatos.genruntimeconfig.cache
+/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Agencia.LogicaAccesoDatos/obj/Debug/net8.0/ref/Agencia.LogicaAccesoDatos.dll

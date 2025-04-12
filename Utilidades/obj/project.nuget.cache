@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9bZGQikaNOM=",
+  "success": true,
+  "projectFilePath": "/Users/clarahardoy/github/OBG_P3_Hardoy_Tapari/Utilidades/Utilidades.csproj",
+  "expectedPackageFiles": [
+    "/Users/clarahardoy/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
