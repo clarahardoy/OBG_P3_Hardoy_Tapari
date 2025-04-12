@@ -12,7 +12,7 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class Usuario
     {
-        public int? _id { get; set; }
+        public int _id { get; set; }
         public NombreCompleto _nombreCompleto { get; set; }
         public string _email { get; set; }
         public string _password { get; set; }

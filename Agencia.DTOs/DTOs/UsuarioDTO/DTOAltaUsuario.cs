@@ -20,6 +20,8 @@ public class DTOAltaUsuario
 
     public RolUsuario Rol { get; set; }
     
+    public int? LogueadoId { get; set; }
+    
     public DTOAltaUsuario(string nombre, string apellido, string email, string password, RolUsuario rol)
     {
         Nombre = nombre;

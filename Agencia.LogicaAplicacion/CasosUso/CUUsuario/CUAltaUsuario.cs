@@ -10,10 +10,12 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario;
 public class CUAltaUsuario : ICUAltaUsuario
 {
     private IRepositorioUsuario _repositorioUsuario;
+    private IRepositorioAuditoria _repositorioAuditoria;
 
-    public CUAltaUsuario(IRepositorioUsuario repositorioUsuario)
+    public CUAltaUsuario(IRepositorioUsuario repositorioUsuario, IRepositorioAuditoria repositorioAuditoria)
     {
         _repositorioUsuario = repositorioUsuario;
+        _repositorioAuditoria = repositorioAuditoria;
     }
 
     public void AltaEmpleado(DTOAltaUsuario dto)
@@ -24,11 +26,15 @@ public class CUAltaUsuario : ICUAltaUsuario
             if (buscado != null) throw new EmailYaExisteException("El email ingresado ya existe");
 
             Usuario nuevoUsuario = MapperUsuario.ToUsuario(dto);
-            _repositorioUsuario.Add(nuevoUsuario);
+            int entidadId = _repositorioUsuario.Add(nuevoUsuario);
+            Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, "ALTA", "EXITO", nuevoUsuario.GetType().Name,
+                entidadId.ToString(), "Alta correcta");
+            _repositorioAuditoria.Auditar(aud);
         }
         catch (Exception ex)
         {
-            Utilidades.Auditor.Auditar(null, "ALTA", "ERROR", null, null, null);
+            Auditoria aud = Utilidades.Auditor.Auditar(null, "ALTA", "ERROR", null, null, null);
+           _repositorioAuditoria.Auditar(aud);
             throw ex;
         }
     }

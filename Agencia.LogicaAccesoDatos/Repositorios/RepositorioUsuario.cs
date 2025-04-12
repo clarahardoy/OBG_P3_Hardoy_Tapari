@@ -10,32 +10,40 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 {
     public class RepositorioUsuario : IRepositorioUsuario
     {
+        private ApplicationDbContext _context;
+        public RepositorioUsuario(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public int Add(Usuario nuevo)
         {
-            throw new NotImplementedException();
+            _context.Usuarios.Add(nuevo);
+            _context.SaveChanges();
+            return nuevo._id;
         }
 
         public List<Usuario> FindAll()
         {
-            throw new NotImplementedException();
+            return _context.Usuarios.ToList(); 
         }
 
         public Usuario FindByEmail(string email)
         {
-            throw new NotImplementedException();
+            return _context.Usuarios.Where(x => x._email == email).SingleOrDefault();
         }
 
         public Usuario FindById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Usuarios.Find(id);
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            _context.Remove(id);
+            _context.SaveChanges();
         }
 
-        public void Update(Usuario obj)
+        public int Update(Usuario obj)
         {
             throw new NotImplementedException();
         }
