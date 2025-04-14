@@ -30,3 +30,4 @@ project.nuget.cache
 
 # Otros
 *.sourcelink.json
+/.vs/AgenciaEnviosWebApp/FileContentIndex
