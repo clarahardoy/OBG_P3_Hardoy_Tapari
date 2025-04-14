@@ -10,6 +10,6 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario
 {
     public interface ICUActualizarFuncionario
     {
-        void ActualizarEmpleado(DTOUsuario empleado);
+        void ActualizarFuncionario(DTOUsuario funcionario);
     }
 }

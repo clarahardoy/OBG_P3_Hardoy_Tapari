@@ -23,14 +23,13 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoUsuario = repoUsuario;
             _repoAuditoria = repoAuditoria;
         }
-        public void ActualizarEmpleado(DTOUsuario dto)
+        public void ActualizarFuncionario(DTOUsuario dto)
         {
             try
             {
                 Usuario usuario = MapperUsuario.FromDtoUsuarioToUsuario(dto);
                 usuario.Validar();
                 int entidadId = _repoUsuario.Update(usuario);
-
 
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "EXITO", usuario.GetType().Name, 
                     entidadId.ToString(), "Actualización exitosa");

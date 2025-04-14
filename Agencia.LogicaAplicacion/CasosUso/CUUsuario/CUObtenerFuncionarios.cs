@@ -20,7 +20,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoUsuario = repoUsuario;
         }
 
-        List<DTOUsuario> ICUObtenerFuncionarios.ListarEmpleados()
+        List<DTOUsuario> ICUObtenerFuncionarios.ListarFuncionarios()
         {
             List<Usuario> usuarios = _repoUsuario.FindAllByRol("Funcionario");
             List<DTOUsuario> ret = MapperUsuario.FromListUsuarioToListDto(usuarios);

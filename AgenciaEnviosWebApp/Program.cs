@@ -21,6 +21,7 @@ builder.Services.AddControllersWithViews();
 
 //DI - REPOS
 // TODO builder.Services.AddScoped<IRepositorioAgencia, RepositorioAgencia>();
+builder.Services.AddScoped<IRepositorioAuditoria, RepositorioAuditoria>();
 builder.Services.AddScoped<IRepositorioComentario, RepositorioComentario>();
 builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
@@ -30,6 +31,7 @@ builder.Services.AddScoped<ICULogin, CULogin>();
 builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
 builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
+builder.Services.AddScoped<ICUEliminarFuncionario, CUEliminarFuncionario>();
 
 var app = builder.Build();
 

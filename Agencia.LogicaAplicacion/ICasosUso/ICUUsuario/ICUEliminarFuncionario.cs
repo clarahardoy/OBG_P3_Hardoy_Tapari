@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario
 {
-    public interface ICUObtenerFuncionarios
+    public interface ICUEliminarFuncionario
     {
-        List<DTOUsuario> ListarFuncionarios();
+        void EliminarFuncionario(DTOUsuario dto);
     }
 }
