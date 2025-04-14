@@ -27,6 +27,11 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             return _context.Usuarios.ToList();
         }
 
+        public List<Usuario> FindAllByRol(string rol)
+        {
+            return _context.Usuarios.Where(x => x._rol.ToString() == rol).ToList();
+        }
+
         public Usuario FindByEmail(string email)
         {
             return _context.Usuarios.Where(x => x._email == email).SingleOrDefault();
@@ -43,11 +48,11 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             _context.SaveChanges();
         }
 
-        public int Update(Usuario unUsuario)
+        public int Update(Usuario obj)
         {
-            _context.Comentarios.Update(unUsuario);
+            _context.Usuarios.Update(obj);
             _context.SaveChanges();
-            return unUsuario.Id;
+            return obj.Id;
         }
     }
 }

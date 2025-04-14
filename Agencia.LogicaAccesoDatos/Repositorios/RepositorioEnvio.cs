@@ -38,11 +38,11 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             _context.SaveChanges();
         }
 
-        public int Update(Envio unEnvio)
+        public int Update(Envio obj)
         {
-            _context.Comentarios.Update(unEnvio);
+            _context.Envios.Update(obj);
             _context.SaveChanges();
-            return unEnvio.Id;
+            return obj.Id;
         }
     }
 }

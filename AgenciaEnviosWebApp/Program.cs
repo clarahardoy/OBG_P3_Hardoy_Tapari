@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Agencia.LogicaAplicacion.CasosUso.CUUsuario;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,9 +26,10 @@ builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 // TO DO: resolver inyeccion de dependecia
 
-builder.Services.AddScoped<ICULogin, ICULogin>();
-builder.Services.AddScoped<ICUAltaUsuario, ICUAltaUsuario>();
-
+builder.Services.AddScoped<ICULogin, CULogin>();
+builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
+builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
+builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
 
 var app = builder.Build();
 

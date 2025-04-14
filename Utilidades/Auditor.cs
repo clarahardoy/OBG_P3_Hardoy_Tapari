@@ -5,7 +5,7 @@ namespace Utilidades;
 
 public class Auditor
 {
-    public static Auditoria Auditar( int? usuarioId, Acciones accion, string resultado, string entidad, string entidadId, string observaciones)
+    public static Auditoria Auditar(int? usuarioId, Acciones accion, string resultado, string entidad, string entidadId, string observaciones)
     {
         Auditoria nuevaAuditoria = new Auditoria(usuarioId, accion, resultado, entidad, entidadId, observaciones);
         return nuevaAuditoria;

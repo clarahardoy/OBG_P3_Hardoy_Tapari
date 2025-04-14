@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Agencia.LogicaNegocio.Entidades
 {
@@ -24,13 +25,18 @@ namespace Agencia.LogicaNegocio.Entidades
             _email = email;
             _password = password;
             _rol = rol;
+            Validar();
+        }
 
-            nombreCompleto.Validar(); 
-            if (!email.Contains('@')) {
+        public Usuario() { }
 
+        public void Validar()
+        {
+            _nombreCompleto.Validar();
+            if (!_email.Contains('@'))
+            {
                 throw new EmailNoValidoException("El email no tiene arroba");
             }
         }
-        public Usuario() { }
     }
 }

@@ -11,4 +11,6 @@ namespace Agencia.LogicaNegocio.InterfacesRepositorios
     {
         Usuario FindByEmail(string email);
 
-    }   }
+        List<Usuario>FindAllByRol(string rol);
+    }
+}   
