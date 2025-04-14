@@ -36,7 +36,7 @@ public class CUAltaUsuario : ICUAltaUsuario
         catch (Exception ex)
         {
             Auditoria aud = Utilidades.Auditor.Auditar(null, Acciones.ALTA, "ERROR", null, null, null);
-           _repositorioAuditoria.Auditar(aud);
+            _repositorioAuditoria.Auditar(aud);
             throw ex;
         }
     }

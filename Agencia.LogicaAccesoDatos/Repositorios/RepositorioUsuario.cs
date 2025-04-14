@@ -19,12 +19,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
         {
             _context.Usuarios.Add(nuevo);
             _context.SaveChanges();
-            return nuevo._id;
+            return nuevo.Id;
         }
 
         public List<Usuario> FindAll()
         {
-            return _context.Usuarios.ToList(); 
+            return _context.Usuarios.ToList();
         }
 
         public Usuario FindByEmail(string email)
@@ -43,9 +43,11 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             _context.SaveChanges();
         }
 
-        public int Update(Usuario obj)
+        public int Update(Usuario unUsuario)
         {
-            throw new NotImplementedException();
+            _context.Comentarios.Update(unUsuario);
+            _context.SaveChanges();
+            return unUsuario.Id;
         }
     }
 }

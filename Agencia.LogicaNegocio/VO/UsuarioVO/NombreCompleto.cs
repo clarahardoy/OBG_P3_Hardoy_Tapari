@@ -1,13 +1,15 @@
 ﻿using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Agencia.LogicaNegocio.VO.UsuarioVO
 {
-    public class NombreCompleto
+    [ComplexType]
+    public record NombreCompleto
     {
         public string _nombre { get; init; }
         public string _apellido { get; init; }

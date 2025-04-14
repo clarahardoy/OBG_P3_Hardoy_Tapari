@@ -10,29 +10,39 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 {
     public class RepositorioEnvio : IRepositorioEnvio
     {
+        private ApplicationDbContext _context;
+        public RepositorioEnvio(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public int Add(Envio nuevo)
         {
-            throw new NotImplementedException();
+            _context.Envios.Add(nuevo);
+            _context.SaveChanges();
+            return nuevo.Id;
         }
 
         public List<Envio> FindAll()
         {
-            throw new NotImplementedException();
+            return _context.Envios.ToList();
         }
 
         public Envio FindById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Envios.Find(id);
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            _context.Remove(id);
+            _context.SaveChanges();
         }
 
-        public int Update(Envio obj)
+        public int Update(Envio unEnvio)
         {
-            throw new NotImplementedException();
+            _context.Comentarios.Update(unEnvio);
+            _context.SaveChanges();
+            return unEnvio.Id;
         }
     }
 }

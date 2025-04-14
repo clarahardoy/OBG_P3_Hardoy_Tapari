@@ -12,7 +12,7 @@ public class RepositorioAuditoria : IRepositorioAuditoria
     }
     public void Auditar(Auditoria nueva)
     {
-        _context.Auditorias.Add(nueva);  
+        _context.Auditorias.Add(nueva);
         _context.SaveChanges();
     }
 }

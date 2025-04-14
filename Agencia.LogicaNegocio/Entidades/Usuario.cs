@@ -12,7 +12,7 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class Usuario
     {
-        public int _id { get; set; }
+        public int Id { get; set; }
         public NombreCompleto _nombreCompleto { get; set; }
         public string _email { get; set; }
         public string _password { get; set; }
@@ -31,7 +31,6 @@ namespace Agencia.LogicaNegocio.Entidades
                 throw new EmailNoValidoException("El email no tiene arroba");
             }
         }
-
         public Usuario() { }
     }
 }

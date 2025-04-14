@@ -8,10 +8,10 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class Comentario
     {
-        public int _id { get; set; }
-        private string _descripcion { get; set; }
-        private DateTime _fecha { get; set; }
-        private Usuario _empleadoAutor { get; set; }
+        public int Id { get; set; }
+        public string _descripcion { get; set; }
+        public DateTime _fecha { get; set; }
+        public Usuario _empleadoAutor { get; set; }
 
         public Comentario(string descripcion, DateTime fecha, Usuario empleadoAutor)
         {

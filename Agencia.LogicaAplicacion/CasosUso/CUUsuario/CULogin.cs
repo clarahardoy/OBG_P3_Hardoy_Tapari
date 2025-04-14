@@ -32,7 +32,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 if (passwordCoincide)
                 {
                     DTOUsuario ret = new DTOUsuario();
-                    ret.Id = usuario._id;
+                    ret.Id = usuario.Id;
                     ret.Rol = usuario._rol.ToString();
                     return ret;
                 }
@@ -50,4 +50,3 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         }
     }
 }
-     

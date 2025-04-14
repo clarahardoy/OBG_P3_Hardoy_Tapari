@@ -4,7 +4,6 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 
 public interface ICULogin
 
-    {
-
-        DTOUsuario VerificarDatosParaLogin(DTOUsuario dto);
-    }
+{
+    DTOUsuario VerificarDatosParaLogin(DTOUsuario dto);
+}

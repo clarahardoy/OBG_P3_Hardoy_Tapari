@@ -11,9 +11,8 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar la cadena de conexión (desde appsettings.json)
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-// Registrar el DbContext en el contenedor de servicios
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.

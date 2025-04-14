@@ -9,13 +9,22 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class Envio
     {
-        private int _id { get; set; }
-        private int _nroTracking { get; set; }
-        private Usuario _empleado { get; set; }
-        private Usuario _cliente { get; set; }
-        private double _peso { get; set; }
-        private EstadoEnvio _estado { get; set; }
-        private List<Comentario> _seguimiento { get; set; }
+        public int Id { get; set; }
+
+        public int _nroTracking { get; set; }
+
+        public int EmpleadoId { get; set; } // FK
+
+        public Usuario _empleado { get; set; }
+
+        public int ClienteId { get; set; } // FK
+        public Usuario _cliente { get; set; }
+
+        public double _peso { get; set; }
+
+        public EstadoEnvio _estado { get; set; }
+
+        public List<Comentario> _seguimiento { get; set; }
 
         public Envio(int nroTracking, Usuario empleado, Usuario cliente, double peso, EstadoEnvio estado, List<Comentario> seguimiento)
         {

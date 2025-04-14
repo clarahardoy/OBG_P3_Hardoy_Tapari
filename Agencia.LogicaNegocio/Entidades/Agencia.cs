@@ -9,10 +9,10 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class Agencia
     {
-        public int _id { get; set; }
-        private string _nombre { get; set; }
-        private int _direccionPostal { get; set; }
-        private Ubicacion _ubicacion { get; set; }
+        public int Id { get; set; }
+        public string _nombre { get; set; }
+        public int _direccionPostal { get; set; }
+        public Ubicacion _ubicacion { get; set; }
 
 
         // Constructor con parámetros

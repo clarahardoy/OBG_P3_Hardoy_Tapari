@@ -10,29 +10,40 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 {
     public class RepositorioComentario : IRepositorioComentario
     {
+        private ApplicationDbContext _context;
+        public RepositorioComentario(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public int Add(Comentario nuevo)
         {
-            throw new NotImplementedException();
+            _context.Comentarios.Add(nuevo);
+            _context.SaveChanges();
+            return nuevo.Id;
         }
 
         public List<Comentario> FindAll()
         {
-            throw new NotImplementedException();
+            return _context.Comentarios.ToList();
         }
 
         public Comentario FindById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Comentarios.Find(id);
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            _context.Remove(id);
+            _context.SaveChanges();
         }
 
-        public int Update(Comentario obj)
+        public int Update(Comentario unComentario)
         {
-            throw new NotImplementedException();
+            _context.Comentarios.Update(unComentario);
+            _context.SaveChanges();
+            return unComentario.Id;
         }
     }
 }

@@ -9,8 +9,8 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class EnvioUrgente : Envio
     {
-        private int _direccionPostal { get; set; }
-        private bool _entregado { get; set; }
+        public int _direccionPostal { get; set; }
+        public bool _entregado { get; set; }
 
         public EnvioUrgente(int nroTracking, Usuario empleado, Usuario cliente, double peso, EstadoEnvio estado, List<Comentario> seguimiento, int direccionPostal, bool entregado) : base(nroTracking, empleado, cliente, peso, estado, seguimiento)
         {
