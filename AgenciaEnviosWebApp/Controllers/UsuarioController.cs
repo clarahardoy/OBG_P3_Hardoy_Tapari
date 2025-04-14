@@ -8,7 +8,7 @@ public class UsuarioController : Controller
 {
     private ICUAltaUsuario _CUAltaEmpleado;
     private ICULogin _CULogin;
-    private ICUObtenerFuncionarios _CUObtenerEmpleados;
+    private ICUObtenerFuncionarios _CUObtenerFuncionarios;
     
     public UsuarioController(ICUAltaUsuario CUAltaEmpleado,ICULogin CUlogin)
     {
@@ -45,11 +45,9 @@ public class UsuarioController : Controller
         return View();
     }
 
-
     public IActionResult AccesoDenegado() { 
         return View();
     }
-
 
     public IActionResult Login() {
         return View();
@@ -74,6 +72,6 @@ public class UsuarioController : Controller
 
     public IActionResult ListEmpleados()
     {
-        return View(_CUObtenerEmpleados.ListarEmpleados());
+        return View(_CUObtenerFuncionarios.ListarFuncionarios());
     }
 }
