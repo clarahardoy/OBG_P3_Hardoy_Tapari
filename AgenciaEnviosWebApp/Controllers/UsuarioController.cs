@@ -20,8 +20,7 @@ public class UsuarioController : Controller
     }
 
    // [LogueadoAuthorize]
-   // TODO implementar filtros
-   // [EmpleadoAuthorize]
+   // [AdministradorAuthorize]
     public IActionResult Create()
     {
         return View();
