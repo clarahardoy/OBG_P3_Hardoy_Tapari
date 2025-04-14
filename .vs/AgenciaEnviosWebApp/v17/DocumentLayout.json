@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\valen\\Obg1_P3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CUActualizarFuncionario.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
-              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
-              "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwB8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T20:30:48.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Program.cs",
-              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Program.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Program.cs",
-              "RelativeToolTip": "AgenciaEnviosWebApp\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAewBcAAAAyAAAAAAAAAA==",
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T20:21:09.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CUObtenerFuncionarios.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
-              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
-              "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T18:50:46.8Z",
+              "WhenOpened": "2025-04-14T21:52:18.556Z",
               "EditorCaption": ""
             }
           ]
