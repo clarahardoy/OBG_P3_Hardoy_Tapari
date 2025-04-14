@@ -13,6 +13,5 @@ public class LogueadoAuthorize : ActionFilterAttribute
         {
             context.Result = new RedirectToActionResult("Login", "Usuario", null);
         }
-
     }
 }
