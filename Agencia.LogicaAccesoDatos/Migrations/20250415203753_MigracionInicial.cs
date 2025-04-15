@@ -31,6 +31,22 @@ namespace Agencia.LogicaAccesoDatos.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sucursales",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    _nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    _direccionPostal = table.Column<int>(type: "int", nullable: false),
+                    _ubicacion__latitud = table.Column<int>(type: "int", nullable: false),
+                    _ubicacion__longitud = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sucursales", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -132,6 +148,9 @@ namespace Agencia.LogicaAccesoDatos.Migrations
 
             migrationBuilder.DropTable(
                 name: "Comentarios");
+
+            migrationBuilder.DropTable(
+                name: "Sucursales");
 
             migrationBuilder.DropTable(
                 name: "Envios");

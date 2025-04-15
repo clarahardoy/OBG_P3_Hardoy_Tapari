@@ -13,7 +13,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
 {
     public class CUObtenerFuncionarios : ICUObtenerFuncionarios
     {
-         private IRepositorioUsuario _repoUsuario;
+        private IRepositorioUsuario _repoUsuario;
 
         public CUObtenerFuncionarios(IRepositorioUsuario repoUsuario)
         {

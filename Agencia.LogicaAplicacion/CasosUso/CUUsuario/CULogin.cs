@@ -13,7 +13,6 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
 {
     public class CULogin : ICULogin
     {
-
         private IRepositorioUsuario _repositorioUsuario;
 
         public CULogin(IRepositorioUsuario repositorioUsuario)
@@ -45,8 +44,6 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             {
                 throw e;
             }
-
-
         }
     }
 }

@@ -20,13 +20,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddControllersWithViews();
 
 //DI - REPOS
-// TODO builder.Services.AddScoped<IRepositorioAgencia, RepositorioAgencia>();
 builder.Services.AddScoped<IRepositorioAuditoria, RepositorioAuditoria>();
 builder.Services.AddScoped<IRepositorioComentario, RepositorioComentario>();
 builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
+builder.Services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
-// TO DO: resolver inyeccion de dependecia
 
+//DI - CUUsuario
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
 builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
 builder.Services.AddScoped<ICUEliminarFuncionario, CUEliminarFuncionario>();

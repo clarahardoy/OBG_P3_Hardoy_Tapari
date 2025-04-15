@@ -34,7 +34,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             }
             catch (Exception ex)
             {
-                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "FALLA", usuario.GetType().Name,
+                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "FALLA", "USUARIO",//usuario.GetType().Name,
                        null, ex.Message);
                 _repoAuditoria.Auditar(aud);
                 throw ex;

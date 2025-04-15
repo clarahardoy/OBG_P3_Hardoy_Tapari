@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agencia.LogicaAccesoDatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250414172912_MigracionInicial")]
+    [Migration("20250415203753_MigracionInicial")]
     partial class MigracionInicial
     {
         /// <inheritdoc />
@@ -120,6 +120,37 @@ namespace Agencia.LogicaAccesoDatos.Migrations
                     b.HasIndex("EmpleadoId");
 
                     b.ToTable("Envios");
+                });
+
+            modelBuilder.Entity("Agencia.LogicaNegocio.Entidades.Sucursal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("_direccionPostal")
+                        .HasColumnType("int");
+
+                    b.Property<string>("_nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ComplexProperty<Dictionary<string, object>>("_ubicacion", "Agencia.LogicaNegocio.Entidades.Sucursal._ubicacion#Ubicacion", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<int>("_latitud")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("_longitud")
+                                .HasColumnType("int");
+                        });
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sucursales");
                 });
 
             modelBuilder.Entity("Agencia.LogicaNegocio.Entidades.Usuario", b =>

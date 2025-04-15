@@ -31,7 +31,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 usuario.Validar();
                 int entidadId = _repoUsuario.Update(usuario);
 
-                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "EXITO", usuario.GetType().Name, 
+                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "EXITO", usuario.GetType().Name,
                     entidadId.ToString(), "Actualización exitosa");
                 _repoAuditoria.Auditar(aud);
             }
