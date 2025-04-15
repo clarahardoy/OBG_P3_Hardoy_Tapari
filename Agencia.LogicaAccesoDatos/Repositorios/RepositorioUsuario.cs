@@ -1,5 +1,7 @@
 ﻿using Agencia.LogicaNegocio.Entidades;
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
+using Agencia.LogicaNegocio.VO.UsuarioVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +29,10 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             return _context.Usuarios.ToList();
         }
 
-        public List<Usuario> FindAllByRol(string rol)
+        public List<Usuario> ListAllFuncionarios()
         {
-            return _context.Usuarios.Where(x => x._rol.ToString() == rol).ToList();
+            var r = RolUsuario.Funcionario;
+            return _context.Usuarios.Where(x => x._rol == r).ToList();
         }
 
         public Usuario FindByEmail(string email)

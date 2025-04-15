@@ -9,19 +9,25 @@ public class UsuarioController : Controller
     private ICUAltaUsuario _CUAltaEmpleado;
     private ICULogin _CULogin;
     private ICUObtenerFuncionarios _CUObtenerFuncionarios;
-    
-    public UsuarioController(ICUAltaUsuario CUAltaEmpleado,ICULogin CUlogin)
+    private ICUActualizarFuncionario _CUActualizarFuncionario;
+
+    public UsuarioController(ICUAltaUsuario CUAltaEmpleado,
+                             ICULogin CUlogin,
+                             ICUObtenerFuncionarios CUObtenerFuncionarios,
+                             ICUActualizarFuncionario cUActualizarFuncionario)
     {
         _CUAltaEmpleado = CUAltaEmpleado;
         _CULogin = CUlogin;
+        _CUObtenerFuncionarios = CUObtenerFuncionarios;
+        _CUActualizarFuncionario = cUActualizarFuncionario;
     }
     public IActionResult Index()
     {
-        return View();
+        return RedirectToAction("Index", "Home");
     }
 
-   // [LogueadoAuthorize]
-   // [AdministradorAuthorize]
+    // [LogueadoAuthorize]
+    // [AdministradorAuthorize]
     public IActionResult Create()
     {
         return View();
@@ -36,20 +42,22 @@ public class UsuarioController : Controller
             dto.LogueadoId = logueadoId;
 
             _CUAltaEmpleado.AltaEmpleado(dto);
-            ViewBag.msg = "Alta exitosa";
+            ViewBag.successMessage = "Alta exitosa";
         }
         catch (Exception e)
         {
-            ViewBag.msg = e.Message;
+            ViewBag.Mensaje = e.Message;
         }
         return View();
     }
 
-    public IActionResult AccesoDenegado() { 
+    public IActionResult AccesoDenegado()
+    {
         return View();
     }
 
-    public IActionResult Login() {
+    public IActionResult Login()
+    {
         return View();
     }
 
@@ -64,13 +72,12 @@ public class UsuarioController : Controller
         }
         catch (Exception e)
         {
-
-            throw e;
+            ViewBag.Mensaje = e.Message;
         }
         return View();
     }
 
-    public IActionResult ListEmpleados()
+    public IActionResult ListFuncionarios()
     {
         return View(_CUObtenerFuncionarios.ListarFuncionarios());
     }
