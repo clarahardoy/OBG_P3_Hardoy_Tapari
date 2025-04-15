@@ -32,9 +32,9 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             return _context.Envios.Find(id);
         }
 
-        public void Remove(int id)
+        public void Remove(Envio e)
         {
-            _context.Remove(id);
+            _context.Remove(e);
             _context.SaveChanges();
         }
 

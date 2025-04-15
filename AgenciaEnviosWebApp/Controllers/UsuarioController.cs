@@ -75,7 +75,7 @@ public class UsuarioController : Controller
         {
             DTOUsuario b = _CULogin.VerificarDatosParaLogin(dto);
             HttpContext.Session.SetInt32("LogueadoId", (int)b.Id);
-            HttpContext.Session.SetString("LogueadoRol", b.Rol);
+            HttpContext.Session.SetString("LogueadoRol", b.Rol.ToString());
         }
         catch (Exception e)
         {

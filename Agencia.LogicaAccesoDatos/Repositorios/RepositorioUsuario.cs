@@ -45,9 +45,9 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             return _context.Usuarios.Find(id);
         }
 
-        public void Remove(int id)
+        public void Remove(Usuario u)
         {
-            _context.Remove(id);
+            _context.Remove(u);
             _context.SaveChanges();
         }
 

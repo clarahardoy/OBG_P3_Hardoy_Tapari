@@ -33,7 +33,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 {
                     DTOUsuario ret = new DTOUsuario();
                     ret.Id = usuario.Id;
-                    ret.Rol = usuario._rol.ToString();
+                    ret.Rol = usuario._rol;
                     return ret;
                 }
                 else

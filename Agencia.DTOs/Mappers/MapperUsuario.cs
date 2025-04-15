@@ -15,8 +15,9 @@ public class MapperUsuario
         nuevo._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
         nuevo._email = dto.Email;
 
-        var rol = RolUsuario.Funcionario;
+        var rol = dto.Rol;
         if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
+        if (dto.Rol.Equals(1)) rol = RolUsuario.Funcionario;
         if (dto.Rol.Equals(0)) rol = RolUsuario.Administrador;
         nuevo._rol = rol;
 
@@ -34,7 +35,7 @@ public class MapperUsuario
             dto.Nombre = unUsuario._nombreCompleto._nombre;
             dto.Apellido = unUsuario._nombreCompleto._apellido;
             dto.Email = unUsuario._email;
-            dto.Rol = unUsuario._rol.ToString();
+            dto.Rol = unUsuario._rol;
             ret.Add(dto);
         }
         return ret;
@@ -47,7 +48,7 @@ public class MapperUsuario
         dto.Nombre = u._nombreCompleto._nombre;
         dto.Apellido = u._nombreCompleto._apellido;
         dto.Email = u._email;
-        dto.Rol = u._rol.ToString();
+        dto.Rol = u._rol;
         return dto;
     }
 

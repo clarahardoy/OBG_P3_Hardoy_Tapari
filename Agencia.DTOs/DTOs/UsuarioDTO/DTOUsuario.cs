@@ -1,3 +1,5 @@
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
+
 namespace Agencia.DTOs.DTOs.UsuarioDTO;
 
 public class DTOUsuario
@@ -7,6 +9,6 @@ public class DTOUsuario
     public string? Password { get; set; }
     public string? Nombre { get; set; }
     public string? Apellido { get; set; }
-    public string? Rol { get; set; }
+    public RolUsuario Rol { get; set; }
     public int? LogueadoId { get; set; }
 }

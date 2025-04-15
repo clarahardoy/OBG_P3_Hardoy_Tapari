@@ -33,9 +33,9 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             return _context.Comentarios.Find(id);
         }
 
-        public void Remove(int id)
+        public void Remove(Comentario c)
         {
-            _context.Remove(id);
+            _context.Remove(c);
             _context.SaveChanges();
         }
 

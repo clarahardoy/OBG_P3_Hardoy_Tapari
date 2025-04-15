@@ -24,9 +24,10 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         }
         public void EliminarFuncionario(DTOUsuario dto)
         {
-            Usuario usuario = MapperUsuario.FromDtoUsuarioToUsuario(dto);
+            Usuario usuario = _repoUsuario.FindById((int)dto.Id);
             try
             {
+                _repoUsuario.Remove(usuario);
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "EXITO", usuario.GetType().Name,
                        null, "Eliminado exitosamente");
                 _repoAuditoria.Auditar(aud);

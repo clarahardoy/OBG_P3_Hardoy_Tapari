@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\valen\\Obg1_P3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D058BFC9-C536-4711-8FDC-C4328D16587C}|Agencia.LogicaNegocio\\Agencia.LogicaNegocio.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicanegocio\\interfacesrepositorios\\irepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D058BFC9-C536-4711-8FDC-C4328D16587C}|Agencia.LogicaNegocio\\Agencia.LogicaNegocio.csproj|solutionrelative:agencia.logicanegocio\\interfacesrepositorios\\irepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CE91E2D8-0989-4B76-8519-3D3072302F17}|Agencia.LogicaAccesoDatos\\Agencia.LogicaAccesoDatos.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaccesodatos\\repositorios\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE91E2D8-0989-4B76-8519-3D3072302F17}|Agencia.LogicaAccesoDatos\\Agencia.LogicaAccesoDatos.csproj|solutionrelative:agencia.logicaaccesodatos\\repositorios\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCFE3358-B635-4A91-8D5C-E49EB511A0CA}|Agencia.DTOs\\Agencia.DTOs.csproj|c:\\users\\valen\\obg1_p3\\agencia.dtos\\mappers\\mapperusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCFE3358-B635-4A91-8D5C-E49EB511A0CA}|Agencia.DTOs\\Agencia.DTOs.csproj|solutionrelative:agencia.dtos\\mappers\\mapperusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cueliminarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cueliminarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +23,12 @@
       "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuactualizarfuncionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -50,8 +50,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorio.cs",
+              "RelativeDocumentMoniker": "Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorio.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorio.cs",
+              "RelativeToolTip": "Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T04:36:07.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CUEliminarFuncionario.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUEliminarFuncionario.cs",
+              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUEliminarFuncionario.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUEliminarFuncionario.cs",
+              "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUEliminarFuncionario.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwB0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T04:27:27.987Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -67,41 +93,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RepositorioUsuario.cs",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
               "RelativeDocumentMoniker": "Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
               "RelativeToolTip": "Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAkwDsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAwAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T03:57:33.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "CUActualizarFuncionario.cs",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
               "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
               "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUActualizarFuncionario.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAjwB4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAjwB8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T03:57:01.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MapperUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.DTOs\\Mappers\\MapperUsuario.cs",
-              "RelativeDocumentMoniker": "Agencia.DTOs\\Mappers\\MapperUsuario.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.DTOs\\Mappers\\MapperUsuario.cs",
-              "RelativeToolTip": "Agencia.DTOs\\Mappers\\MapperUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T03:43:19.752Z",
               "EditorCaption": ""
             },
             {
@@ -119,25 +132,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
-              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
-              "RelativeToolTip": "AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T03:20:01.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Delete.cshtml",
               "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Views\\Usuario\\Delete.cshtml",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Delete.cshtml",
               "RelativeToolTip": "AgenciaEnviosWebApp\\Views\\Usuario\\Delete.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-15T03:19:29.007Z",
               "EditorCaption": ""
@@ -174,7 +174,7 @@
               "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAmwGcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAH4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T21:52:18.556Z",
               "EditorCaption": ""

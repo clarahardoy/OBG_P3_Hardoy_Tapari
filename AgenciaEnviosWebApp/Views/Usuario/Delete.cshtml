@@ -3,6 +3,18 @@
 @{
     ViewData["Title"] = "Eliminar";
 }
+@if (ViewBag.successMessage != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.successMessage
+    </div>
+}
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
 
 <h1>Eliminar</h1>
 

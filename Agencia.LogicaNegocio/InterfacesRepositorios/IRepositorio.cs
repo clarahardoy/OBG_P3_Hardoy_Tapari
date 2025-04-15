@@ -10,7 +10,7 @@ namespace Agencia.LogicaNegocio.InterfacesRepositorios
     {
         int Add(T nuevo);//Retornamos int para tener el id luego de insertado
         T FindById(int id);
-        void Remove(int id);
+        void Remove(T obj);
         List<T> FindAll();
         int Update(T obj);
     }
