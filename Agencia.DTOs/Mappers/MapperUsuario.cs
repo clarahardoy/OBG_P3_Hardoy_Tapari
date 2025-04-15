@@ -14,6 +14,7 @@ public class MapperUsuario
         nuevo.Id = (int)dto.Id;
         nuevo._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
         nuevo._email = dto.Email;
+        nuevo._password = dto.Password;
 
         var rol = dto.Rol;
         if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
@@ -48,6 +49,7 @@ public class MapperUsuario
         dto.Nombre = u._nombreCompleto._nombre;
         dto.Apellido = u._nombreCompleto._apellido;
         dto.Email = u._email;
+        dto.Password = u._password;
         dto.Rol = u._rol;
         return dto;
     }

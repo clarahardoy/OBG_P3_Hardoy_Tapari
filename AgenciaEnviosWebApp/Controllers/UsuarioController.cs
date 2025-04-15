@@ -1,5 +1,6 @@
 using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
+using AgenciaEnviosWebApp.Filtros;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgenciaEnviosWebApp.Controllers;
@@ -27,13 +28,14 @@ public class UsuarioController : Controller
         _CUObtenerUsuario = cUObtenerUsuario;
         _CUEliminarFuncionario = cUEliminarFuncionario;
     }
+
     public IActionResult Index()
     {
         return RedirectToAction("Index", "Home");
     }
 
-    // [LogueadoAuthorize]
-    // [AdministradorAuthorize]
+    [LogueadoAuthorize]
+    [AdministradorAuthorize]
     public IActionResult Create()
     {
         return View();
@@ -44,8 +46,7 @@ public class UsuarioController : Controller
     {
         try
         {
-            //int? logueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            int? logueadoId = 2;
+            int? logueadoId = HttpContext.Session.GetInt32("LogueadoId");
             dto.LogueadoId = logueadoId;
 
             _CUAltaEmpleado.AltaEmpleado(dto);
@@ -81,13 +82,18 @@ public class UsuarioController : Controller
         {
             ViewBag.Mensaje = e.Message;
         }
-        return View();
+        return RedirectToAction("Index", "Home");
     }
 
+    [LogueadoAuthorize]
+    [AdministradorAuthorize]
     public IActionResult ListFuncionarios()
     {
         return View(_CUObtenerFuncionarios.ListarFuncionarios());
     }
+
+    [LogueadoAuthorize]
+    [AdministradorAuthorize]
     public IActionResult Edit(int id)
     {
         //salir a buscar el genero con este id
@@ -99,8 +105,7 @@ public class UsuarioController : Controller
     {
         try
         {
-            //dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            dto.LogueadoId = 2;
+            dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
             _CUActualizarFuncionario.ActualizarFuncionario(dto);
             ViewBag.successMessage = "Usuario actualizado con éxito.";
         }
@@ -111,6 +116,8 @@ public class UsuarioController : Controller
         return View();
     }
 
+    [LogueadoAuthorize]
+    [AdministradorAuthorize]
     public IActionResult Delete(int id)
     {
         //salir a buscar el genero con este id
@@ -122,8 +129,7 @@ public class UsuarioController : Controller
     {
         try
         {
-            //dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            dto.LogueadoId = 2;
+            dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
             _CUEliminarFuncionario.EliminarFuncionario(dto);
             ViewBag.successMessage = "Usuario eliminado con éxito.";
         }
