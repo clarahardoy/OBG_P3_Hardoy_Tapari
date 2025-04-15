@@ -3,6 +3,18 @@
 @{
     ViewData["Title"] = "Edit";
 }
+@if (ViewBag.successMessage != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.successMessage
+    </div>
+}
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
 
 <h1>Editar Funcionario</h1>
 

@@ -2,6 +2,7 @@ using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Agencia.LogicaNegocio.VO.UsuarioVO;
+using System.Data;
 
 namespace Agencia.DTOs.Mappers;
 
@@ -10,6 +11,7 @@ public class MapperUsuario
     public static Usuario FromDtoUsuarioToUsuario(DTOUsuario dto)
     {
         Usuario nuevo = new Usuario();
+        nuevo.Id = (int)dto.Id;
         nuevo._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
         nuevo._email = dto.Email;
 
@@ -29,7 +31,8 @@ public class MapperUsuario
         {
             DTOUsuario dto = new DTOUsuario();
             dto.Id = unUsuario.Id;
-            dto.Nombre = unUsuario._nombreCompleto.ToString();
+            dto.Nombre = unUsuario._nombreCompleto._nombre;
+            dto.Apellido = unUsuario._nombreCompleto._apellido;
             dto.Email = unUsuario._email;
             dto.Rol = unUsuario._rol.ToString();
             ret.Add(dto);
@@ -41,7 +44,8 @@ public class MapperUsuario
     {
         DTOUsuario dto = new DTOUsuario();
         dto.Id = u.Id;
-        dto.Nombre = u._nombreCompleto.ToString();
+        dto.Nombre = u._nombreCompleto._nombre;
+        dto.Apellido = u._nombreCompleto._apellido;
         dto.Email = u._email;
         dto.Rol = u._rol.ToString();
         return dto;
@@ -49,9 +53,10 @@ public class MapperUsuario
 
     public static Usuario ToUsuario(DTOAltaUsuario dto)
     {
-        var rol = RolUsuario.Funcionario;
+        var rol = dto.Rol;
         if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
         if (dto.Rol.Equals(1)) rol = RolUsuario.Funcionario;
+        if (dto.Rol.Equals(0)) rol = RolUsuario.Administrador;
         string passHashed = Utilidades.Crypto.HashPasswordConBcrypt(dto.Password, 12);
 
         Usuario ret = new Usuario(new NombreCompleto(dto.Nombre, dto.Apellido), dto.Email, passHashed, rol);

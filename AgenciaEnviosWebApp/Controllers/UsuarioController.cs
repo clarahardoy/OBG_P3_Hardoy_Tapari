@@ -11,18 +11,21 @@ public class UsuarioController : Controller
     private ICUObtenerFuncionarios _CUObtenerFuncionarios;
     private ICUActualizarFuncionario _CUActualizarFuncionario;
     private ICUObtenerUsuario _CUObtenerUsuario;
+    private ICUEliminarFuncionario _CUEliminarFuncionario;
 
     public UsuarioController(ICUAltaUsuario CUAltaEmpleado,
                              ICULogin CUlogin,
                              ICUObtenerFuncionarios CUObtenerFuncionarios,
                              ICUActualizarFuncionario cUActualizarFuncionario,
-                             ICUObtenerUsuario cUObtenerUsuario)
+                             ICUObtenerUsuario cUObtenerUsuario,
+                             ICUEliminarFuncionario cUEliminarFuncionario)
     {
         _CUAltaEmpleado = CUAltaEmpleado;
         _CULogin = CUlogin;
         _CUObtenerFuncionarios = CUObtenerFuncionarios;
         _CUActualizarFuncionario = cUActualizarFuncionario;
         _CUObtenerUsuario = cUObtenerUsuario;
+        _CUEliminarFuncionario = cUEliminarFuncionario;
     }
     public IActionResult Index()
     {
@@ -41,7 +44,8 @@ public class UsuarioController : Controller
     {
         try
         {
-            int? logueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            //int? logueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            int? logueadoId = 2;
             dto.LogueadoId = logueadoId;
 
             _CUAltaEmpleado.AltaEmpleado(dto);
@@ -95,9 +99,33 @@ public class UsuarioController : Controller
     {
         try
         {
-            dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            //dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            dto.LogueadoId = 2;
             _CUActualizarFuncionario.ActualizarFuncionario(dto);
             ViewBag.successMessage = "Usuario actualizado con éxito.";
+        }
+        catch (Exception e)
+        {
+            ViewBag.Mensaje = e.Message;
+        }
+        return View();
+    }
+
+    public IActionResult Delete(int id)
+    {
+        //salir a buscar el genero con este id
+        DTOUsuario model = _CUObtenerUsuario.ObtenerUsuario(id);
+        return View(model);
+    }
+    [HttpPost]
+    public IActionResult Delete(DTOUsuario dto)
+    {
+        try
+        {
+            //dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            dto.LogueadoId = 2;
+            _CUEliminarFuncionario.EliminarFuncionario(dto);
+            ViewBag.successMessage = "Usuario eliminado con éxito.";
         }
         catch (Exception e)
         {
