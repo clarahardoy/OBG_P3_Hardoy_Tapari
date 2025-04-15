@@ -37,6 +37,16 @@ public class MapperUsuario
         return ret;
     }
 
+    public static DTOUsuario FromUsuarioToDto(Usuario u)
+    {
+        DTOUsuario dto = new DTOUsuario();
+        dto.Id = u.Id;
+        dto.Nombre = u._nombreCompleto.ToString();
+        dto.Email = u._email;
+        dto.Rol = u._rol.ToString();
+        return dto;
+    }
+
     public static Usuario ToUsuario(DTOAltaUsuario dto)
     {
         var rol = RolUsuario.Funcionario;

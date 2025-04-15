@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\valen\\Obg1_P3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE91E2D8-0989-4B76-8519-3D3072302F17}|Agencia.LogicaAccesoDatos\\Agencia.LogicaAccesoDatos.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaccesodatos\\repositorios\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE91E2D8-0989-4B76-8519-3D3072302F17}|Agencia.LogicaAccesoDatos\\Agencia.LogicaAccesoDatos.csproj|solutionrelative:agencia.logicaaccesodatos\\repositorios\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D058BFC9-C536-4711-8FDC-C4328D16587C}|Agencia.LogicaNegocio\\Agencia.LogicaNegocio.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicanegocio\\interfacesrepositorios\\irepositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D058BFC9-C536-4711-8FDC-C4328D16587C}|Agencia.LogicaNegocio\\Agencia.LogicaNegocio.csproj|solutionrelative:agencia.logicanegocio\\interfacesrepositorios\\irepositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\icasosuso\\icuusuario\\icuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\icasosuso\\icuusuario\\icuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\listfuncionarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\listfuncionarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\icasosuso\\icuusuario\\icuobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\icasosuso\\icuusuario\\icuobtenerusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|c:\\users\\valen\\obg1_p3\\agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}|AgenciaEnviosWebApp\\AgenciaEnviosWebApp.csproj|solutionrelative:agenciaenvioswebapp\\views\\usuario\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|c:\\users\\valen\\obg1_p3\\agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11497CFE-FB13-40A2-B77A-675669EFFAF5}|Agencia.LogicaAplicacion\\Agencia.LogicaAplicacion.csproj|solutionrelative:agencia.logicaaplicacion\\casosuso\\cuusuario\\cuobtenerfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,32 +42,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RepositorioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
-              "RelativeDocumentMoniker": "Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
-              "RelativeToolTip": "Agencia.LogicaAccesoDatos\\Repositorios\\RepositorioUsuario.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Program.cs",
+              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Program.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Program.cs",
+              "RelativeToolTip": "AgenciaEnviosWebApp\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T02:24:06.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IRepositorioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorioUsuario.cs",
-              "RelativeDocumentMoniker": "Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorioUsuario.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorioUsuario.cs",
-              "RelativeToolTip": "Agencia.LogicaNegocio\\InterfacesRepositorios\\IRepositorioUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T02:23:22.253Z",
+              "WhenOpened": "2025-04-15T02:46:33.689Z",
               "EditorCaption": ""
             },
             {
@@ -76,52 +63,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ICUObtenerFuncionarios.cs",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerFuncionarios.cs",
-              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerFuncionarios.cs",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerFuncionarios.cs",
-              "RelativeToolTip": "Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerFuncionarios.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Edit.cshtml",
+              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Views\\Usuario\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Edit.cshtml",
+              "RelativeToolTip": "AgenciaEnviosWebApp\\Views\\Usuario\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T02:44:57.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CUObtenerUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerUsuario.cs",
+              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerUsuario.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerUsuario.cs",
+              "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T02:10:48.246Z",
+              "WhenOpened": "2025-04-15T02:36:49.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ListFuncionarios.cshtml",
-              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\ListFuncionarios.cshtml",
-              "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Views\\Usuario\\ListFuncionarios.cshtml",
-              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\ListFuncionarios.cshtml",
-              "RelativeToolTip": "AgenciaEnviosWebApp\\Views\\Usuario\\ListFuncionarios.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAACwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T01:57:59.19Z",
+              "Title": "ICUObtenerUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerUsuario.cs",
+              "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerUsuario.cs",
+              "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerUsuario.cs",
+              "RelativeToolTip": "Agencia.LogicaAplicacion\\ICasosUso\\ICUUsuario\\ICUObtenerUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T02:35:47.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "CUObtenerFuncionarios.cs",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
               "RelativeDocumentMoniker": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
               "RelativeToolTip": "Agencia.LogicaAplicacion\\CasosUso\\CUUsuario\\CUObtenerFuncionarios.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBgAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T01:56:01.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
               "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
               "RelativeToolTip": "AgenciaEnviosWebApp\\Views\\Usuario\\Create.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-15T01:40:01.064Z",
               "EditorCaption": ""
@@ -141,13 +141,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\valen\\Obg1_P3\\AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "AgenciaEnviosWebApp\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAwwFYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T21:52:18.556Z",
               "EditorCaption": ""

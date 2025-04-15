@@ -27,11 +27,12 @@ builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 // TO DO: resolver inyeccion de dependecia
 
-builder.Services.AddScoped<ICULogin, CULogin>();
-builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
-builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
+builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
 builder.Services.AddScoped<ICUEliminarFuncionario, CUEliminarFuncionario>();
+builder.Services.AddScoped<ICULogin, CULogin>();
+builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
+builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
 
 var app = builder.Build();
 

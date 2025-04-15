@@ -10,16 +10,19 @@ public class UsuarioController : Controller
     private ICULogin _CULogin;
     private ICUObtenerFuncionarios _CUObtenerFuncionarios;
     private ICUActualizarFuncionario _CUActualizarFuncionario;
+    private ICUObtenerUsuario _CUObtenerUsuario;
 
     public UsuarioController(ICUAltaUsuario CUAltaEmpleado,
                              ICULogin CUlogin,
                              ICUObtenerFuncionarios CUObtenerFuncionarios,
-                             ICUActualizarFuncionario cUActualizarFuncionario)
+                             ICUActualizarFuncionario cUActualizarFuncionario,
+                             ICUObtenerUsuario cUObtenerUsuario)
     {
         _CUAltaEmpleado = CUAltaEmpleado;
         _CULogin = CUlogin;
         _CUObtenerFuncionarios = CUObtenerFuncionarios;
         _CUActualizarFuncionario = cUActualizarFuncionario;
+        _CUObtenerUsuario = cUObtenerUsuario;
     }
     public IActionResult Index()
     {
@@ -80,5 +83,26 @@ public class UsuarioController : Controller
     public IActionResult ListFuncionarios()
     {
         return View(_CUObtenerFuncionarios.ListarFuncionarios());
+    }
+    public IActionResult Edit(int id)
+    {
+        //salir a buscar el genero con este id
+        DTOUsuario model = _CUObtenerUsuario.ObtenerUsuario(id);
+        return View(model);
+    }
+    [HttpPost]
+    public IActionResult Edit(DTOUsuario dto)
+    {
+        try
+        {
+            dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
+            _CUActualizarFuncionario.ActualizarFuncionario(dto);
+            ViewBag.successMessage = "Usuario actualizado con éxito.";
+        }
+        catch (Exception e)
+        {
+            ViewBag.Mensaje = e.Message;
+        }
+        return View();
     }
 }
