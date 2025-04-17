@@ -44,5 +44,11 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             _context.SaveChanges();
             return obj.Id;
         }
+
+        public List<Sucursal> ListAllSucursales()
+        {
+            return _context.Sucursales.ToList();
+        
+        }
     }
 }

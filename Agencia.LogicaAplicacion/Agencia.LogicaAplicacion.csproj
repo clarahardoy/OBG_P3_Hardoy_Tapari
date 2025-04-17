@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="CasosUso\CUEnvio\" />
     <Folder Include="CasosUso\CUComentario\" />
-    <Folder Include="CasosUso\CUAgencia\" />
-    <Folder Include="ICasosUso\ICUAgencia\" />
     <Folder Include="ICasosUso\ICUComentario\" />
     <Folder Include="ICasosUso\ICUEnvio\" />
   </ItemGroup>

@@ -9,5 +9,7 @@ namespace Agencia.LogicaNegocio.InterfacesRepositorios
 {
     public interface IRepositorioSucursal : IRepositorio<Sucursal>
     {
+        List<Sucursal> ListAllSucursales();
+        
     }
 }
