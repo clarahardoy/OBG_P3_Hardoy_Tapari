@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="CustomException\AgenciaExceptions\" />
     <Folder Include="CustomException\ComentarioExceptions\" />
-    <Folder Include="CustomException\EnvioExceptions\" />
   </ItemGroup>
 
 </Project>

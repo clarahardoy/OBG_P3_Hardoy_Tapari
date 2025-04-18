@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Agencia.LogicaNegocio.Enumerados.EnvioEnums;
 
 namespace Agencia.LogicaAccesoDatos.Repositorios
 {
@@ -43,6 +44,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
             _context.Envios.Update(obj);
             _context.SaveChanges();
             return obj.Id;
+        }
+
+        public List<Envio> ObtenerEnviosEnProceso()
+        {
+            List<Envio> enviosEnProceso = this.FindAll().Where(e => e._estado == EstadoEnvio.EN_PROCESO).ToList();
+            return enviosEnProceso; 
         }
     }
 }

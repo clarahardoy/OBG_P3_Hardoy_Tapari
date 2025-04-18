@@ -7,10 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CasosUso\CUEnvio\" />
     <Folder Include="CasosUso\CUComentario\" />
     <Folder Include="ICasosUso\ICUComentario\" />
-    <Folder Include="ICasosUso\ICUEnvio\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -37,7 +37,7 @@ public class CUAltaUsuario : ICUAltaUsuario
         {
             Auditoria aud = Utilidades.Auditor.Auditar(null, Acciones.ALTA, "ERROR", null, null, null);
             _repositorioAuditoria.Auditar(aud);
-            throw ex;
+            throw ;
         }
     }
 }
