@@ -9,5 +9,6 @@ namespace Agencia.LogicaNegocio.InterfacesRepositorios
 {
     public interface IRepositorioEnvio : IRepositorio<Envio>
     {
+        List<Envio> ObtenerEnviosEnProceso();
     }
 }
