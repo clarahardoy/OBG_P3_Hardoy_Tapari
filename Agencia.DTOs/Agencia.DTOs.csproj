@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\EnvioDTO\" />
-    <Folder Include="DTOs\AgenciaDTO\" />
     <Folder Include="DTOs\ComentarioDTO\" />
   </ItemGroup>
 
