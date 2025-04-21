@@ -40,14 +40,14 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "FALLO", null,
                     null, e.Message); 
                 _repoAuditoria.Auditar(aud);
-                throw e;
+                throw;
             }
             catch (Exception e)
             {
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "FALLO", null,
                     null, e.Message);
                 _repoAuditoria.Auditar(aud);
-                throw e;
+                throw;
             }
         }
     }
