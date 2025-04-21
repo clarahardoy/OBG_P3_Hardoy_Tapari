@@ -13,5 +13,5 @@ public class DTOEnvio
         public double? Peso { get; set; }
         public string? TipoEnvio { get; set; }
         public EstadoEnvio? Estado { get; set; }
-        public List<Comentario>? Comentarios { get; set; }
+        public List<Comentario>? Seguimiento { get; set; }
 }

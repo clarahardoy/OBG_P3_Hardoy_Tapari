@@ -19,6 +19,7 @@ public class MapperEnvio
             dto.Peso = env._peso;
             dto.TipoEnvio = env.GetType().ToString();
             dto.Estado = env._estado; 
+            dto.Seguimiento = env._seguimiento;
             ret.Add(dto);
         }
         return ret;
