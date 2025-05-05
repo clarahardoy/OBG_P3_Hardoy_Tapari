@@ -8,24 +8,41 @@ namespace Agencia.DTOs.Mappers;
 
 public class MapperUsuario
 {
-    public static Usuario FromDtoUsuarioToUsuario(DTOUsuario dto)
+    // Mapper Actualizar:
+    public static DTOActualizarFuncionario ToDtoActualizarFuncionario(Usuario usuario)
     {
-        Usuario nuevo = new Usuario();
-        nuevo.Id = (int)dto.Id;
-        nuevo._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
-        nuevo._email = dto.Email;
-        nuevo._password = dto.Password;
+        DTOActualizarFuncionario dto = new DTOActualizarFuncionario();
+        dto.Id = (int)usuario.Id;
+        dto.Nombre = usuario._nombreCompleto._nombre;
+        dto.Apellido = usuario._nombreCompleto._apellido;
+        dto.Email = usuario._email;
 
+        var rol = dto.Rol;
+        if (usuario._rol.Equals(2)) rol = RolUsuario.Cliente;
+        if (usuario._rol.Equals(1)) rol = RolUsuario.Funcionario;
+        if (usuario._rol.Equals(0)) rol = RolUsuario.Administrador;
+        dto.Rol = rol;
+
+        return dto;
+    }
+
+    // Mapper Alta:
+    public static Usuario FromDtoAltaUsuario(DTOAltaUsuario dto)
+    {
         var rol = dto.Rol;
         if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
         if (dto.Rol.Equals(1)) rol = RolUsuario.Funcionario;
         if (dto.Rol.Equals(0)) rol = RolUsuario.Administrador;
-        nuevo._rol = rol;
+        string passHashed = Utilidades.Crypto.HashPasswordConBcrypt(dto.Password, 12);
 
-        return nuevo;
+        Usuario ret = new Usuario(new NombreCompleto(dto.Nombre, dto.Apellido),
+                                    dto.Email, passHashed, rol);
+
+        return ret;
     }
 
-    public static List<DTOUsuario> FromListUsuarioToListDto(List<Usuario> usuarios)
+    // Mapper Lista
+    public static List<DTOUsuario> FromListUsuario(List<Usuario> usuarios)
     {
         List<DTOUsuario> ret = new List<DTOUsuario>();
 
@@ -37,12 +54,13 @@ public class MapperUsuario
             dto.Apellido = unUsuario._nombreCompleto._apellido;
             dto.Email = unUsuario._email;
             dto.Rol = unUsuario._rol;
-            ret.Add(dto);
+            if(unUsuario._activo == true) ret.Add(dto);
         }
         return ret;
     }
 
-    public static DTOUsuario FromUsuarioToDto(Usuario u)
+    // Mappers Generales: 
+    public static DTOUsuario ToDtoUsuario(Usuario u)
     {
         DTOUsuario dto = new DTOUsuario();
         dto.Id = u.Id;
@@ -51,19 +69,19 @@ public class MapperUsuario
         dto.Email = u._email;
         dto.Password = u._password;
         dto.Rol = u._rol;
+        dto.Activo = u._activo;
         return dto;
     }
 
-    public static Usuario ToUsuario(DTOAltaUsuario dto)
+    public static Usuario ToUsuario(DTOUsuario dto)
     {
-        var rol = dto.Rol;
-        if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
-        if (dto.Rol.Equals(1)) rol = RolUsuario.Funcionario;
-        if (dto.Rol.Equals(0)) rol = RolUsuario.Administrador;
-        string passHashed = Utilidades.Crypto.HashPasswordConBcrypt(dto.Password, 12);
-
-        Usuario ret = new Usuario(new NombreCompleto(dto.Nombre, dto.Apellido), dto.Email, passHashed, rol);
-
-        return ret;
+        Usuario u = new Usuario();
+        u.Id = (int)dto.Id;
+        u._nombreCompleto = new NombreCompleto( dto.Nombre, dto.Apellido );
+        u._email = dto.Email;
+        u._password = dto.Password;
+        u._rol = dto.Rol;
+        u._activo = dto.Activo;
+        return u;
     }
 }

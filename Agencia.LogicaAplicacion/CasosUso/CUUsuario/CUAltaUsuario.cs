@@ -27,8 +27,10 @@ public class CUAltaUsuario : ICUAltaUsuario
             Usuario buscado = _repositorioUsuario.FindByEmail(dto.Email);
             if (buscado != null) throw new EmailYaExisteException("El email ingresado ya existe");
 
-            Usuario nuevoUsuario = MapperUsuario.ToUsuario(dto);
+            Usuario nuevoUsuario = MapperUsuario.FromDtoAltaUsuario(dto);
+
             int entidadId = _repositorioUsuario.Add(nuevoUsuario);
+
             Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ALTA, "EXITO", nuevoUsuario.GetType().Name,
                 entidadId.ToString(), "Alta correcta");
             _repositorioAuditoria.Auditar(aud);

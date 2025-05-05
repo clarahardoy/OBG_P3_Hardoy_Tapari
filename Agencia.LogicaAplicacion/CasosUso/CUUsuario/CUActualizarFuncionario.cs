@@ -5,11 +5,13 @@ using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.Enumerados.AuditoriaEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
+using Agencia.LogicaNegocio.VO.UsuarioVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
 {
@@ -23,11 +25,18 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoUsuario = repoUsuario;
             _repoAuditoria = repoAuditoria;
         }
-        public void ActualizarFuncionario(DTOUsuario dto)
+        public void ActualizarFuncionario(DTOActualizarFuncionario dto)
         {
             try
             {
-                Usuario usuario = MapperUsuario.FromDtoUsuarioToUsuario(dto);
+                // Traigo el Usuario de la BD:
+                Usuario usuario = _repoUsuario.FindById((int)dto.Id);
+
+                // Le cambio solo los datos que tengo en el DTO:
+                usuario._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
+                usuario._email = dto.Email;
+                usuario._rol = dto.Rol;
+
                 usuario.Validar();
                 int entidadId = _repoUsuario.Update(usuario);
 

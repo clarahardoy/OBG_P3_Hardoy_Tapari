@@ -35,6 +35,18 @@ namespace Agencia.LogicaAccesoDatos
                 .WithMany()
                 .HasForeignKey(v => v.ClienteId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Envio>()
+                .HasOne(v => v._agenciaOrigen)
+                .WithMany()
+                .HasForeignKey(v => v.AgenciaOrigenId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<EnvioComun>()
+                .HasOne(v => v._destino)
+                .WithMany()
+                .HasForeignKey(v => v.DestinoId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

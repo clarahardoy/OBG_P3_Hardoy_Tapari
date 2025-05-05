@@ -1,4 +1,5 @@
 using Agencia.DTOs.DTOs.UsuarioDTO;
+using Agencia.LogicaAplicacion.CasosUso.CUUsuario;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 using AgenciaEnviosWebApp.Filtros;
 using Microsoft.AspNetCore.Mvc;
@@ -7,26 +8,26 @@ namespace AgenciaEnviosWebApp.Controllers;
 
 public class UsuarioController : Controller
 {
+    private ICUActualizarFuncionario _CUActualizarFuncionario;
     private ICUAltaUsuario _CUAltaEmpleado;
+    private ICUDesactivarFuncionario _CUDesactivarFuncionario;
     private ICULogin _CULogin;
     private ICUObtenerFuncionarios _CUObtenerFuncionarios;
-    private ICUActualizarFuncionario _CUActualizarFuncionario;
     private ICUObtenerUsuario _CUObtenerUsuario;
-    private ICUEliminarFuncionario _CUEliminarFuncionario;
 
-    public UsuarioController(ICUAltaUsuario CUAltaEmpleado,
+    public UsuarioController(ICUActualizarFuncionario cUActualizarFuncionario,
+                             ICUAltaUsuario CUAltaEmpleado,
+                             ICUDesactivarFuncionario cUDesactivarFuncionario,
                              ICULogin CUlogin,
                              ICUObtenerFuncionarios CUObtenerFuncionarios,
-                             ICUActualizarFuncionario cUActualizarFuncionario,
-                             ICUObtenerUsuario cUObtenerUsuario,
-                             ICUEliminarFuncionario cUEliminarFuncionario)
+                             ICUObtenerUsuario cUObtenerUsuario)
     {
+        _CUActualizarFuncionario = cUActualizarFuncionario;
         _CUAltaEmpleado = CUAltaEmpleado;
+        _CUDesactivarFuncionario = cUDesactivarFuncionario;
         _CULogin = CUlogin;
         _CUObtenerFuncionarios = CUObtenerFuncionarios;
-        _CUActualizarFuncionario = cUActualizarFuncionario;
         _CUObtenerUsuario = cUObtenerUsuario;
-        _CUEliminarFuncionario = cUEliminarFuncionario;
     }
 
     public IActionResult Index()
@@ -50,7 +51,7 @@ public class UsuarioController : Controller
             dto.LogueadoId = logueadoId;
 
             _CUAltaEmpleado.AltaEmpleado(dto);
-            ViewBag.successMessage = "Alta exitosa";
+            ViewBag.successMessage = "Usuario creado con éxito.";
         }
         catch (Exception e)
         {
@@ -85,23 +86,38 @@ public class UsuarioController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    public IActionResult Logout()
+    {
+        try
+        {
+            HttpContext.Session.Clear();
+            ViewBag.successMessage = "Sesión cerrada."; // Porque no muestra este mensaje ??
+        }
+        catch (Exception e)
+        {
+            ViewBag.Mensaje = e.Message;
+        }
+        return RedirectToAction("Login", "Usuario");
+    }
+
     [LogueadoAuthorize]
     [AdministradorAuthorize]
     public IActionResult ListFuncionarios()
     {
         return View(_CUObtenerFuncionarios.ListarFuncionarios());
+
     }
 
     [LogueadoAuthorize]
     [AdministradorAuthorize]
     public IActionResult Edit(int id)
     {
-        //salir a buscar el genero con este id
-        DTOUsuario model = _CUObtenerUsuario.ObtenerUsuario(id);
+        //alir a buscar el Usuario con este id
+        DTOActualizarFuncionario model = _CUObtenerUsuario.ObtenerFuncionario(id);
         return View(model);
     }
     [HttpPost]
-    public IActionResult Edit(DTOUsuario dto)
+    public IActionResult Edit(DTOActualizarFuncionario dto)
     {
         try
         {
@@ -124,13 +140,14 @@ public class UsuarioController : Controller
         DTOUsuario model = _CUObtenerUsuario.ObtenerUsuario(id);
         return View(model);
     }
+
     [HttpPost]
     public IActionResult Delete(DTOUsuario dto)
     {
         try
         {
             dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            _CUEliminarFuncionario.EliminarFuncionario(dto);
+            _CUDesactivarFuncionario.DesactivarFuncionario(dto);
             ViewBag.successMessage = "Usuario eliminado con éxito.";
         }
         catch (Exception e)

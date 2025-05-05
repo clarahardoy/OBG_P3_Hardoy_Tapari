@@ -22,7 +22,13 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         public DTOUsuario ObtenerUsuario(int id)
         {
             Usuario u = _repoUsuario.FindById(id);
-            return MapperUsuario.FromUsuarioToDto(u);
+            return MapperUsuario.ToDtoUsuario(u);
+        }
+
+        public DTOActualizarFuncionario ObtenerFuncionario(int id)
+        {
+            Usuario funcionario = _repoUsuario.FindById(id);
+            return MapperUsuario.ToDtoActualizarFuncionario(funcionario);
         }
     }
 }

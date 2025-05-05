@@ -1,20 +1,17 @@
 ﻿@model IEnumerable<Agencia.DTOs.DTOs.UsuarioDTO.DTOUsuario>
 
 @{
-	ViewData["Title"] = "Listar Funcionarios";
+	ViewData["Title"] = "Funcionarios";
 }
 
-<h1>Listar Funcionarios</h1>
+<h1>Funcionarios</h1>
 
 <p>
-	<a asp-action="Create">Create New</a>
+	<a asp-action="Create">Agregar Funcionario</a>
 </p>
 <table class="table">
 	<thead>
 		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Id)
-			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Email)
 			</th>
@@ -34,9 +31,6 @@
 		@foreach (var item in Model)
 		{
 			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.Id)
-				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Email)
 				</td>

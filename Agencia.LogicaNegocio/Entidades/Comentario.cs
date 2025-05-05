@@ -13,10 +13,10 @@ namespace Agencia.LogicaNegocio.Entidades
         public DateTime _fecha { get; set; }
         public Usuario _empleadoAutor { get; set; }
 
-        public Comentario(string descripcion, DateTime fecha, Usuario empleadoAutor)
+        public Comentario(string descripcion, Usuario empleadoAutor)
         {
             _descripcion = descripcion;
-            _fecha = fecha;
+            _fecha = DateTime.Now;
             _empleadoAutor = empleadoAutor;
         }
 

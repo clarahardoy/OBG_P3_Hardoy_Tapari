@@ -10,5 +10,7 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario
     public interface ICUObtenerUsuario
     {
         DTOUsuario ObtenerUsuario(int id);
+
+        public DTOActualizarFuncionario ObtenerFuncionario(int id);
     }
 }

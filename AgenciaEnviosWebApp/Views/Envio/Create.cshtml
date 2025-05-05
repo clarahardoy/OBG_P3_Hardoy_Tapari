@@ -1,0 +1,98 @@
+﻿@model AgenciaEnviosWebApp.Models.AltaEnvioViewModel
+
+@{
+	ViewData["Title"] = "Agregar envío";
+}
+@if (ViewBag.successMessage != null)
+{
+	<div class="alert alert-success">
+		@ViewBag.successMessage
+	</div>
+}
+@if (ViewBag.Mensaje != null)
+{
+	<div class="alert alert-danger">
+		@ViewBag.Mensaje
+	</div>
+}
+
+<h1>Agregar</h1>
+
+<h4>Envío</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label>Tipo envío</label>
+				<select class="form-select" asp-items="Model.TiposEnvio" asp-for="@Model.Dto.TipoEnvio">
+				</select>
+			</div>
+			<div>
+				<label asp-for="Dto.ClienteEmail" class="control-label"></label>
+				<input asp-for="Dto.ClienteEmail" class="form-control" />
+				<span asp-validation-for="@Model.Dto.ClienteEmail" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Dto.Peso" class="control-label"></label>
+				<input asp-for="Dto.Peso" class="form-control" />
+				<span asp-validation-for="Dto.Peso" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Dto.PrimerComentario" class="control-label"></label>
+				<input asp-for="Dto.PrimerComentario" class="form-control" />
+				<span asp-validation-for="Dto.PrimerComentario" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label>Agencia Origen</label>
+				<select class="form-select" asp-items="Model.AgenciasDisponibles" asp-for="@Model.Dto.AgenciaOrigenId">
+				</select>
+			</div>
+			@* Envío común: *@
+			<div id="opcionesComun">
+				<div class="form-group">
+					<label>Agencia Destino</label>
+					<select class="form-select" asp-items="Model.AgenciasDisponibles" asp-for="@Model.Dto.AgenciaDestinoId">
+					</select>
+				</div>
+			</div>
+			@* Envío urgente: *@
+			<div id="opcionesUrgente">
+				<div class="form-group">
+					<label asp-for="Dto.CalleDireccion" class="control-label"></label>
+					<input asp-for="Dto.CalleDireccion" class="form-control" />
+					<span asp-validation-for="Dto.CalleDireccion" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Dto.CiudadDireccion" class="control-label"></label>
+					<input asp-for="Dto.CiudadDireccion" class="form-control" />
+					<span asp-validation-for="Dto.CiudadDireccion" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Dto.DepartamentoDireccion" class="control-label"></label>
+					<input asp-for="Dto.DepartamentoDireccion" class="form-control" />
+					<span asp-validation-for="Dto.DepartamentoDireccion" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Dto.CodigoPostalDireccion" class="control-label"></label>
+					<input asp-for="Dto.CodigoPostalDireccion" class="form-control" />
+					<span asp-validation-for="Dto.CodigoPostalDireccion" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Agregar" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Volver a la Lista</a>
+</div>
+<script src="~/js/Envio/Create.js"></script>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

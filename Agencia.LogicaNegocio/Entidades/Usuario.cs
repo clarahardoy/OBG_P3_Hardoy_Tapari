@@ -14,10 +14,16 @@ namespace Agencia.LogicaNegocio.Entidades
     public class Usuario
     {
         public int Id { get; set; }
+
         public NombreCompleto _nombreCompleto { get; set; }
+
         public string _email { get; set; }
+
         public string _password { get; set; }
+
         public RolUsuario _rol { get; set; }
+
+        public bool _activo { get; set; }
 
         public Usuario(NombreCompleto nombreCompleto, string email, string password, RolUsuario rol)
         {
@@ -25,6 +31,7 @@ namespace Agencia.LogicaNegocio.Entidades
             _email = email;
             _password = password;
             _rol = rol;
+            _activo = true;
             Validar();
         }
 

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Agencia.DTOs.DTOs.EnvioDTO.DTOEnvio>
+
+@{
+	ViewData["Title"] = "Envíos";
+}
+
+<h1>Envíos en proceso</h1>
+
+<p>
+	<a asp-action="Create">Agregar Envío</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.TipoEnvio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.NumeroTracking)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Peso)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Estado)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.TipoEnvio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.NumeroTracking)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Peso)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Estado)
+				</td>
+				<td>
+					@* @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) | *@
+					@Html.ActionLink("Delete", "Eliminar", new { Id = item.Id })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

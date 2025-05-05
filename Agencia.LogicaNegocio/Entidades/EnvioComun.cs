@@ -12,12 +12,17 @@ namespace Agencia.LogicaNegocio.Entidades
     public class EnvioComun : Envio
     {
         public Sucursal _destino { get; set; }
+        public int DestinoId { get; set; } // FK
 
-        public EnvioComun(int nroTracking, Usuario empleado, Usuario cliente, double peso, EstadoEnvio estado, List<Comentario> seguimiento, Sucursal destino, DateTime fechaEntrega) : base(nroTracking, empleado, cliente, peso, estado, seguimiento, fechaEntrega)
+        public EnvioComun(Usuario empleado, Usuario cliente, double peso,
+                            Sucursal agenciaOrigen, Sucursal destino) :
+            base(empleado, cliente, peso, agenciaOrigen)
         {
             _destino = destino;
         }
+
         public EnvioComun() : base() { }
+
         public override void FinalizarEnvio()
         {
             FinalizarEnvioBase();

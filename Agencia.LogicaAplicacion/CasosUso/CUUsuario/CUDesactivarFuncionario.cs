@@ -12,32 +12,39 @@ using System.Threading.Tasks;
 
 namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
 {
-    public class CUEliminarFuncionario : ICUEliminarFuncionario
+    public class CUDesactivarFuncionario : ICUDesactivarFuncionario
     {
         private IRepositorioUsuario _repoUsuario;
         private IRepositorioAuditoria _repoAuditoria;
 
-        public CUEliminarFuncionario(IRepositorioUsuario repoUsuario, IRepositorioAuditoria repoAuditoria)
+        public CUDesactivarFuncionario(IRepositorioUsuario repoUsuario, IRepositorioAuditoria repoAuditoria)
         {
             _repoUsuario = repoUsuario;
             _repoAuditoria = repoAuditoria;
         }
-        public void EliminarFuncionario(DTOUsuario dto)
+
+        public void DesactivarFuncionario(DTOUsuario dto)
         {
+            // Traigo el Usuario de la BD:
             Usuario usuario = _repoUsuario.FindById((int)dto.Id);
             try
             {
-                _repoUsuario.Remove(usuario);
+                // Modifico solo el estado de Activo a false:
+                usuario._activo = false;
+
+                // Lo actualizo:
+                _repoUsuario.Update(usuario);
+
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "EXITO", usuario.GetType().Name,
-                       null, "Eliminado exitosamente");
+                       null, "Desactivado exitosamente");
                 _repoAuditoria.Auditar(aud);
             }
             catch (Exception ex)
             {
-                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "FALLA", "USUARIO",//usuario.GetType().Name,
+                Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ELIMINACION, "FALLA", usuario.GetType().Name,
                        null, ex.Message);
                 _repoAuditoria.Auditar(aud);
-                throw;
+                throw ex;
             }
         }
     }

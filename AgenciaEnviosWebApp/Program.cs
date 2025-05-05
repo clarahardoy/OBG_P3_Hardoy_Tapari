@@ -8,6 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Agencia.LogicaAplicacion.CasosUso.CUUsuario;
+using Agencia.LogicaAplicacion.ICasosUso.ICUAgencia;
+using Agencia.LogicaAplicacion.CasosUso.CUAgencia;
+using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
+using Agencia.LogicaAplicacion.CasosUso.CUEnvio;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,13 +32,18 @@ builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
-//DI - CUUsuario
+//DI - CU
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
 builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
-builder.Services.AddScoped<ICUEliminarFuncionario, CUEliminarFuncionario>();
+builder.Services.AddScoped<ICUAltaEnvio, CUAltaEnvio>();
+builder.Services.AddScoped<ICUDesactivarFuncionario, CUDesactivarFuncionario>();
 builder.Services.AddScoped<ICULogin, CULogin>();
 builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
 builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
+builder.Services.AddScoped<ICUObtenerSucursales, CUObtenerSucursales>();
+builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
+builder.Services.AddScoped<ICUFinalizarEnvio, CUFinalizarEnvio>();
+
 
 var app = builder.Build();
 
