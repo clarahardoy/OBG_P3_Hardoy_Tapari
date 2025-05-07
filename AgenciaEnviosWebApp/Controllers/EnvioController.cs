@@ -49,6 +49,14 @@ namespace AgenciaEnviosWebApp.Controllers
         [HttpPost]
         public IActionResult Create(AltaEnvioViewModel vm)
         {
+            foreach (var agencia in _cUObtenerSucursales.ListarSucursales())
+            {
+                SelectListItem sItem = new SelectListItem();
+                sItem.Text = agencia.Nombre;
+                sItem.Value = agencia.Id.ToString();
+                vm.AgenciasDisponibles.Add(sItem);
+            }
+
             try
             {
                 vm.Dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
@@ -63,8 +71,9 @@ namespace AgenciaEnviosWebApp.Controllers
             {
                 ViewBag.Mensaje = e.Message;
             }
-                        
-            return View();
+
+            return View(vm);
+            //return RedirectToAction("Index", "Envio");
         }
     }
 }

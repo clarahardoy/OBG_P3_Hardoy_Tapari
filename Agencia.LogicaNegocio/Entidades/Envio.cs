@@ -12,7 +12,6 @@ namespace Agencia.LogicaNegocio.Entidades
     {
         public int Id { get; set; }
 
-        private static int _ultimoTracking = 95;
 
         public int _nroTracking { get; set; }
 
@@ -39,8 +38,7 @@ namespace Agencia.LogicaNegocio.Entidades
         public Envio(Usuario empleado, Usuario cliente,
                      double peso,Sucursal agenciaOrigen)
         {
-            _ultimoTracking += 5; //Automatizamos el nroTracking que aumente de 5 en 5
-            _nroTracking = _ultimoTracking;
+            _nroTracking = GenerarTracking();
             _empleado = empleado;
             _cliente = cliente;
             _peso = peso;
@@ -61,6 +59,11 @@ namespace Agencia.LogicaNegocio.Entidades
 
             _estado = EstadoEnvio.FINALIZADO;
             _fechaEntrega = DateTime.Now;
+        }
+
+        private int GenerarTracking()
+        {
+            return int.Parse(DateTime.Now.ToString("yyyyMMddddHHmmss"));
         }
     }
 }

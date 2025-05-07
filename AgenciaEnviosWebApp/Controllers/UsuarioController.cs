@@ -91,7 +91,7 @@ public class UsuarioController : Controller
         try
         {
             HttpContext.Session.Clear();
-            ViewBag.successMessage = "Sesión cerrada."; // Porque no muestra este mensaje ??
+            TempData["successMessage"] = "Sesión cerrada.";
         }
         catch (Exception e)
         {

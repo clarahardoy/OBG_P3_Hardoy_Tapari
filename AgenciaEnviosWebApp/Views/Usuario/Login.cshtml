@@ -4,16 +4,16 @@
 	ViewData["Title"] = "Login";
 }
 
-@if (ViewBag.successMessage != null)
+@if (TempData["successMessage"] != null)
 {
 	<div class="alert alert-success">
-		@ViewBag.successMessage
+		@TempData["successMessage"].ToString();
 	</div>
 }
-@if (ViewBag.Mensaje != null)
+@if (TempData["Mensaje"] != null)
 {
 	<div class="alert alert-danger">
-		@ViewBag.Mensaje
+		@TempData["Mensaje"].ToString();
 	</div>
 }
 

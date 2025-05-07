@@ -49,7 +49,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
                 e._empleado = empleadoAutorBuscado;
                 e._cliente = clienteBuscado;
                 e._seguimiento.Add(primerComentario);
-
+               
                 int entidadId = _repositorioEnvio.Add(e);
                 
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ALTA, "EXITO", e.GetType().Name,
