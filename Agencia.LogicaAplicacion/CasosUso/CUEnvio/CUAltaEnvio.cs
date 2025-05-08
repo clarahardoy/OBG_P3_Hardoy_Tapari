@@ -40,7 +40,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
                 Sucursal agenciaDestinoBuscada = _repositorioSucursal.FindById((int)dto.AgenciaDestinoId);
                 Usuario empleadoAutorBuscado = _repositorioUsuario.FindById((int)dto.LogueadoId);
                 Usuario clienteBuscado = _repositorioUsuario.FindByEmail(dto.ClienteEmail);
-                if (clienteBuscado != null) throw new EmailNoValidoException("El email de Cliente ingresado no es valido.");
+                if (clienteBuscado == null) throw new EmailNoValidoException("El email ingresado del Cliente no es valido.");
                 
                 Comentario primerComentario = new Comentario(dto.PrimerComentario, empleadoAutorBuscado);
 

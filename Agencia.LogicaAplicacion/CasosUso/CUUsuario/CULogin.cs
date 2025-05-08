@@ -22,28 +22,19 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
 
         public DTOUsuario VerificarDatosParaLogin(DTOUsuario dto)
         {
-            try
-            {
-                Usuario usuario = _repositorioUsuario.FindByEmail(dto.Email);
+            var usuario = _repositorioUsuario.FindByEmail(dto.Email);
+            if (usuario is null)
+                throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
-                bool passwordCoincide = Utilidades.Crypto.VerifyPasswordConBcrypt(dto.Password, usuario._password);
+            bool passwordCoincide = Utilidades.Crypto.VerifyPasswordConBcrypt(dto.Password, usuario._password);
+            if (!passwordCoincide)
+                throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
-                if (passwordCoincide)
-                {
-                    DTOUsuario ret = new DTOUsuario();
-                    ret.Id = usuario.Id;
-                    ret.Rol = usuario._rol;
-                    return ret;
-                }
-                else
-                {
-                    throw new CredencialesInvalidasException("Credenciales inválidas");
-                }
-            }
-            catch (Exception e)
+            return new DTOUsuario
             {
-                throw e;
-            }
+                Id = usuario.Id,
+                Rol = usuario._rol
+            };
         }
     }
 }

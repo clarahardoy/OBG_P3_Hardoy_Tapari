@@ -43,6 +43,8 @@ builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
 builder.Services.AddScoped<ICUObtenerSucursales, CUObtenerSucursales>();
 builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
 builder.Services.AddScoped<ICUFinalizarEnvio, CUFinalizarEnvio>();
+builder.Services.AddScoped<ICUObtenerEnvio, CUObtenerEnvio>();
+builder.Services.AddScoped<ICUObtenerEnvioNroTracking, CUObtenerEnvioNroTracking>();
 
 
 var app = builder.Build();

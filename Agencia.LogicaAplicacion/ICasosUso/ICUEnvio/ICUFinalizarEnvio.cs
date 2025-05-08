@@ -1,6 +1,8 @@
+using Agencia.DTOs.DTOs.EnvioDTO;
+
 namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 
 public interface ICUFinalizarEnvio
 {
-    void FinalizarEnvio(int idEnvio, int idUsuarioLogueado);
+    void FinalizarEnvio(DTOMostrarEnvio dto);
 }

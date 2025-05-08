@@ -49,7 +49,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
         public List<Envio> ObtenerEnviosEnProceso()
         {
             List<Envio> enviosEnProceso = this.FindAll().Where(e => e._estado == EstadoEnvio.EN_PROCESO).ToList();
-            return enviosEnProceso; 
+            return enviosEnProceso;
+        }
+
+        public Envio FindByTrackingNumber(string nroTracking)
+        {
+            return _context.Envios.Where(x => x._nroTracking == nroTracking).SingleOrDefault();
         }
     }
 }

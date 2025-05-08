@@ -12,8 +12,7 @@ namespace Agencia.LogicaNegocio.Entidades
     {
         public int Id { get; set; }
 
-
-        public int _nroTracking { get; set; }
+        public string _nroTracking { get; set; }
 
         public int EmpleadoId { get; set; } // FK
 
@@ -36,7 +35,7 @@ namespace Agencia.LogicaNegocio.Entidades
         public int AgenciaOrigenId { get; set; } // FK
 
         public Envio(Usuario empleado, Usuario cliente,
-                     double peso,Sucursal agenciaOrigen)
+                     double peso, Sucursal agenciaOrigen)
         {
             _nroTracking = GenerarTracking();
             _empleado = empleado;
@@ -61,9 +60,17 @@ namespace Agencia.LogicaNegocio.Entidades
             _fechaEntrega = DateTime.Now;
         }
 
-        private int GenerarTracking()
+        private string GenerarTracking()
         {
-            return int.Parse(DateTime.Now.ToString("yyyyMMddddHHmmss"));
+            return DateTime.Now.ToString("yyyyMMddddHHmmss");
+        }
+
+        private void Validar()
+        {
+            if (_peso <= 0)
+            {
+                throw new PesoInvalidoException("El Peso debe ser mayor a 0.");
+            }
         }
     }
 }

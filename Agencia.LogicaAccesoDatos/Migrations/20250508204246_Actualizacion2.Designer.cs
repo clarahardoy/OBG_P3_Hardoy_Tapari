@@ -5,6 +5,7 @@ using Agencia.LogicaAccesoDatos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,9 +13,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Agencia.LogicaAccesoDatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508204246_Actualizacion2")]
+    partial class Actualizacion2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,11 +114,8 @@ namespace Agencia.LogicaAccesoDatos.Migrations
                     b.Property<int>("EmpleadoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("_estado")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .IsUnicode(true)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<int>("_estado")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("_fechaEntrega")
                         .HasColumnType("datetime2");
@@ -123,9 +123,8 @@ namespace Agencia.LogicaAccesoDatos.Migrations
                     b.Property<DateTime?>("_fechaInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("_nroTracking")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("_nroTracking")
+                        .HasColumnType("int");
 
                     b.Property<double>("_peso")
                         .HasColumnType("float");
@@ -195,11 +194,8 @@ namespace Agencia.LogicaAccesoDatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("_rol")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .IsUnicode(true)
-                        .HasColumnType("nvarchar(20)");
+                    b.Property<int>("_rol")
+                        .HasColumnType("int");
 
                     b.ComplexProperty<Dictionary<string, object>>("_nombreCompleto", "Agencia.LogicaNegocio.Entidades.Usuario._nombreCompleto#NombreCompleto", b1 =>
                         {

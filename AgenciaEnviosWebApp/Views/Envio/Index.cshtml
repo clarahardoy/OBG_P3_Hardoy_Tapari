@@ -19,6 +19,12 @@
 				@Html.DisplayNameFor(model => model.NumeroTracking)
 			</th>
 			<th>
+				@Html.DisplayNameFor(model => model.NombreCliente)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.NombreEmpleado)
+			</th>
+			<th>
 				@Html.DisplayNameFor(model => model.Peso)
 			</th>
 			<th>
@@ -38,14 +44,20 @@
 					@Html.DisplayFor(modelItem => item.NumeroTracking)
 				</td>
 				<td>
+					@Html.DisplayFor(modelItem => item.NombreCliente)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.NombreEmpleado)
+				</td>
+				<td>
 					@Html.DisplayFor(modelItem => item.Peso)
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Estado)
 				</td>
 				<td>
-					@* @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) | *@
-					@Html.ActionLink("Delete", "Eliminar", new { Id = item.Id })
+					@* @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) *@
+					@Html.ActionLink("Finalizar", "Delete", new { Id = item.Id })
 				</td>
 			</tr>
 		}

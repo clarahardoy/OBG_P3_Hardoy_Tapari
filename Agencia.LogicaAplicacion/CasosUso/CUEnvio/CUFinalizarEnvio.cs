@@ -1,3 +1,4 @@
+using Agencia.DTOs.DTOs.EnvioDTO;
 using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 using Agencia.LogicaNegocio.CustomException.EnvioExceptions;
 using Agencia.LogicaNegocio.Entidades;
@@ -17,21 +18,21 @@ public class CUFinalizarEnvio : ICUFinalizarEnvio
         _repoAuditoria = repoAuditoria;
     }
     
-    public void FinalizarEnvio(int idEnvio, int idUsuarioLogueado)
+    public void FinalizarEnvio(DTOMostrarEnvio dto)
     {
         try
         {
-            Envio envioAFinalizar = _repoEnvio.FindById(idEnvio);
+            Envio envioAFinalizar = _repoEnvio.FindById((int)dto.Id);
             if (envioAFinalizar == null) throw new EnvioNoEncontradoException("No se encontró el envío.");
             
             envioAFinalizar.FinalizarEnvio(); 
             _repoEnvio.Update(envioAFinalizar);
             Auditoria aud = Utilidades.Auditor.Auditar(
-                idUsuarioLogueado,
+                dto.LogueadoId,
                 Acciones.EDICION,
                 "EXITO",
                 envioAFinalizar.GetType().Name,
-                idEnvio.ToString(),
+                dto.Id.ToString(),
                 "Finalización de envío exitosa"
             );
             _repoAuditoria.Auditar(aud);
@@ -41,7 +42,7 @@ public class CUFinalizarEnvio : ICUFinalizarEnvio
         catch (Exception e)
         {
             Auditoria aud = Utilidades.Auditor.Auditar(
-                idUsuarioLogueado,
+                dto.LogueadoId,
                 Acciones.EDICION,
                 "FALLO",
                 null,

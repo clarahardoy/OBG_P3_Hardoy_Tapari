@@ -18,6 +18,7 @@ public class DTOAltaUsuario
     [StringLength(32, MinimumLength = 8, ErrorMessage = "La longitud debe estar entre 8 y 32 caracteres")]
     public string Password { get; set; }
 
+    [Required]
     public RolUsuario Rol { get; set; }
     
     public int? LogueadoId { get; set; }

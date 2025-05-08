@@ -17,15 +17,20 @@ namespace Agencia.DTOs.DTOs.EnvioDTO
 
         public int? LogueadoId { get; set; }
 
+        [Required]
         [Display(Name = "Email del Cliente")]
         [EmailAddress]
         public string ClienteEmail { get; set; }
 
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "El Peso debe ser mayor a 0")]
         public double Peso { get; set; }
 
+        [Required]
         [Display(Name = "Primer comentario")]
         public string PrimerComentario { get; set; }
 
+        [Required]
         [Display(Name = "Agencia de origen")]
         public int AgenciaOrigenId { get; set; }
 

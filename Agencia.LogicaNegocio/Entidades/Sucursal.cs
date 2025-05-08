@@ -1,4 +1,5 @@
-﻿using Agencia.LogicaNegocio.VO.AgenciaVO;
+﻿using Agencia.LogicaNegocio.CustomException.SucursalExceptions;
+using Agencia.LogicaNegocio.VO.AgenciaVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,20 @@ namespace Agencia.LogicaNegocio.Entidades
             _nombre = nombre;
             _direccionPostal = direccionPostal;
             _ubicacion = ubicacion;
+            Validar();
         }
 
         // Constructor sin parámetros
-        public Sucursal() { }
+        public Sucursal() { 
+        }
+
+        public void Validar()
+        {
+            if (string.IsNullOrWhiteSpace(_nombre))
+                throw new SucursalInvalidaException("El nombre de la sucursal es obligatorio.");
+
+            if (_direccionPostal <= 0)
+                throw new SucursalInvalidaException("La dirección postal debe ser un número positivo.");
+        }
     }
 }

@@ -1,6 +1,7 @@
 using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaAplicacion.CasosUso.CUUsuario;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
+using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using AgenciaEnviosWebApp.Filtros;
 using Microsoft.AspNetCore.Mvc;
 
@@ -78,12 +79,18 @@ public class UsuarioController : Controller
             DTOUsuario b = _CULogin.VerificarDatosParaLogin(dto);
             HttpContext.Session.SetInt32("LogueadoId", (int)b.Id);
             HttpContext.Session.SetString("LogueadoRol", b.Rol.ToString());
+            return RedirectToAction("Index", "Home");
         }
-        catch (Exception e)
+        catch (CredencialesInvalidasException ex)
         {
-            ViewBag.Mensaje = e.Message;
+            TempData["Mensaje"] = ex.Message;
+            return View(dto);
         }
-        return RedirectToAction("Index", "Home");
+        catch (Exception)
+        {
+            TempData["Mensaje"] = "Ocurrió un error inesperado.";
+            return View(dto);
+        }
     }
 
     public IActionResult Logout()

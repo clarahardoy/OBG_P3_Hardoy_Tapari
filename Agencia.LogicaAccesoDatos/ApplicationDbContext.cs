@@ -1,5 +1,9 @@
 ﻿using Agencia.LogicaNegocio.Entidades;
+using Agencia.LogicaNegocio.Enumerados.AuditoriaEnums;
+using Agencia.LogicaNegocio.Enumerados.EnvioEnums;
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +51,25 @@ namespace Agencia.LogicaAccesoDatos
                 .WithMany()
                 .HasForeignKey(v => v.DestinoId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Auditoria>()
+                .Property(a => a.Accion)
+                .HasConversion(new EnumToStringConverter<Acciones>())
+                .HasMaxLength(20)
+                .IsUnicode();
+
+            modelBuilder.Entity<Envio>()
+                .Property(a => a._estado)
+                .HasConversion(new EnumToStringConverter<EstadoEnvio>())
+                .HasMaxLength(20)
+                .IsUnicode();
+
+            modelBuilder.Entity<Usuario>()
+                .Property(a => a._rol)
+                .HasConversion(new EnumToStringConverter<RolUsuario>())
+                .HasMaxLength(20)
+                .IsUnicode();
+
         }
     }
 }

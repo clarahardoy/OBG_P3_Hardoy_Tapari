@@ -26,6 +26,35 @@ public class MapperEnvio
         return ret;
     }
 
+    public static DTOMostrarEnvio ToDtoMostrarEnvio(Envio eBuscado)
+    {
+        DTOMostrarEnvio dto = new DTOMostrarEnvio();
+        dto.Id = eBuscado.Id;
+        dto.NroTracking = eBuscado._nroTracking;
+        dto.Empleado = eBuscado._empleado;
+        dto.Cliente = eBuscado._cliente;
+        dto.Peso = eBuscado._peso;
+        dto.Estado = eBuscado._estado.ToString();
+        dto.UltimoComentario = eBuscado._seguimiento[eBuscado._seguimiento.Count - 1]._descripcion;
+        dto.FechaInicio = eBuscado._fechaInicio;
+        dto.FechaEntrega = eBuscado._fechaEntrega;
+        dto.AgenciaOrigen = eBuscado._agenciaOrigen;
+
+        if (eBuscado.GetType() == typeof(EnvioComun))
+        {
+            dto.Destino = ((EnvioComun)eBuscado)._destino;
+        }
+        else if (eBuscado.GetType() == typeof(EnvioUrgente))
+        {
+            var envioUrgente = (EnvioUrgente)eBuscado;
+            dto.DireccionDestino = envioUrgente._direccionDestino;
+            dto.EntregaEficiente = envioUrgente._entregaEficiente;
+        }
+
+        return dto;
+    }
+
+
     public static Envio ToEnvio(DTOAltaEnvio dto, Sucursal agenciaDestino)
     {
         Envio envioNuevo;
