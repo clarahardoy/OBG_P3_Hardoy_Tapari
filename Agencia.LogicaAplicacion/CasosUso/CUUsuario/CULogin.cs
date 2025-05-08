@@ -23,6 +23,10 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         public DTOUsuario VerificarDatosParaLogin(DTOUsuario dto)
         {
             var usuario = _repositorioUsuario.FindByEmail(dto.Email);
+            if (!usuario._activo)
+            {
+                throw new UsuarioInactivoException("Usuario inactivo. No puede acceder.");
+            }
             if (usuario is null)
                 throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
