@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CasosUso\CUComentario\" />
-    <Folder Include="ICasosUso\ICUComentario\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Agencia.DTOs\Agencia.DTOs.csproj" />
   </ItemGroup>
 
