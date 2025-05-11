@@ -25,7 +25,22 @@ namespace Agencia.LogicaNegocio.Entidades
         public override void FinalizarEnvio()
         {
             FinalizarEnvioBase();
-            //TODO: CalcularEficiencia();
+            this.CalcularEficiencia();
+        }
+
+        private void CalcularEficiencia()
+        {
+            var diferencia = _fechaEntrega - _fechaInicio;
+
+            if (diferencia < TimeSpan.FromHours(24))
+            {
+                _entregaEficiente = true;
+            }
+            else
+            {
+                _entregaEficiente = false;
+            }
+            
         }
     }
 }
