@@ -17,18 +17,21 @@ namespace AgenciaEnviosWebApp.Controllers
         private ICUAltaEnvio _cUAltaEnvio;
         private ICUObtenerEnvio _cUObtenerEnvio;
         private ICUFinalizarEnvio _cUFinalizarEnvio;
+        private ICUAgregarSeguimiento _cuAgregarSeguimiento;
 
         public EnvioController(ICUObtenerSucursales cUObtenerSucursales,
-                               ICUAltaEnvio cUAltaEnvio,
-                               ICUObtenerEnviosEnProceso cUObtenerEnviosEnProceso,
-                               ICUObtenerEnvio cUObtenerEnvio,
-                               ICUFinalizarEnvio cUFinalizarEnvio)
+            ICUAltaEnvio cUAltaEnvio,
+            ICUObtenerEnviosEnProceso cUObtenerEnviosEnProceso,
+            ICUObtenerEnvio cUObtenerEnvio,
+            ICUFinalizarEnvio cUFinalizarEnvio,
+            ICUAgregarSeguimiento cuAgregarSeguimiento)
         {
             _cUObtenerSucursales = cUObtenerSucursales;
             _cUAltaEnvio = cUAltaEnvio;
             _cUObtenerEnviosEnProceso = cUObtenerEnviosEnProceso;
             _cUObtenerEnvio = cUObtenerEnvio;
             _cUFinalizarEnvio = cUFinalizarEnvio;
+            _cuAgregarSeguimiento = cuAgregarSeguimiento;
         }
 
         [LogueadoAuthorize]
@@ -103,7 +106,29 @@ namespace AgenciaEnviosWebApp.Controllers
             {
                 ViewBag.Mensaje = e.Message;
             }
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AgregarSeguimiento(AgregarSeguimientoModel vm)
+        {
+            DTOAgregarSeguimiento dto = new DTOAgregarSeguimiento();
+            dto.idEnvio = (int)vm.dtoEnvio.Id;
+            dto.Seguimiento = vm.dtoAgregarSeguimiento.Seguimiento;
+            dto.idLogueado = HttpContext.Session.GetInt32("LogueadoId");
+            
+            _cuAgregarSeguimiento.AgregarSeguimiento(dto);
+            TempData["Exito"] = "Seguimiento agregado correctamente";
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult AgregarSeguimiento(int idEnv)
+        {
+            AgregarSeguimientoModel vm = new AgregarSeguimientoModel();
+            DTOMostrarEnvio envio = _cUObtenerEnvio.ObtenerEnvioPorId(idEnv);
+            vm.dtoEnvio = envio;
+            return View(vm);
         }
     }
 }

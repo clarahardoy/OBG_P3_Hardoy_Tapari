@@ -30,7 +30,9 @@
 			<th>
 				@Html.DisplayNameFor(model => model.Estado)
 			</th>
-			<th></th>
+			<th>
+				
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -58,6 +60,7 @@
 				<td>
 					@* @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) *@
 					@Html.ActionLink("Finalizar", "Delete", new { Id = item.Id })
+					@Html.ActionLink("Agregar seguimiento", "AgregarSeguimiento", new {id = item.Id })
 				</td>
 			</tr>
 		}

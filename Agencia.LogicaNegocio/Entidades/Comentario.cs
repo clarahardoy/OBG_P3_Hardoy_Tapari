@@ -20,6 +20,9 @@ namespace Agencia.LogicaNegocio.Entidades
             _empleadoAutor = empleadoAutor;
         }
 
-        public Comentario() { }
+        public Comentario()
+        {
+            _fecha = DateTime.Now;
+        }
     }
 }

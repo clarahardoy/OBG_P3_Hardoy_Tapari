@@ -72,5 +72,10 @@ namespace Agencia.LogicaNegocio.Entidades
                 throw new PesoInvalidoException("El Peso debe ser mayor a 0.");
             }
         }
+        
+        public void AgregarNuevoSeguimientoALista(Comentario comentarioSeguimiento)
+        {
+            _seguimiento.Add(comentarioSeguimiento);
+        }
     }
 }

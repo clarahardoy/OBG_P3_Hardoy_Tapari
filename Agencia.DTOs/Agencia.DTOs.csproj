@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Utilidades\Utilidades.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\ComentarioDTO\" />
-  </ItemGroup>
-
 </Project>
