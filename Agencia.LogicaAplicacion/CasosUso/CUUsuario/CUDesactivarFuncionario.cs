@@ -29,7 +29,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             Usuario usuario = _repoUsuario.FindById((int)dto.Id);
             try
             {
-                // Modifico solo el estado de Activo a false:
+                // Modifico solo el estado Activo a false:
                 usuario._activo = false;
 
                 // Lo actualizo:

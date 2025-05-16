@@ -29,7 +29,7 @@ namespace Agencia.LogicaNegocio.Entidades
         public Sucursal() { 
         }
 
-        public void Validar()
+        private void Validar()
         {
             if (string.IsNullOrWhiteSpace(_nombre))
                 throw new SucursalInvalidaException("El nombre de la sucursal es obligatorio.");

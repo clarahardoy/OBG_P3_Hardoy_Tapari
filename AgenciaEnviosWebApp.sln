@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenciaEnviosWebApp", "AgenciaEnviosWebApp\AgenciaEnviosWebApp.csproj", "{C48B97F2-D1E8-49E1-A400-A041E8C90DBC}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D058BFC9-C536-4711-8FDC-C4328D16587C} = {D058BFC9-C536-4711-8FDC-C4328D16587C}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agencia.LogicaNegocio", "Agencia.LogicaNegocio\Agencia.LogicaNegocio.csproj", "{D058BFC9-C536-4711-8FDC-C4328D16587C}"
 EndProject

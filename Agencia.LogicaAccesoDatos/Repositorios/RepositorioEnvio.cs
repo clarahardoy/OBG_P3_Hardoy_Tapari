@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Agencia.LogicaNegocio.Enumerados.EnvioEnums;
+using Microsoft.EntityFrameworkCore;
 
 namespace Agencia.LogicaAccesoDatos.Repositorios
 {
@@ -25,12 +26,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Envio> FindAll()
         {
-            return _context.Envios.ToList();
+            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).ToList();
         }
 
         public Envio FindById(int id)
         {
-            return _context.Envios.Find(id);
+            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e.Id.Equals(id)).SingleOrDefault();
         }
 
         public void Remove(Envio e)
@@ -48,13 +49,13 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Envio> ObtenerEnviosEnProceso()
         {
-            List<Envio> enviosEnProceso = this.FindAll().Where(e => e._estado == EstadoEnvio.EN_PROCESO).ToList();
-            return enviosEnProceso;
+            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e._estado == EstadoEnvio.EN_PROCESO).ToList();
         }
+
 
         public Envio FindByTrackingNumber(string nroTracking)
         {
-            return _context.Envios.Where(x => x._nroTracking == nroTracking).SingleOrDefault();
+            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e._nroTracking == nroTracking).SingleOrDefault();
         }
     }
 }

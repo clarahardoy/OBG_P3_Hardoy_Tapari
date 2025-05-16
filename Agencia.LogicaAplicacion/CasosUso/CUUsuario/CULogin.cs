@@ -7,6 +7,7 @@ using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Agencia.LogicaNegocio.Entidades;
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
 
 namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
@@ -27,6 +28,10 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             {
                 throw new UsuarioInactivoException("Usuario inactivo. No puede acceder.");
             }
+            if(usuario._rol == RolUsuario.Cliente)
+            {
+                throw new AccesoDenegadoException("");
+            }
             if (usuario is null)
                 throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
@@ -37,7 +42,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             return new DTOUsuario
             {
                 Id = usuario.Id,
-                Rol = usuario._rol
+                Rol = usuario._rol.ToString()
             };
         }
     }

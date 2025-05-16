@@ -9,6 +9,6 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio
 {
     public interface ICUObtenerEnvio
     {
-        public DTOMostrarEnvio ObtenerEnvioPorId(int id);
+        public DTOEnvio ObtenerEnvioPorId(int id);
     }
 }

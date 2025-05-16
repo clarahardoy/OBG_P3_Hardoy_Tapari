@@ -18,9 +18,9 @@ public class MapperUsuario
         dto.Email = usuario._email;
 
         var rol = dto.Rol;
-        if (usuario._rol.Equals(2)) rol = RolUsuario.Cliente;
-        if (usuario._rol.Equals(1)) rol = RolUsuario.Funcionario;
-        if (usuario._rol.Equals(0)) rol = RolUsuario.Administrador;
+        if (usuario._rol.Equals(2)) rol = RolUsuario.Cliente.ToString();
+        if (usuario._rol.Equals(1)) rol = RolUsuario.Funcionario.ToString();
+        if (usuario._rol.Equals(0)) rol = RolUsuario.Administrador.ToString();
         dto.Rol = rol;
 
         return dto;
@@ -29,10 +29,7 @@ public class MapperUsuario
     // Mapper Alta:
     public static Usuario FromDtoAltaUsuario(DTOAltaUsuario dto)
     {
-        var rol = dto.Rol;
-        if (dto.Rol.Equals(2)) rol = RolUsuario.Cliente;
-        if (dto.Rol.Equals(1)) rol = RolUsuario.Funcionario;
-        if (dto.Rol.Equals(0)) rol = RolUsuario.Administrador;
+        RolUsuario rol = (RolUsuario)Enum.Parse(typeof(RolUsuario), dto.Rol);
         string passHashed = Utilidades.Crypto.HashPasswordConBcrypt(dto.Password, 12);
 
         Usuario ret = new Usuario(new NombreCompleto(dto.Nombre, dto.Apellido),
@@ -48,13 +45,8 @@ public class MapperUsuario
 
         foreach (Usuario unUsuario in usuarios)
         {
-            DTOUsuario dto = new DTOUsuario();
-            dto.Id = unUsuario.Id;
-            dto.Nombre = unUsuario._nombreCompleto._nombre;
-            dto.Apellido = unUsuario._nombreCompleto._apellido;
-            dto.Email = unUsuario._email;
-            dto.Rol = unUsuario._rol;
-            if(unUsuario._activo == true) ret.Add(dto);
+            DTOUsuario dto = ToDtoUsuario(unUsuario);
+            if (unUsuario._activo == true) ret.Add(dto);
         }
         return ret;
     }
@@ -68,7 +60,7 @@ public class MapperUsuario
         dto.Apellido = u._nombreCompleto._apellido;
         dto.Email = u._email;
         dto.Password = u._password;
-        dto.Rol = u._rol;
+        dto.Rol = u._rol.ToString();
         dto.Activo = u._activo;
         return dto;
     }
@@ -77,10 +69,10 @@ public class MapperUsuario
     {
         Usuario u = new Usuario();
         u.Id = (int)dto.Id;
-        u._nombreCompleto = new NombreCompleto( dto.Nombre, dto.Apellido );
+        u._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
         u._email = dto.Email;
         u._password = dto.Password;
-        u._rol = dto.Rol;
+        u._rol = (RolUsuario)Enum.Parse(typeof(RolUsuario), dto.Rol);
         u._activo = dto.Activo;
         return u;
     }

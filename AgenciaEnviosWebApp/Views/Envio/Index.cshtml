@@ -3,7 +3,18 @@
 @{
 	ViewData["Title"] = "Envíos";
 }
-
+@if (TempData["successMessage"] != null)
+{
+	<div class="alert alert-success">
+		@TempData["successMessage"].ToString()
+	</div>
+}
+@if (TempData["Mensaje"] != null)
+{
+	<div class="alert alert-danger">
+		@TempData["Mensaje"].ToString()
+	</div>
+}
 <h1>Envíos en proceso</h1>
 
 <p>
@@ -19,6 +30,9 @@
 				@Html.DisplayNameFor(model => model.NumeroTracking)
 			</th>
 			<th>
+				@Html.DisplayNameFor(model => model.AgenciaOrigen)
+			</th>
+			<th>
 				@Html.DisplayNameFor(model => model.NombreCliente)
 			</th>
 			<th>
@@ -31,8 +45,10 @@
 				@Html.DisplayNameFor(model => model.Estado)
 			</th>
 			<th>
-				
+				@Html.DisplayNameFor(model => model.Seguimiento)
 			</th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,6 +60,9 @@
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.NumeroTracking)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AgenciaOrigen)
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.NombreCliente)
@@ -58,9 +77,26 @@
 					@Html.DisplayFor(modelItem => item.Estado)
 				</td>
 				<td>
-					@* @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) *@
+					@if (item.Seguimiento != null && item.Seguimiento.Any())
+					{
+						<ul>
+							@foreach (var comentario in item.Seguimiento)
+							{
+								<li>@comentario.Descripcion</li>
+							}
+						</ul>
+					}
+					else
+					{
+						<span>Sin comentarios</span>
+					}
+				</td>
+
+				<td>
 					@Html.ActionLink("Finalizar", "Delete", new { Id = item.Id })
-					@Html.ActionLink("Agregar seguimiento", "AgregarSeguimiento", new {id = item.Id })
+				</td>
+				<td>
+					@Html.ActionLink("Agregar seguimiento", "AgregarSeguimiento", new { idEnv = item.Id })
 				</td>
 			</tr>
 		}

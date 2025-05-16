@@ -13,12 +13,6 @@ namespace AgenciaEnviosWebApp.Models
             new SelectListItem { Text = "Envío Común", Value = "comun" }
         };
 
-        public List<SelectListItem> EstadoEnvio { get; set; } = new List<SelectListItem>()
-        {
-            new SelectListItem { Text = "Envío Urgente", Value = "urgente" },
-            new SelectListItem { Text = "Envío Común", Value = "comun" }
-        };
-
         public List<SelectListItem> AgenciasDisponibles { get; set; } = new List<SelectListItem>();
     }
 }

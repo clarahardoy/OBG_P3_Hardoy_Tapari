@@ -25,26 +25,36 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession(); // THIS IS THE ADDED CODE
 
-//DI - REPOS
+//DI - REPOSITORIOS :
 builder.Services.AddScoped<IRepositorioAuditoria, RepositorioAuditoria>();
 builder.Services.AddScoped<IRepositorioComentario, RepositorioComentario>();
 builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
-//DI - CU
+//DI - Casos de Uso : 
+
+// Comentario : 
+builder.Services.AddScoped<ICUAgregarSeguimiento, CUAgregarSeguimiento>();
+
+// Envio : 
+builder.Services.AddScoped<ICUAltaEnvio, CUAltaEnvio>();
+builder.Services.AddScoped<ICUFinalizarEnvio, CUFinalizarEnvio>();
+builder.Services.AddScoped<ICUObtenerEnvio, CUObtenerEnvio>();
+builder.Services.AddScoped<ICUObtenerEnvioNroTracking, CUObtenerEnvioNroTracking>();
+builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
+
+// Sucursal:
+builder.Services.AddScoped<ICUObtenerSucursal, CUObtenerSucursal>();
+builder.Services.AddScoped<ICUObtenerSucursales, CUObtenerSucursales>();
+
+// Usuario :
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
 builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
-builder.Services.AddScoped<ICUAltaEnvio, CUAltaEnvio>();
 builder.Services.AddScoped<ICUDesactivarFuncionario, CUDesactivarFuncionario>();
 builder.Services.AddScoped<ICULogin, CULogin>();
 builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
 builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
-builder.Services.AddScoped<ICUObtenerSucursales, CUObtenerSucursales>();
-builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
-builder.Services.AddScoped<ICUFinalizarEnvio, CUFinalizarEnvio>();
-builder.Services.AddScoped<ICUObtenerEnvio, CUObtenerEnvio>();
-builder.Services.AddScoped<ICUObtenerEnvioNroTracking, CUObtenerEnvioNroTracking>();
 
 
 var app = builder.Build();

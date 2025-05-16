@@ -52,6 +52,11 @@ namespace Agencia.LogicaAccesoDatos
                 .HasForeignKey(v => v.DestinoId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Envio>()
+                .HasDiscriminator<string>("TipoEnvio")
+                .HasValue<EnvioComun>("Comun")
+                .HasValue<EnvioUrgente>("Urgente");
+
             modelBuilder.Entity<Auditoria>()
                 .Property(a => a.Accion)
                 .HasConversion(new EnumToStringConverter<Acciones>())

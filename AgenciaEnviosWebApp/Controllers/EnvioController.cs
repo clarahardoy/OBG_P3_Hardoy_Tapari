@@ -2,6 +2,7 @@
 using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaAplicacion.ICasosUso.ICUAgencia;
 using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
+using Agencia.LogicaNegocio.CustomException.EnvioExceptions;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using AgenciaEnviosWebApp.Filtros;
 using AgenciaEnviosWebApp.Models;
@@ -89,12 +90,12 @@ namespace AgenciaEnviosWebApp.Controllers
         public IActionResult Delete(int id)
         {
             //salir a buscar el genero con este id
-            DTOMostrarEnvio model = _cUObtenerEnvio.ObtenerEnvioPorId(id);
+            DTOEnvio model = _cUObtenerEnvio.ObtenerEnvioPorId(id);
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult Delete(DTOMostrarEnvio dto)
+        public IActionResult Delete(DTOEnvio dto)
         {
             try
             {
@@ -102,33 +103,49 @@ namespace AgenciaEnviosWebApp.Controllers
                 _cUFinalizarEnvio.FinalizarEnvio(dto);
                 ViewBag.successMessage = "Envío finalizado con éxito.";
             }
-            catch (Exception e)
+            catch (EnvioYaFinalizadoException e)
             {
                 ViewBag.Mensaje = e.Message;
+            }
+            catch (EnvioNoEncontradoException e1)
+            {
+                ViewBag.Mensaje = e1.Message;
+            }
+            catch (Exception e2)
+            {
+                ViewBag.Mensaje = e2.Message;
             }
 
             return View();
         }
 
-        [HttpPost]
-        public IActionResult AgregarSeguimiento(AgregarSeguimientoModel vm)
-        {
-            DTOAgregarSeguimiento dto = new DTOAgregarSeguimiento();
-            dto.idEnvio = (int)vm.dtoEnvio.Id;
-            dto.Seguimiento = vm.dtoAgregarSeguimiento.Seguimiento;
-            dto.idLogueado = HttpContext.Session.GetInt32("LogueadoId");
-            
-            _cuAgregarSeguimiento.AgregarSeguimiento(dto);
-            TempData["Exito"] = "Seguimiento agregado correctamente";
-            return RedirectToAction("Index");
-        }
-
         public IActionResult AgregarSeguimiento(int idEnv)
         {
             AgregarSeguimientoModel vm = new AgregarSeguimientoModel();
-            DTOMostrarEnvio envio = _cUObtenerEnvio.ObtenerEnvioPorId(idEnv);
+            DTOEnvio envio = _cUObtenerEnvio.ObtenerEnvioPorId(idEnv);
             vm.dtoEnvio = envio;
             return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult AgregarSeguimiento(AgregarSeguimientoModel vm)
+        {
+            try
+            {
+
+                DTOAgregarSeguimiento dto = new DTOAgregarSeguimiento();
+                dto.idEnvio = vm.dtoEnvio.Id;
+                dto.Seguimiento = vm.dtoAgregarSeguimiento.Seguimiento;
+                dto.idLogueado = HttpContext.Session.GetInt32("LogueadoId");
+
+                _cuAgregarSeguimiento.AgregarSeguimiento(dto);
+                TempData["successMessage"] = "Seguimiento agregado correctamente";
+            }
+            catch (Exception e)
+            {
+                TempData["Mensaje"] = e.Message;
+            }
+            return RedirectToAction("Index");
         }
     }
 }

@@ -54,6 +54,10 @@ public class UsuarioController : Controller
             _CUAltaEmpleado.AltaEmpleado(dto);
             ViewBag.successMessage = "Usuario creado con éxito.";
         }
+        catch (EmailYaExisteException e1)
+        {
+            ViewBag.Mensaje = e1.Message;
+        }
         catch (Exception e)
         {
             ViewBag.Mensaje = e.Message;
@@ -86,6 +90,15 @@ public class UsuarioController : Controller
             TempData["Mensaje"] = ex.Message;
             return View(dto);
         }
+        catch (UsuarioInactivoException ex)
+        {
+            TempData["Mensaje"] = ex.Message;
+            return View(dto);
+        }
+        catch (AccesoDenegadoException)
+        {
+            return RedirectToAction("AccesoDenegado", "Usuario");
+        }
         catch (Exception)
         {
             TempData["Mensaje"] = "Ocurrió un error inesperado.";
@@ -112,7 +125,6 @@ public class UsuarioController : Controller
     public IActionResult ListFuncionarios()
     {
         return View(_CUObtenerFuncionarios.ListarFuncionarios());
-
     }
 
     [LogueadoAuthorize]

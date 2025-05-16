@@ -9,6 +9,6 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio
 {
     public interface ICUObtenerEnvioNroTracking
     {
-        public DTOMostrarEnvio obtenerEnviosPorNroTracking(string nroTracking);
+        public DTOEnvio obtenerEnviosPorNroTracking(string nroTracking);
     }
 }

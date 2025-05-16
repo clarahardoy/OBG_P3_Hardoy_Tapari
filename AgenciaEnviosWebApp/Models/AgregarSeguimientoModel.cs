@@ -4,6 +4,6 @@ namespace AgenciaEnviosWebApp.Models;
 
 public class AgregarSeguimientoModel
 {
-    public DTOMostrarEnvio dtoEnvio  { get;  set;   }
+    public DTOEnvio dtoEnvio  { get;  set;   }
     public DTOAgregarSeguimiento dtoAgregarSeguimiento { get; set; }
 }

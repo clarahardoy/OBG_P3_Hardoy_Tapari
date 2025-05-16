@@ -10,15 +10,9 @@ public class MapperSucursal
     {
         List<DTOSucursal> ret = new List<DTOSucursal>();
 
-        foreach (Sucursal suc in sucursales)
+        foreach (Sucursal sucursal in sucursales)
         {
-            DTOSucursal dto = new DTOSucursal();
-            dto.Id = suc.Id;
-            dto.Nombre = suc._nombre;
-            dto.DireccionPostal = suc._direccionPostal;
-            dto.Ubicacion = suc._ubicacion;
-            
-            ret.Add(dto);
+            ret.Add(FromSucursalToDTO(sucursal));
         }
         return ret;
     }
@@ -29,7 +23,8 @@ public class MapperSucursal
         dto.Id = sucursal.Id;
         dto.Nombre = sucursal._nombre;
         dto.DireccionPostal = sucursal._direccionPostal;
-        dto.Ubicacion = sucursal._ubicacion;
+        dto.LongitudUbicacion = sucursal._ubicacion._longitud.ToString();
+        dto.LatitudUbicacion = sucursal._ubicacion._longitud.ToString();
         return dto;
     }
 }

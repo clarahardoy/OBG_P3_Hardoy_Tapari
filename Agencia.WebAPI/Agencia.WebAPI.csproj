@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Agencia.LogicaAccesoDatos\Agencia.LogicaAccesoDatos.csproj" />
     <ProjectReference Include="..\Agencia.LogicaAplicacion\Agencia.LogicaAplicacion.csproj" />
   </ItemGroup>
 

@@ -25,7 +25,7 @@ namespace Agencia.WebAPI.Controllers
         {
             try
             {
-                DTOMostrarEnvio dto = _cUObtenerEnvioNroTracking.obtenerEnviosPorNroTracking(nroTracking);
+                DTOEnvio dto = _cUObtenerEnvioNroTracking.obtenerEnviosPorNroTracking(nroTracking);
                 return Ok(dto);
             }
             catch (EnvioNoEncontradoException e)

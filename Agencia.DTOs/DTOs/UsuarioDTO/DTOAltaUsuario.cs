@@ -19,11 +19,11 @@ public class DTOAltaUsuario
     public string Password { get; set; }
 
     [Required]
-    public RolUsuario Rol { get; set; }
+    public string Rol { get; set; }
     
     public int? LogueadoId { get; set; }
     
-    public DTOAltaUsuario(string nombre, string apellido, string email, string password, RolUsuario rol)
+    public DTOAltaUsuario(string nombre, string apellido, string email, string password, string rol)
     {
         Nombre = nombre;
         Apellido = apellido;

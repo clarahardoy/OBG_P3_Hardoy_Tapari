@@ -18,7 +18,7 @@ namespace Agencia.DTOs.DTOs.UsuarioDTO
 
         public string Email { get; set; }
 
-        public RolUsuario Rol { get; set; }
+        public string Rol { get; set; }
 
         public int? LogueadoId { get; set; }
     }

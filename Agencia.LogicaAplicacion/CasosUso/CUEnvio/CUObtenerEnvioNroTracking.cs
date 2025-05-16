@@ -20,12 +20,12 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
             _repoEnvio = repoEnvio;
         }
 
-        public DTOMostrarEnvio obtenerEnviosPorNroTracking(string nroTracking)
+        public DTOEnvio obtenerEnviosPorNroTracking(string nroTracking)
         {
             Envio eBuscado = _repoEnvio.FindByTrackingNumber(nroTracking);
             if (eBuscado == null) throw new EnvioNoEncontradoException("El número de Tracking ingresado no es válido");
             
-            DTOMostrarEnvio dto = MapperEnvio.ToDtoMostrarEnvio(eBuscado);
+            DTOEnvio dto = MapperEnvio.ToDtoEnvio(eBuscado);
             return dto;
         }
     }

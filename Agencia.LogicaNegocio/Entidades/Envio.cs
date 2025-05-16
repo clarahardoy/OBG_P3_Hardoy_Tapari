@@ -45,6 +45,7 @@ namespace Agencia.LogicaNegocio.Entidades
             _fechaInicio = DateTime.Now;
             _fechaEntrega = null;
             _agenciaOrigen = agenciaOrigen;
+            Validar();
         }
 
         public Envio() { }

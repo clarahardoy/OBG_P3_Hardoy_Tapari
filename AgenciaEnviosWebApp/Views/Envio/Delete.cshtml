@@ -1,62 +1,74 @@
-﻿@model Agencia.DTOs.DTOs.EnvioDTO.DTOMostrarEnvio
+﻿@model Agencia.DTOs.DTOs.EnvioDTO.DTOEnvio
 
 @{
-    ViewData["Title"] = "Finalizar";
+	ViewData["Title"] = "Finalizar";
 }
-
+@if (ViewBag.successMessage != null)
+{
+	<div class="alert alert-success">
+		@ViewBag.successMessage
+	</div>
+}
+@if (ViewBag.Mensaje != null)
+{
+	<div class="alert alert-danger">
+		@ViewBag.Mensaje
+	</div>
+}
 <h1>Finalizar</h1>
 
 <h3>¿Quieres finalizar este envío?</h3>
 <div>
-    <h4>Envío: </h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NroTracking)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NroTracking)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Peso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Peso)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UltimoComentario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UltimoComentario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaInicio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaInicio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaEntrega)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaEntrega)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EntregaEficiente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EntregaEficiente)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Finalizar" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver a la lista</a>
-    </form>
+	<h4>Envío: </h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.NumeroTracking)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.NumeroTracking)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Peso)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Peso)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Estado)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Estado)
+		</dd>
+		<dt class="col-sm-2">
+			Seguimiento
+		</dt>
+		<dd class="col-sm-10">
+			@if (Model.Seguimiento != null && Model.Seguimiento.Any())
+			{
+				<ul>
+					@foreach (var comentario in Model.Seguimiento)
+					{
+						<li>@comentario.Descripcion</li>
+					}
+				</ul>
+			}
+			else
+			{
+				<span>Sin comentarios</span>
+			}
+		</dd>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.FechaInicio)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.FechaInicio)
+		</dd>
+	</dl>
+
+	<form asp-action="Delete">
+		<input type="submit" value="Finalizar" class="btn btn-danger" /> |
+		<a asp-action="Index">Volver a la lista</a>
+	</form>
 </div>

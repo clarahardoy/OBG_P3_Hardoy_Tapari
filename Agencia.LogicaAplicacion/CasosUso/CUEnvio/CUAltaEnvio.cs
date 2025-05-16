@@ -4,6 +4,7 @@ using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.Enumerados.AuditoriaEnums;
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
 using Agencia.LogicaNegocio.VO.EnvioVO;
 using System;
@@ -35,13 +36,14 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
         {
             try
             {
-                // Mappeo a mano ya que hay que salir a buscar la agencia, el lciente y el empleado : 
+                // Mappeo a mano ya que hay que salir a buscar la agencia, el cliente y el empleado : 
                 Sucursal agenciaOrigenBuscada = _repositorioSucursal.FindById(dto.AgenciaOrigenId);
                 Sucursal agenciaDestinoBuscada = _repositorioSucursal.FindById((int)dto.AgenciaDestinoId);
                 Usuario empleadoAutorBuscado = _repositorioUsuario.FindById((int)dto.LogueadoId);
                 Usuario clienteBuscado = _repositorioUsuario.FindByEmail(dto.ClienteEmail);
-                if (clienteBuscado == null) throw new EmailNoValidoException("El email ingresado del Cliente no es valido.");
-                
+                if (clienteBuscado == null || clienteBuscado._rol != RolUsuario.Cliente)
+                    throw new EmailNoValidoException("Email de Cliente inválido.");
+
                 Comentario primerComentario = new Comentario(dto.PrimerComentario, empleadoAutorBuscado);
 
                 Envio e = MapperEnvio.ToEnvio(dto, agenciaDestinoBuscada);
@@ -49,13 +51,12 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
                 e._empleado = empleadoAutorBuscado;
                 e._cliente = clienteBuscado;
                 e._seguimiento.Add(primerComentario);
-               
+
                 int entidadId = _repositorioEnvio.Add(e);
-                
+
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.ALTA, "EXITO", e.GetType().Name,
                 entidadId.ToString(), "Alta correcta");
                 _repositorioAuditoria.Auditar(aud);
-
             }
             catch (Exception ex)
             {

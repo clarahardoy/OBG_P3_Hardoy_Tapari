@@ -1,3 +1,4 @@
+using Agencia.DTOs.DTOs.ComentarioDTO;
 using Agencia.DTOs.DTOs.EnvioDTO;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.VO.EnvioVO;
@@ -10,45 +11,44 @@ public class MapperEnvio
     {
         List<DTOEnvio> ret = new List<DTOEnvio>();
 
-        foreach (Envio env in envios)
+        foreach (Envio envio in envios)
         {
-            DTOEnvio dto = new DTOEnvio();
-            dto.Id = env.Id;
-            dto.NumeroTracking = env._nroTracking;
-            dto.NombreCliente = env._cliente?._nombreCompleto;
-            dto.NombreEmpleado = env._empleado?._nombreCompleto;
-            dto.Peso = env._peso;
-            dto.TipoEnvio = env.GetType().ToString();
-            dto.Estado = env._estado;
-            dto.Seguimiento = env._seguimiento;
-            ret.Add(dto);
+            ret.Add(ToDtoEnvio(envio));
         }
         return ret;
     }
 
-    public static DTOMostrarEnvio ToDtoMostrarEnvio(Envio eBuscado)
+    public static DTOEnvio ToDtoEnvio(Envio eBuscado)
     {
-        DTOMostrarEnvio dto = new DTOMostrarEnvio();
+        List<DTOComentario> dtoComentarios = MapperSeguimiento.ToListDtoComentario(eBuscado._seguimiento);
+
+        DTOEnvio dto = new DTOEnvio();
         dto.Id = eBuscado.Id;
-        dto.NroTracking = eBuscado._nroTracking;
-        dto.Empleado = eBuscado._empleado;
-        dto.Cliente = eBuscado._cliente;
+        dto.NumeroTracking = eBuscado._nroTracking;
+        dto.NombreEmpleado = eBuscado._empleado._nombreCompleto._nombre + " " + eBuscado._empleado._nombreCompleto._apellido;
+        dto.NombreCliente = eBuscado._cliente._nombreCompleto._nombre + " " + eBuscado._cliente._nombreCompleto._apellido;
         dto.Peso = eBuscado._peso;
         dto.Estado = eBuscado._estado.ToString();
-        dto.UltimoComentario = eBuscado._seguimiento[eBuscado._seguimiento.Count - 1]._descripcion;
         dto.FechaInicio = eBuscado._fechaInicio;
         dto.FechaEntrega = eBuscado._fechaEntrega;
-        dto.AgenciaOrigen = eBuscado._agenciaOrigen;
+        dto.AgenciaOrigen = eBuscado._agenciaOrigen._nombre;
+        dto.Seguimiento = dtoComentarios;
 
         if (eBuscado.GetType() == typeof(EnvioComun))
         {
-            dto.Destino = ((EnvioComun)eBuscado)._destino;
+            var envioComun = (EnvioComun)eBuscado;
+            dto.Destino = envioComun._destino?.ToString();
+            dto.TipoEnvio = "Común";
         }
         else if (eBuscado.GetType() == typeof(EnvioUrgente))
         {
             var envioUrgente = (EnvioUrgente)eBuscado;
-            dto.DireccionDestino = envioUrgente._direccionDestino;
-            dto.EntregaEficiente = envioUrgente._entregaEficiente;
+
+            dto.CalleDireccion = envioUrgente._direccionDestino._calle;
+            dto.CiudadDireccion = envioUrgente._direccionDestino._ciudad;
+            dto.DepartamentoDireccion = envioUrgente._direccionDestino._departamento;
+            dto.CodigoPostalDireccion = envioUrgente._direccionDestino._codigoPostal;
+            dto.TipoEnvio = "Urgente";
         }
 
         return dto;

@@ -14,7 +14,7 @@ public class DTOUsuario
 
     public string? Apellido { get; set; }
 
-    public RolUsuario Rol { get; set; }
+    public string Rol { get; set; }
 
     public bool Activo {  get; set; }
 

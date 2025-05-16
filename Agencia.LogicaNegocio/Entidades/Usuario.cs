@@ -37,7 +37,7 @@ namespace Agencia.LogicaNegocio.Entidades
 
         public Usuario() { }
 
-        public void Validar()
+        private void Validar()
         {
             _nombreCompleto.Validar();
             if (!_email.Contains('@'))

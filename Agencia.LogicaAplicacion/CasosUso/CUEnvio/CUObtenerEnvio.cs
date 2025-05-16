@@ -22,11 +22,11 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
             _repoEnvio = repoEnvio;
             _repoAuditoria = repoAuditoria;
         }
-        public DTOMostrarEnvio ObtenerEnvioPorId(int id)
+        public DTOEnvio ObtenerEnvioPorId(int id)
         {
             Envio envioBuscado = _repoEnvio.FindById(id);
             if (envioBuscado == null) throw new EnvioNoEncontradoException("Id de Envío incorrecto");
-            DTOMostrarEnvio dto = MapperEnvio.ToDtoMostrarEnvio(envioBuscado);
+            DTOEnvio dto = MapperEnvio.ToDtoEnvio(envioBuscado);
             return dto;
         }
     }

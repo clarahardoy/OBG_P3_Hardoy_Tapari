@@ -25,6 +25,7 @@
 				@Html.DisplayNameFor(model => model.Rol)
 			</th>
 			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,8 +45,11 @@
 					@Html.DisplayFor(modelItem => item.Rol)
 				</td>
 				<td>
-					@Html.ActionLink("Edit", "Edit", new { Id = item.Id }) |
-					@Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+					@Html.ActionLink("Editar", "Edit", new { Id = item.Id })
+					
+				</td>
+				<td>
+					@Html.ActionLink("Eliminar", "Delete", new { Id = item.Id })
 				</td>
 			</tr>
 		}

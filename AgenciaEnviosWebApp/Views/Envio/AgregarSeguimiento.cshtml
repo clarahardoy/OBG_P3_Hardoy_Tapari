@@ -12,7 +12,7 @@
         <form asp-action="AgregarSeguimiento">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <input type="hidden" value="@Model.dtoEnvio.Id" asp-for="@Model.dtoAgregarSeguimiento.idEnvio"/>
+            <input type="hidden" value="@Model.dtoEnvio.Id" asp-for="@Model.dtoEnvio.Id"/>
 
             <textarea asp-for="@Model.dtoAgregarSeguimiento.Seguimiento">
 

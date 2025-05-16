@@ -4,6 +4,7 @@ using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.Enumerados.AuditoriaEnums;
+using Agencia.LogicaNegocio.Enumerados.UsuarioEnums;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
 using Agencia.LogicaNegocio.VO.UsuarioVO;
 using System;
@@ -35,7 +36,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 // Le cambio solo los datos que tengo en el DTO:
                 usuario._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
                 usuario._email = dto.Email;
-                usuario._rol = dto.Rol;
+                usuario._rol = (RolUsuario)Enum.Parse(typeof(RolUsuario), dto.Rol);
 
                 usuario.Validar();
                 int entidadId = _repoUsuario.Update(usuario);
