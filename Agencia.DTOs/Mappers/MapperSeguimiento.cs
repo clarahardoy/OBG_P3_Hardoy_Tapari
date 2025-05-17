@@ -17,9 +17,10 @@ public class MapperSeguimiento
         {
             DTOComentario dto = new DTOComentario();
             dto.Id = comentario.Id;
-            dto.Descripcion = comentario._descripcion;
-            dto.Fecha = comentario._fecha;
-            dto.EmpleadoAutor = comentario._empleadoAutor._nombreCompleto._nombre + " " + comentario._empleadoAutor._nombreCompleto._apellido;
+            dto.Descripcion = comentario.Descripcion;
+            dto.Fecha = comentario.Fecha;
+            dto.EmpleadoAutor = comentario.EmpleadoAutor?.NombreCompleto.Nombre + " " + comentario.EmpleadoAutor?.NombreCompleto.Apellido;
+
             ret.Add(dto);
         }
         return ret;

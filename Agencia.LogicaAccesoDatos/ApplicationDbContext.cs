@@ -29,27 +29,27 @@ namespace Agencia.LogicaAccesoDatos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Envio>()
-                .HasOne(v => v._empleado)
+                .HasOne(v => v.Empleado)
                 .WithMany()
                 .HasForeignKey(v => v.EmpleadoId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Envio>()
-                .HasOne(v => v._cliente)
+                .HasOne(v => v.Cliente)
                 .WithMany()
                 .HasForeignKey(v => v.ClienteId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Envio>()
-                .HasOne(v => v._agenciaOrigen)
+                .HasOne(v => v.AgenciaOrigen)
                 .WithMany()
                 .HasForeignKey(v => v.AgenciaOrigenId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<EnvioComun>()
-                .HasOne(v => v._destino)
+                .HasOne(v => v.AgenciaDestino)
                 .WithMany()
-                .HasForeignKey(v => v.DestinoId)
+                .HasForeignKey(v => v.AgenciaDestinoId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Envio>()
@@ -64,17 +64,30 @@ namespace Agencia.LogicaAccesoDatos
                 .IsUnicode();
 
             modelBuilder.Entity<Envio>()
-                .Property(a => a._estado)
+                .Property(a => a.Estado)
                 .HasConversion(new EnumToStringConverter<EstadoEnvio>())
                 .HasMaxLength(20)
                 .IsUnicode();
 
             modelBuilder.Entity<Usuario>()
-                .Property(a => a._rol)
+                .Property(a => a.Rol)
                 .HasConversion(new EnumToStringConverter<RolUsuario>())
                 .HasMaxLength(20)
                 .IsUnicode();
 
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.Activo)
+                .HasConversion(v => v.ToString(),
+                                v => bool.Parse(v))
+                .HasMaxLength(5)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<EnvioUrgente>()
+                .Property(e => e.EntregaEficiente)
+                .HasConversion(v => v.HasValue ? v.Value.ToString() : null,
+                                v => v != null ? bool.Parse(v) : (bool?)null)
+                .HasMaxLength(5)
+                .IsUnicode(false);
         }
     }
 }

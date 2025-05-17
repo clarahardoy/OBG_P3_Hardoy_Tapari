@@ -12,39 +12,41 @@ namespace Agencia.LogicaNegocio.Entidades
     {
         public int Id { get; set; }
 
-        public string _nroTracking { get; set; }
+        public string NroTracking { get; set; }
 
         public int EmpleadoId { get; set; } // FK
 
-        public Usuario _empleado { get; set; }
+        public Usuario Empleado { get; set; }
 
         public int ClienteId { get; set; } // FK
-        public Usuario _cliente { get; set; }
 
-        public double _peso { get; set; }
+        public Usuario Cliente { get; set; }
 
-        public EstadoEnvio _estado { get; set; }
+        public double Peso { get; set; }
 
-        public List<Comentario> _seguimiento { get; set; } = new List<Comentario>();
+        public EstadoEnvio Estado { get; set; }
 
-        public DateTime? _fechaInicio { get; set; }
+        public List<Comentario> Seguimiento { get; set; } = new List<Comentario>();
 
-        public DateTime? _fechaEntrega { get; set; }
+        public DateTime? FechaInicio { get; set; }
 
-        public Sucursal _agenciaOrigen { get; set; }
+        public DateTime? FechaEntrega { get; set; }
+
+        public Sucursal AgenciaOrigen { get; set; }
+
         public int AgenciaOrigenId { get; set; } // FK
 
         public Envio(Usuario empleado, Usuario cliente,
                      double peso, Sucursal agenciaOrigen)
         {
-            _nroTracking = GenerarTracking();
-            _empleado = empleado;
-            _cliente = cliente;
-            _peso = peso;
-            _estado = EstadoEnvio.EN_PROCESO;
-            _fechaInicio = DateTime.Now;
-            _fechaEntrega = null;
-            _agenciaOrigen = agenciaOrigen;
+            NroTracking = GenerarTracking();
+            Empleado = empleado;
+            Cliente = cliente;
+            Peso = peso;
+            Estado = EstadoEnvio.EN_PROCESO;
+            FechaInicio = DateTime.Now;
+            FechaEntrega = null;
+            AgenciaOrigen = agenciaOrigen;
             Validar();
         }
 
@@ -54,11 +56,11 @@ namespace Agencia.LogicaNegocio.Entidades
 
         protected void FinalizarEnvioBase()
         {
-            if (_estado == EstadoEnvio.FINALIZADO)
+            if (Estado == EstadoEnvio.FINALIZADO)
                 throw new EnvioYaFinalizadoException("El envío ya finalizó");
 
-            _estado = EstadoEnvio.FINALIZADO;
-            _fechaEntrega = DateTime.Now;
+            Estado = EstadoEnvio.FINALIZADO;
+            FechaEntrega = DateTime.Now;
         }
 
         private string GenerarTracking()
@@ -68,7 +70,7 @@ namespace Agencia.LogicaNegocio.Entidades
 
         private void Validar()
         {
-            if (_peso <= 0)
+            if (Peso <= 0)
             {
                 throw new PesoInvalidoException("El Peso debe ser mayor a 0.");
             }
@@ -76,7 +78,7 @@ namespace Agencia.LogicaNegocio.Entidades
         
         public void AgregarNuevoSeguimientoALista(Comentario comentarioSeguimiento)
         {
-            _seguimiento.Add(comentarioSeguimiento);
+            Seguimiento.Add(comentarioSeguimiento);
         }
     }
 }

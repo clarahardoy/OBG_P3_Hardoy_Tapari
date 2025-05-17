@@ -44,7 +44,7 @@
 			Seguimiento
 		</dt>
 		<dd class="col-sm-10">
-			@if (Model.Seguimiento != null && Model.Seguimiento.Any())
+			@if (Model.Seguimiento != null)
 			{
 				<ul>
 					@foreach (var comentario in Model.Seguimiento)
@@ -55,9 +55,10 @@
 			}
 			else
 			{
-				<span>Sin comentarios</span>
+				<p>No hay comentarios de seguimiento.</p>
 			}
 		</dd>
+
 
 		<dt class="col-sm-2">
 			@Html.DisplayNameFor(model => model.FechaInicio)

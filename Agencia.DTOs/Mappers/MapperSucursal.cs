@@ -21,10 +21,10 @@ public class MapperSucursal
     {
         DTOSucursal dto = new DTOSucursal();
         dto.Id = sucursal.Id;
-        dto.Nombre = sucursal._nombre;
-        dto.DireccionPostal = sucursal._direccionPostal;
-        dto.LongitudUbicacion = sucursal._ubicacion._longitud.ToString();
-        dto.LatitudUbicacion = sucursal._ubicacion._longitud.ToString();
+        dto.Nombre = sucursal.Nombre;
+        dto.DireccionPostal = sucursal.DireccionPostal;
+        dto.LongitudUbicacion = sucursal.Ubicacion.Longitud.ToString();
+        dto.LatitudUbicacion = sucursal.Ubicacion.Latitud.ToString();
         return dto;
     }
 }

@@ -26,12 +26,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Envio> FindAll()
         {
-            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).ToList();
+            return _context.Envios.Include(e => e.Cliente).Include(e => e.Empleado).Include(e => e.Seguimiento).Include(e => e.AgenciaOrigen).ToList();
         }
 
         public Envio FindById(int id)
         {
-            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e.Id.Equals(id)).SingleOrDefault();
+            return _context.Envios.Include(e => e.Cliente).Include(e => e.Empleado).Include(e => e.Seguimiento).Include(e => e.AgenciaOrigen).Where(e => e.Id.Equals(id)).SingleOrDefault();
         }
 
         public void Remove(Envio e)
@@ -49,13 +49,13 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Envio> ObtenerEnviosEnProceso()
         {
-            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e._estado == EstadoEnvio.EN_PROCESO).ToList();
+            return _context.Envios.Include(e => e.Cliente).Include(e => e.Empleado).Include(e => e.Seguimiento).Include(e => e.AgenciaOrigen).Where(e => e.Estado == EstadoEnvio.EN_PROCESO).ToList();
         }
 
 
         public Envio FindByTrackingNumber(string nroTracking)
         {
-            return _context.Envios.Include(e => e._cliente).Include(e => e._empleado).Include(e => e._seguimiento).Include(e => e._agenciaOrigen).Where(e => e._nroTracking == nroTracking).SingleOrDefault();
+            return _context.Envios.Include(e => e.Cliente).Include(e => e.Empleado).Include(e => e.Seguimiento).Include(e => e.AgenciaOrigen).Where(e => e.NroTracking == nroTracking).SingleOrDefault();
         }
     }
 }

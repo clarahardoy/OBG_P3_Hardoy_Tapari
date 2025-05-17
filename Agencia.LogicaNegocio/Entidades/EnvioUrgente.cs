@@ -10,14 +10,15 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class EnvioUrgente : Envio
     {
-        public Direccion _direccionDestino {  get; set; }
-        public bool? _entregaEficiente { get; set; }
+        public Direccion DireccionDestino {  get; set; }
+
+        public bool? EntregaEficiente { get; set; }
 
         public EnvioUrgente(Usuario empleado, Usuario cliente, double peso,
                             Sucursal agenciaOrigen, Direccion direccionDestino) :
             base(empleado, cliente, peso, agenciaOrigen)
         {
-            _direccionDestino = direccionDestino;
+            DireccionDestino = direccionDestino;
         }
 
         public EnvioUrgente() : base() { }
@@ -30,17 +31,16 @@ namespace Agencia.LogicaNegocio.Entidades
 
         private void CalcularEficiencia()
         {
-            var diferencia = _fechaEntrega - _fechaInicio;
+            var diferencia = FechaEntrega - FechaInicio;
 
             if (diferencia < TimeSpan.FromHours(24))
             {
-                _entregaEficiente = true;
+                EntregaEficiente = true;
             }
             else
             {
-                _entregaEficiente = false;
+                EntregaEficiente = false;
             }
-            
         }
     }
 }

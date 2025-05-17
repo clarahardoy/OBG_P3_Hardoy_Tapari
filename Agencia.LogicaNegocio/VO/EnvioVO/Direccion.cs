@@ -11,20 +11,20 @@ namespace Agencia.LogicaNegocio.VO.EnvioVO
     public record Direccion
     {
 
-        public string _calle { get; set; }
+        public string Calle { get; set; }
 
-        public string _ciudad { get; set; }
+        public string Ciudad { get; set; }
 
-        public string _departamento { get; set; }
+        public string Departamento { get; set; }
 
-        public string _codigoPostal { get; set; }
+        public string CodigoPostal { get; set; }
 
         public Direccion(string calleDireccion, string ciudadDireccion, string departamentoDireccion, string codigoPostalDireccion)
         {
-            this._calle = calleDireccion;
-            this._ciudad = ciudadDireccion;
-            this._departamento = departamentoDireccion;
-            this._codigoPostal = codigoPostalDireccion;
+            this.Calle = calleDireccion;
+            this.Ciudad = ciudadDireccion;
+            this.Departamento = departamentoDireccion;
+            this.CodigoPostal = codigoPostalDireccion;
         }
 
         public Direccion() { }

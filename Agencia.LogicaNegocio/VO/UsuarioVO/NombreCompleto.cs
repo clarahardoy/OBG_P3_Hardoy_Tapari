@@ -11,21 +11,23 @@ namespace Agencia.LogicaNegocio.VO.UsuarioVO
     [ComplexType]
     public record NombreCompleto
     {
-        public string _nombre { get; init; }
-        public string _apellido { get; init; }
+        public string Nombre { get; init; }
+
+        public string Apellido { get; init; }
+
         public NombreCompleto(string nombre, string apellido)
         {
-            _nombre = nombre;
-            _apellido = apellido;
+            Nombre = nombre;
+            Apellido = apellido;
         }
 
         public void Validar()
         {
-            if (String.IsNullOrEmpty(_nombre))
+            if (String.IsNullOrEmpty(Nombre))
             {
                 throw new NombreNoValidoException("El nombre no puede ser vacío");
             }
-            if (String.IsNullOrEmpty(_apellido))
+            if (String.IsNullOrEmpty(Apellido))
             {
                 throw new NombreNoValidoException("El apellido no puede ser vacío");
             }

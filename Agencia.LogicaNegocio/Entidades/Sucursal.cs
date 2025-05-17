@@ -11,17 +11,19 @@ namespace Agencia.LogicaNegocio.Entidades
     public class Sucursal
     {
         public int Id { get; set; }
-        public string _nombre { get; set; }
-        public int _direccionPostal { get; set; }
-        public Ubicacion _ubicacion { get; set; }
 
+        public string Nombre { get; set; }
+
+        public int DireccionPostal { get; set; }
+
+        public Ubicacion Ubicacion { get; set; }
 
         // Constructor con parámetros
         public Sucursal(string nombre, int direccionPostal, Ubicacion ubicacion)
         {
-            _nombre = nombre;
-            _direccionPostal = direccionPostal;
-            _ubicacion = ubicacion;
+            Nombre = nombre;
+            DireccionPostal = direccionPostal;
+            Ubicacion = ubicacion;
             Validar();
         }
 
@@ -31,10 +33,10 @@ namespace Agencia.LogicaNegocio.Entidades
 
         private void Validar()
         {
-            if (string.IsNullOrWhiteSpace(_nombre))
+            if (string.IsNullOrWhiteSpace(Nombre))
                 throw new SucursalInvalidaException("El nombre de la sucursal es obligatorio.");
 
-            if (_direccionPostal <= 0)
+            if (DireccionPostal <= 0)
                 throw new SucursalInvalidaException("La dirección postal debe ser un número positivo.");
         }
     }

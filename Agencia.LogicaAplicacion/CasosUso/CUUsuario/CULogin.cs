@@ -24,25 +24,25 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         public DTOUsuario VerificarDatosParaLogin(DTOUsuario dto)
         {
             var usuario = _repositorioUsuario.FindByEmail(dto.Email);
-            if (!usuario._activo)
+            if (!usuario.Activo)
             {
                 throw new UsuarioInactivoException("Usuario inactivo. No puede acceder.");
             }
-            if(usuario._rol == RolUsuario.Cliente)
+            if(usuario.Rol == RolUsuario.Cliente)
             {
                 throw new AccesoDenegadoException("");
             }
             if (usuario is null)
                 throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
-            bool passwordCoincide = Utilidades.Crypto.VerifyPasswordConBcrypt(dto.Password, usuario._password);
+            bool passwordCoincide = Utilidades.Crypto.VerifyPasswordConBcrypt(dto.Password, usuario.Password);
             if (!passwordCoincide)
                 throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
             return new DTOUsuario
             {
                 Id = usuario.Id,
-                Rol = usuario._rol.ToString()
+                Rol = usuario.Rol.ToString()
             };
         }
     }

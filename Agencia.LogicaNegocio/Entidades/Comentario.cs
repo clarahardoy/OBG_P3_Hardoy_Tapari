@@ -9,20 +9,23 @@ namespace Agencia.LogicaNegocio.Entidades
     public class Comentario
     {
         public int Id { get; set; }
-        public string _descripcion { get; set; }
-        public DateTime _fecha { get; set; }
-        public Usuario _empleadoAutor { get; set; }
+
+        public string Descripcion { get; set; }
+
+        public DateTime Fecha { get; set; }
+
+        public Usuario EmpleadoAutor { get; set; }
 
         public Comentario(string descripcion, Usuario empleadoAutor)
         {
-            _descripcion = descripcion;
-            _fecha = DateTime.Now;
-            _empleadoAutor = empleadoAutor;
+            Descripcion = descripcion;
+            Fecha = DateTime.Now;
+            EmpleadoAutor = empleadoAutor;
         }
 
         public Comentario()
         {
-            _fecha = DateTime.Now;
+            Fecha = DateTime.Now;
         }
     }
 }

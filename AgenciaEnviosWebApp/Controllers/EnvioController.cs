@@ -116,7 +116,7 @@ namespace AgenciaEnviosWebApp.Controllers
                 ViewBag.Mensaje = e2.Message;
             }
 
-            return View();
+            return View(dto);
         }
 
         public IActionResult AgregarSeguimiento(int idEnv)

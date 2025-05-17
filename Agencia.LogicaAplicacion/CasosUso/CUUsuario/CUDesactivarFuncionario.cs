@@ -30,7 +30,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             try
             {
                 // Modifico solo el estado Activo a false:
-                usuario._activo = false;
+                usuario.Activo = false;
 
                 // Lo actualizo:
                 _repoUsuario.Update(usuario);

@@ -11,14 +11,15 @@ namespace Agencia.LogicaNegocio.Entidades
 {
     public class EnvioComun : Envio
     {
-        public Sucursal _destino { get; set; }
-        public int DestinoId { get; set; } // FK
+        public Sucursal AgenciaDestino { get; set; }
+
+        public int AgenciaDestinoId { get; set; } // FK
 
         public EnvioComun(Usuario empleado, Usuario cliente, double peso,
                             Sucursal agenciaOrigen, Sucursal destino) :
             base(empleado, cliente, peso, agenciaOrigen)
         {
-            _destino = destino;
+            AgenciaDestino = destino;
         }
 
         public EnvioComun() : base() { }

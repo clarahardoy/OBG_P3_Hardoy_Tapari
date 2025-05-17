@@ -10,7 +10,8 @@ namespace Agencia.LogicaNegocio.VO.AgenciaVO
     [ComplexType]
     public record Ubicacion
     {
-        public int _latitud { get; set; }
-        public int _longitud { get; set; }
+        public int Latitud { get; set; }
+
+        public int Longitud { get; set; }
     }
 }

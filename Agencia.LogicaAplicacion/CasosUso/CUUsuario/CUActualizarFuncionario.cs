@@ -34,11 +34,10 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
                 Usuario usuario = _repoUsuario.FindById((int)dto.Id);
 
                 // Le cambio solo los datos que tengo en el DTO:
-                usuario._nombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
-                usuario._email = dto.Email;
-                usuario._rol = (RolUsuario)Enum.Parse(typeof(RolUsuario), dto.Rol);
+                usuario.NombreCompleto = new NombreCompleto(dto.Nombre, dto.Apellido);
+                usuario.Email = dto.Email;
+                usuario.Rol = (RolUsuario)Enum.Parse(typeof(RolUsuario), dto.Rol);
 
-                usuario.Validar();
                 int entidadId = _repoUsuario.Update(usuario);
 
                 Auditoria aud = Utilidades.Auditor.Auditar(dto.LogueadoId, Acciones.EDICION, "EXITO", usuario.GetType().Name,

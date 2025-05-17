@@ -15,23 +15,23 @@ namespace Agencia.LogicaNegocio.Entidades
     {
         public int Id { get; set; }
 
-        public NombreCompleto _nombreCompleto { get; set; }
+        public NombreCompleto NombreCompleto { get; set; }
 
-        public string _email { get; set; }
+        public string Email { get; set; }
 
-        public string _password { get; set; }
+        public string Password { get; set; }
 
-        public RolUsuario _rol { get; set; }
+        public RolUsuario Rol { get; set; }
 
-        public bool _activo { get; set; }
+        public bool Activo { get; set; }
 
         public Usuario(NombreCompleto nombreCompleto, string email, string password, RolUsuario rol)
         {
-            _nombreCompleto = nombreCompleto;
-            _email = email;
-            _password = password;
-            _rol = rol;
-            _activo = true;
+            NombreCompleto = nombreCompleto;
+            Email = email;
+            Password = password;
+            Rol = rol;
+            Activo = true;
             Validar();
         }
 
@@ -39,8 +39,8 @@ namespace Agencia.LogicaNegocio.Entidades
 
         private void Validar()
         {
-            _nombreCompleto.Validar();
-            if (!_email.Contains('@'))
+            NombreCompleto.Validar();
+            if (!Email.Contains('@'))
             {
                 throw new EmailNoValidoException("El email no tiene arroba");
             }

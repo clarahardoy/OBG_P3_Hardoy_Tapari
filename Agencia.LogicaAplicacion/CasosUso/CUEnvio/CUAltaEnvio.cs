@@ -41,16 +41,16 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
                 Sucursal agenciaDestinoBuscada = _repositorioSucursal.FindById((int)dto.AgenciaDestinoId);
                 Usuario empleadoAutorBuscado = _repositorioUsuario.FindById((int)dto.LogueadoId);
                 Usuario clienteBuscado = _repositorioUsuario.FindByEmail(dto.ClienteEmail);
-                if (clienteBuscado == null || clienteBuscado._rol != RolUsuario.Cliente)
+                if (clienteBuscado == null || clienteBuscado.Rol != RolUsuario.Cliente)
                     throw new EmailNoValidoException("Email de Cliente inválido.");
 
                 Comentario primerComentario = new Comentario(dto.PrimerComentario, empleadoAutorBuscado);
 
                 Envio e = MapperEnvio.ToEnvio(dto, agenciaDestinoBuscada);
-                e._agenciaOrigen = agenciaOrigenBuscada;
-                e._empleado = empleadoAutorBuscado;
-                e._cliente = clienteBuscado;
-                e._seguimiento.Add(primerComentario);
+                e.AgenciaOrigen = agenciaOrigenBuscada;
+                e.Empleado = empleadoAutorBuscado;
+                e.Cliente = clienteBuscado;
+                e.Seguimiento.Add(primerComentario);
 
                 int entidadId = _repositorioEnvio.Add(e);
 

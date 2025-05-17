@@ -20,37 +20,36 @@ public class MapperEnvio
 
     public static DTOEnvio ToDtoEnvio(Envio eBuscado)
     {
-        List<DTOComentario> dtoComentarios = MapperSeguimiento.ToListDtoComentario(eBuscado._seguimiento);
+        List<DTOComentario> dtoComentarios = MapperSeguimiento.ToListDtoComentario(eBuscado.Seguimiento);
 
         DTOEnvio dto = new DTOEnvio();
         dto.Id = eBuscado.Id;
-        dto.NumeroTracking = eBuscado._nroTracking;
-        dto.NombreEmpleado = eBuscado._empleado._nombreCompleto._nombre + " " + eBuscado._empleado._nombreCompleto._apellido;
-        dto.NombreCliente = eBuscado._cliente._nombreCompleto._nombre + " " + eBuscado._cliente._nombreCompleto._apellido;
-        dto.Peso = eBuscado._peso;
-        dto.Estado = eBuscado._estado.ToString();
-        dto.FechaInicio = eBuscado._fechaInicio;
-        dto.FechaEntrega = eBuscado._fechaEntrega;
-        dto.AgenciaOrigen = eBuscado._agenciaOrigen._nombre;
+        dto.NumeroTracking = eBuscado.NroTracking;
+        dto.NombreCliente = eBuscado.Cliente.NombreCompleto.Nombre + " " + eBuscado.Cliente.NombreCompleto.Apellido;
+        dto.NombreEmpleado = eBuscado.Empleado.NombreCompleto.Nombre + " " + eBuscado.Empleado.NombreCompleto.Apellido;
+        dto.Peso = eBuscado.Peso;
+        dto.Estado = eBuscado.Estado.ToString();
+        dto.FechaInicio = eBuscado.FechaInicio;
+        dto.FechaEntrega = eBuscado.FechaEntrega;
+        dto.AgenciaOrigen = eBuscado.AgenciaOrigen.Nombre;
         dto.Seguimiento = dtoComentarios;
 
         if (eBuscado.GetType() == typeof(EnvioComun))
         {
             var envioComun = (EnvioComun)eBuscado;
-            dto.Destino = envioComun._destino?.ToString();
+            dto.Destino = envioComun.AgenciaDestino?.ToString();
             dto.TipoEnvio = "Común";
         }
         else if (eBuscado.GetType() == typeof(EnvioUrgente))
         {
             var envioUrgente = (EnvioUrgente)eBuscado;
 
-            dto.CalleDireccion = envioUrgente._direccionDestino._calle;
-            dto.CiudadDireccion = envioUrgente._direccionDestino._ciudad;
-            dto.DepartamentoDireccion = envioUrgente._direccionDestino._departamento;
-            dto.CodigoPostalDireccion = envioUrgente._direccionDestino._codigoPostal;
+            dto.CalleDireccion = envioUrgente.DireccionDestino.Calle;
+            dto.CiudadDireccion = envioUrgente.DireccionDestino.Ciudad;
+            dto.DepartamentoDireccion = envioUrgente.DireccionDestino.Departamento;
+            dto.CodigoPostalDireccion = envioUrgente.DireccionDestino.CodigoPostal;
             dto.TipoEnvio = "Urgente";
         }
-
         return dto;
     }
 

@@ -32,12 +32,12 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
         public List<Usuario> ListAllFuncionarios()
         {
             var r = RolUsuario.Funcionario;
-            return _context.Usuarios.Where(x => x._rol == r).ToList();
+            return _context.Usuarios.Where(x => x.Rol == r).ToList();
         }
 
         public Usuario FindByEmail(string email)
         {
-            return _context.Usuarios.Where(x => x._email == email).SingleOrDefault();
+            return _context.Usuarios.Where(x => x.Email == email).SingleOrDefault();
         }
 
         public Usuario FindById(int id)

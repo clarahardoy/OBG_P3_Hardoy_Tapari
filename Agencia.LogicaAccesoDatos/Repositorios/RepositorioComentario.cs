@@ -1,5 +1,6 @@
 ﻿using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Comentario> FindAll()
         {
-            return _context.Comentarios.ToList();
+            return _context.Comentarios.Include(c => c.EmpleadoAutor).ThenInclude(e => e.NombreCompleto).ToList();
         }
 
         public Comentario FindById(int id)
