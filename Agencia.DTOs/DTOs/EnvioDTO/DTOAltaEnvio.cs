@@ -38,15 +38,19 @@ namespace Agencia.DTOs.DTOs.EnvioDTO
         public int? AgenciaDestinoId { get; set; }
 
         // Envío urgente : 
+        [Required]
         [Display(Name = "Calle")]
         public string? CalleDireccion { get; set; }
 
+        [Required]
         [Display(Name = "Ciudad")]
         public string? CiudadDireccion { get; set; }
 
+        [Required]
         [Display(Name = "Departamento")]
         public string? DepartamentoDireccion { get; set; }
 
+        [Required]
         [Display(Name = "Código postal")]
         public string? CodigoPostalDireccion { get; set; }
     }

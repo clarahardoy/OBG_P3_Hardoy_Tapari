@@ -11,21 +11,21 @@ public class CUFinalizarEnvio : ICUFinalizarEnvio
 {
     private IRepositorioEnvio _repoEnvio;
     private IRepositorioAuditoria _repoAuditoria;
-    
+
     public CUFinalizarEnvio(IRepositorioEnvio repoEnvio, IRepositorioAuditoria repoAuditoria)
     {
         _repoEnvio = repoEnvio;
         _repoAuditoria = repoAuditoria;
     }
-    
+
     public void FinalizarEnvio(DTOEnvio dto)
     {
         try
         {
             Envio envioAFinalizar = _repoEnvio.FindById((int)dto.Id);
             if (envioAFinalizar == null) throw new EnvioNoEncontradoException("No se encontró el envío.");
-            
-            envioAFinalizar.FinalizarEnvio(); 
+
+            envioAFinalizar.FinalizarEnvio();
             _repoEnvio.Update(envioAFinalizar);
             Auditoria aud = Utilidades.Auditor.Auditar(
                 dto.LogueadoId,

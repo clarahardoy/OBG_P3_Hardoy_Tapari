@@ -34,6 +34,7 @@ public class DTOEnvio
 
     public List<DTOComentario>? Seguimiento { get; set; }
 
+    [Display(Name = "Fecha inicio")]
     public DateTime? FechaInicio { get; set; }
     
     public DateTime? FechaEntrega { get; set; }
