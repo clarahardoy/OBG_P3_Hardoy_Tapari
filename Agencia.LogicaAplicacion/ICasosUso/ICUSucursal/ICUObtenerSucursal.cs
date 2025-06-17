@@ -4,5 +4,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUAgencia;
 
 public interface ICUObtenerSucursal
 {
-    DTOSucursal ObtenerSucursal(int id);
+    DTOSucursal Ejecutar(int id);
 }

@@ -20,7 +20,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoUsuario = repoUsuario;
         }
 
-        public List<DTOUsuario> ListarFuncionarios()
+        public List<DTOUsuario> Ejecutar()
         {
             List<Usuario> usuarios = _repoUsuario.ListAllFuncionarios();
             List<DTOUsuario> ret = MapperUsuario.FromListUsuario(usuarios);

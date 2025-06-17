@@ -12,5 +12,9 @@ namespace Agencia.LogicaNegocio.InterfacesRepositorios
         List<Envio> ObtenerEnviosEnProceso();
 
         Envio FindByTrackingNumber(string nroTracking);
+
+        List<Envio> ObtenerEnviosDeClienteOrdFecha(string emailCliente);
+
+        List<Envio> ObtenerEnviosFechaCliente(string emailCliente, DateTime fecha1, DateTime fecha2);
     }
 }

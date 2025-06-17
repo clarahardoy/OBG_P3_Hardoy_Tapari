@@ -4,5 +4,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUAgencia;
 
 public interface ICUObtenerSucursales
 {
-    List<DTOSucursal> ListarSucursales();
+    List<DTOSucursal> Ejecutar();
 }

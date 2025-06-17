@@ -4,5 +4,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 
 public interface ICUFinalizarEnvio
 {
-    void FinalizarEnvio(DTOEnvio dto);
+    void Ejecutar(DTOEnvio dto);
 }

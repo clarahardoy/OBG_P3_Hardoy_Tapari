@@ -42,20 +42,22 @@ builder.Services.AddScoped<ICUAltaEnvio, CUAltaEnvio>();
 builder.Services.AddScoped<ICUFinalizarEnvio, CUFinalizarEnvio>();
 builder.Services.AddScoped<ICUObtenerEnvio, CUObtenerEnvio>();
 builder.Services.AddScoped<ICUObtenerEnvioNroTracking, CUObtenerEnvioNroTracking>();
+builder.Services.AddScoped<ICUObtenerEnviosDeClienteOrdFecha, CUObtenerEnviosDeClienteOrdFecha>();
 builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
+builder.Services.AddScoped<ICUObtenerEnviosPorFechasDeCliente, CUObtenerEnviosPorFechasDeCliente>();
 
 // Sucursal:
 builder.Services.AddScoped<ICUObtenerSucursal, CUObtenerSucursal>();
 builder.Services.AddScoped<ICUObtenerSucursales, CUObtenerSucursales>();
 
 // Usuario :
+builder.Services.AddScoped<ICUActualizarContrasenia, CUActualizarContrasenia>();
 builder.Services.AddScoped<ICUActualizarFuncionario, CUActualizarFuncionario>();
 builder.Services.AddScoped<ICUAltaUsuario, CUAltaUsuario>();
 builder.Services.AddScoped<ICUDesactivarFuncionario, CUDesactivarFuncionario>();
 builder.Services.AddScoped<ICULogin, CULogin>();
 builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
 builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
-
 
 var app = builder.Build();
 

@@ -26,7 +26,10 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
 
         public List<Comentario> FindAll()
         {
-            return _context.Comentarios.Include(c => c.EmpleadoAutor).ThenInclude(e => e.NombreCompleto).ToList();
+            return _context.Comentarios
+                .Include(c => c.EmpleadoAutor)
+                .ThenInclude(e => e.NombreCompleto)
+                .ToList();
         }
 
         public Comentario FindById(int id)

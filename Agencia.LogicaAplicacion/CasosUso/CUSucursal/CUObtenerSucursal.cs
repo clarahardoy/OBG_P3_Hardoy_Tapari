@@ -14,7 +14,7 @@ public class CUObtenerSucursal : ICUObtenerSucursal
     {
         _repoSucursal = repoSucursal;
     }
-    public DTOSucursal ObtenerSucursal(int id)
+    public DTOSucursal Ejecutar(int id)
     {
         Sucursal suc = _repoSucursal.FindById(id);
         return MapperSucursal.FromSucursalToDTO(suc);

@@ -51,7 +51,7 @@ public class UsuarioController : Controller
             int? logueadoId = HttpContext.Session.GetInt32("LogueadoId");
             dto.LogueadoId = logueadoId;
 
-            _CUAltaEmpleado.AltaEmpleado(dto);
+            _CUAltaEmpleado.Ejecutar(dto);
             ViewBag.successMessage = "Usuario creado con éxito.";
         }
         catch (EmailYaExisteException e1)
@@ -124,7 +124,7 @@ public class UsuarioController : Controller
     [AdministradorAuthorize]
     public IActionResult ListFuncionarios()
     {
-        return View(_CUObtenerFuncionarios.ListarFuncionarios());
+        return View(_CUObtenerFuncionarios.Ejecutar());
     }
 
     [LogueadoAuthorize]
@@ -141,7 +141,7 @@ public class UsuarioController : Controller
         try
         {
             dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            _CUActualizarFuncionario.ActualizarFuncionario(dto);
+            _CUActualizarFuncionario.Ejecutar(dto);
             ViewBag.successMessage = "Usuario actualizado con éxito.";
         }
         catch (Exception e)
@@ -156,7 +156,7 @@ public class UsuarioController : Controller
     public IActionResult Delete(int id)
     {
         //salir a buscar el genero con este id
-        DTOUsuario model = _CUObtenerUsuario.ObtenerUsuario(id);
+        DTOUsuario model = _CUObtenerUsuario.Ejecutar(id);
         return View(model);
     }
 
@@ -166,7 +166,7 @@ public class UsuarioController : Controller
         try
         {
             dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-            _CUDesactivarFuncionario.DesactivarFuncionario(dto);
+            _CUDesactivarFuncionario.Ejecutar(dto);
             ViewBag.successMessage = "Usuario eliminado con éxito.";
         }
         catch (Exception e)

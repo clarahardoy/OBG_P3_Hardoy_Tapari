@@ -26,7 +26,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoUsuario = repoUsuario;
             _repoAuditoria = repoAuditoria;
         }
-        public void ActualizarFuncionario(DTOActualizarFuncionario dto)
+        public void Ejecutar(DTOActualizarFuncionario dto)
         {
             try
             {

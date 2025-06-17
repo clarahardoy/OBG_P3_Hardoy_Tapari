@@ -9,6 +9,6 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario
 {
     public interface ICUObtenerFuncionarios
     {
-        List<DTOUsuario> ListarFuncionarios();
+        List<DTOUsuario> Ejecutar();
     }
 }

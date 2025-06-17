@@ -18,7 +18,7 @@ public class CUFinalizarEnvio : ICUFinalizarEnvio
         _repoAuditoria = repoAuditoria;
     }
 
-    public void FinalizarEnvio(DTOEnvio dto)
+    public void Ejecutar(DTOEnvio dto)
     {
         try
         {

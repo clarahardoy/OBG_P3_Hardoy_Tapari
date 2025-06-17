@@ -14,12 +14,11 @@ public class CUObtenerEnviosEnProceso : ICUObtenerEnviosEnProceso
     {
         _repoEnvio = repoEnvio;
     }
-    
-    public List<DTOEnvio> ObtenerEnviosEnProceso()
+
+    public List<DTOEnvio> Ejecutar()
     {
         List<Envio> enviosEnProceso = _repoEnvio.ObtenerEnviosEnProceso();
         List<DTOEnvio> ret = MapperEnvio.FromListEnvioToListDto(enviosEnProceso);
         return ret;
-        
     }
 }

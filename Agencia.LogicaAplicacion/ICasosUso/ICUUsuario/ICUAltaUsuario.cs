@@ -4,5 +4,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 
 public interface ICUAltaUsuario
 {
-    void AltaEmpleado(DTOAltaUsuario dto);
+    void Ejecutar(DTOAltaUsuario dto);
 }

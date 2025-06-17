@@ -23,7 +23,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             _repoAuditoria = repoAuditoria;
         }
 
-        public void DesactivarFuncionario(DTOUsuario dto)
+        public void Ejecutar(DTOUsuario dto)
         {
             // Traigo el Usuario de la BD:
             Usuario usuario = _repoUsuario.FindById((int)dto.Id);

@@ -5,5 +5,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 
 public interface ICUObtenerEnviosEnProceso
 {
-    public List<DTOEnvio> ObtenerEnviosEnProceso();
+    public List<DTOEnvio> Ejecutar();
 }

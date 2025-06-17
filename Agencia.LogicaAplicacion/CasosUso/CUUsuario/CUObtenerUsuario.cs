@@ -19,7 +19,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         {
             _repoUsuario = repoUsuario;
         }
-        public DTOUsuario ObtenerUsuario(int id)
+        public DTOUsuario Ejecutar(int id)
         {
             Usuario u = _repoUsuario.FindById(id);
             return MapperUsuario.ToDtoUsuario(u);

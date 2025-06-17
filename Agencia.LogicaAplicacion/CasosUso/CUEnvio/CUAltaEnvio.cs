@@ -32,7 +32,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
             _repositorioSucursal = repositorioSucursal;
             _repositorioUsuario = repositorioUsuario;
         }
-        public void AltaEnvio(DTOAltaEnvio dto)
+        public void Ejecutar(DTOAltaEnvio dto)
         {
             try
             {

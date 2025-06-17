@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Agencia.LogicaAplicacion.ICasosUso.ICUUsuario
 {
-    public interface ICUDesactivarFuncionario
+    public interface ICUActualizarContrasenia
     {
-        void Ejecutar(DTOUsuario dto);
+        void Ejecutar(DTOActualizarContrasenia dto);
     }
 }

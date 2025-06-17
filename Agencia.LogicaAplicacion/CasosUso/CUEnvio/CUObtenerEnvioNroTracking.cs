@@ -20,7 +20,7 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
             _repoEnvio = repoEnvio;
         }
 
-        public DTOEnvio obtenerEnviosPorNroTracking(string nroTracking)
+        public DTOEnvio Ejecutar(string nroTracking)
         {
             Envio eBuscado = _repoEnvio.FindByTrackingNumber(nroTracking);
             if (eBuscado == null) throw new EnvioNoEncontradoException("El número de Tracking ingresado no es válido");

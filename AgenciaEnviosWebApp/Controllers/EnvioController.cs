@@ -38,7 +38,7 @@ namespace AgenciaEnviosWebApp.Controllers
         [LogueadoAuthorize]
         public IActionResult Index()
         {
-            return View(_cUObtenerEnviosEnProceso.ObtenerEnviosEnProceso());
+            return View(_cUObtenerEnviosEnProceso.Ejecutar());
         }
 
         [LogueadoAuthorize]
@@ -46,7 +46,7 @@ namespace AgenciaEnviosWebApp.Controllers
         {
             AltaEnvioViewModel vm = new AltaEnvioViewModel();
 
-            foreach (var agencia in _cUObtenerSucursales.ListarSucursales())
+            foreach (var agencia in _cUObtenerSucursales.Ejecutar())
             {
                 SelectListItem sItem = new SelectListItem();
                 sItem.Text = agencia.Nombre;
@@ -61,7 +61,7 @@ namespace AgenciaEnviosWebApp.Controllers
         [HttpPost]
         public IActionResult Create(AltaEnvioViewModel vm)
         {
-            foreach (var agencia in _cUObtenerSucursales.ListarSucursales())
+            foreach (var agencia in _cUObtenerSucursales.Ejecutar())
             {
                 SelectListItem sItem = new SelectListItem();
                 sItem.Text = agencia.Nombre;
@@ -72,7 +72,7 @@ namespace AgenciaEnviosWebApp.Controllers
             try
             {
                 vm.Dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-                _cUAltaEnvio.AltaEnvio(vm.Dto);
+                _cUAltaEnvio.Ejecutar(vm.Dto);
                 ViewBag.successMessage = "Envío creado con éxito.";
             }
             catch (EmailNoValidoException e)
@@ -90,7 +90,7 @@ namespace AgenciaEnviosWebApp.Controllers
         public IActionResult Delete(int id)
         {
             //salir a buscar el genero con este id
-            DTOEnvio model = _cUObtenerEnvio.ObtenerEnvioPorId(id);
+            DTOEnvio model = _cUObtenerEnvio.Ejecutar(id);
             return View(model);
         }
 
@@ -100,7 +100,7 @@ namespace AgenciaEnviosWebApp.Controllers
             try
             {
                 dto.LogueadoId = HttpContext.Session.GetInt32("LogueadoId");
-                _cUFinalizarEnvio.FinalizarEnvio(dto);
+                _cUFinalizarEnvio.Ejecutar(dto);
                 ViewBag.successMessage = "Envío finalizado con éxito.";
             }
             catch (EnvioYaFinalizadoException e)
@@ -122,7 +122,7 @@ namespace AgenciaEnviosWebApp.Controllers
         public IActionResult AgregarSeguimiento(int idEnv)
         {
             AgregarSeguimientoModel vm = new AgregarSeguimientoModel();
-            DTOEnvio envio = _cUObtenerEnvio.ObtenerEnvioPorId(idEnv);
+            DTOEnvio envio = _cUObtenerEnvio.Ejecutar(idEnv);
             vm.dtoEnvio = envio;
             return View(vm);
         }
@@ -138,7 +138,7 @@ namespace AgenciaEnviosWebApp.Controllers
                 dto.Seguimiento = vm.dtoAgregarSeguimiento.Seguimiento;
                 dto.idLogueado = HttpContext.Session.GetInt32("LogueadoId");
 
-                _cuAgregarSeguimiento.AgregarSeguimiento(dto);
+                _cuAgregarSeguimiento.Ejecutar(dto);
                 TempData["successMessage"] = "Seguimiento agregado correctamente";
             }
             catch (Exception e)

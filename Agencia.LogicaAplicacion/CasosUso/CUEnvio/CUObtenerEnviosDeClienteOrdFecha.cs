@@ -12,22 +12,24 @@ using System.Threading.Tasks;
 
 namespace Agencia.LogicaAplicacion.CasosUso.CUEnvio
 {
-    public class CUObtenerEnvio : ICUObtenerEnvio
+    public class CUObtenerEnviosDeClienteOrdFecha : ICUObtenerEnviosDeClienteOrdFecha
     {
         private IRepositorioEnvio _repoEnvio;
-        private IRepositorioAuditoria _repoAuditoria;
 
-        public CUObtenerEnvio(IRepositorioEnvio repoEnvio, IRepositorioAuditoria repoAuditoria)
+        public CUObtenerEnviosDeClienteOrdFecha(IRepositorioEnvio repoEnvio)
         {
             _repoEnvio = repoEnvio;
-            _repoAuditoria = repoAuditoria;
         }
-        public DTOEnvio Ejecutar(int id)
+        public List<DTOEnvio> Ejecutar(string email)
         {
-            Envio envioBuscado = _repoEnvio.FindById(id);
-            if (envioBuscado == null) throw new EnvioNoEncontradoException("Id de Envío incorrecto");
-            DTOEnvio dto = MapperEnvio.ToDtoEnvio(envioBuscado);
-            return dto;
+            List<Envio> envios = _repoEnvio.ObtenerEnviosDeClienteOrdFecha(email);
+            if (envios == null || envios.Count == 0)
+            {
+                throw new NoHayEnviosException("No se encontraron envíos para el cliente.");
+            }
+
+            List<DTOEnvio> ret = MapperEnvio.FromListEnvioToListDto(envios);
+            return ret;
         }
     }
 }

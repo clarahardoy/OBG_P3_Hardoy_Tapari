@@ -40,7 +40,7 @@ namespace Agencia.LogicaNegocio.Entidades
         private void Validar()
         {
             NombreCompleto.Validar();
-            if (!Email.Contains('@'))
+            if (!(Email.Contains('@')))
             {
                 throw new EmailNoValidoException("El email no tiene arroba");
             }

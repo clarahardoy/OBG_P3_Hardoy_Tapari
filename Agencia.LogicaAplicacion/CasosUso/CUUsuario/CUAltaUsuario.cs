@@ -20,7 +20,7 @@ public class CUAltaUsuario : ICUAltaUsuario
         _repositorioAuditoria = repositorioAuditoria;
     }
 
-    public void AltaEmpleado(DTOAltaUsuario dto)
+    public void Ejecutar(DTOAltaUsuario dto)
     {
         try
         {

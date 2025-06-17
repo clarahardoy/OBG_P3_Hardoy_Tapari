@@ -21,7 +21,7 @@ public class CUAgregarSeguimiento : ICUAgregarSeguimiento
         _repoEnvio = repoEnvio;
     }
     
-    public void AgregarSeguimiento(DTOAgregarSeguimiento dto)
+    public void Ejecutar(DTOAgregarSeguimiento dto)
     {
         int entidadId = (int)dto.idEnvio;
         Usuario usuario = null;

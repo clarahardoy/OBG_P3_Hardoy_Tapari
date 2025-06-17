@@ -48,7 +48,6 @@ namespace Agencia.LogicaAccesoDatos.Repositorios
         public List<Sucursal> ListAllSucursales()
         {
             return _context.Sucursales.ToList();
-        
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Agencia.DTOs.DTOs.EnvioDTO;
-using Agencia.DTOs.DTOs.UsuarioDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio
 {
-    public interface ICUAltaEnvio
+    public interface ICUObtenerEnviosDeClienteOrdFecha
     {
-        void Ejecutar(DTOAltaEnvio dto);
+        List<DTOEnvio> Ejecutar(string email);
     }
 }
