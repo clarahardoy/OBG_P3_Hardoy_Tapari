@@ -23,14 +23,16 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         {
             Usuario uBuscado = _repoUsuario.FindByEmail(dto.Email);
             if (uBuscado == null) throw new EmailNoValidoException("Email no válido.");
-            
-            if (uBuscado.Password != dto.OldPassword)
+
+            // Validar que la nueva contraseña no sea igual a la anterior
+            if (!(Utilidades.Crypto.VerifyPasswordConBcrypt(dto.OldPassword, uBuscado.Password)))
             {
                 throw new ContraseniaIncorrectaException("La contraseña anterior es incorrecta.");
             }
             else
             {
-                uBuscado.Password = dto.NewPassword;
+                string newPass = Utilidades.Crypto.HashPasswordConBcrypt(dto.NewPassword, 10);
+                uBuscado.Password = newPass;
                 _repoUsuario.Update(uBuscado);
             }
         }
