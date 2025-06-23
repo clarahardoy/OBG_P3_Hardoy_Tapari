@@ -4,5 +4,5 @@ namespace Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 
 public interface ICUObtenerEnviosPorComentario
     {
-        List<DTOEnvio> Ejecutar(DTOBuscarEnvioPorComentario dto, string emailCliente);
+        List<DTOEnvio> Ejecutar(string palabraClave, string emailCliente);
     }

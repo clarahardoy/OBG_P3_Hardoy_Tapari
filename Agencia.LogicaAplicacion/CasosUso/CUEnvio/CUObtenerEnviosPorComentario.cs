@@ -16,13 +16,13 @@ public class CUObtenerEnviosPorComentario : ICUObtenerEnviosPorComentario
         _repoEnvio = repoEnvio; 
     }
 
-    public List<DTOEnvio> Ejecutar(DTOBuscarEnvioPorComentario dto, string email)
+    public List<DTOEnvio> Ejecutar(string palabraClave, string email)
     {
         List<Envio> envios = _repoEnvio.ObtenerEnviosDeClienteOrdFecha(email);
         
         var contienenPalabraClave = envios
             .Where(e => e.Seguimiento.Any(
-                com => !string.IsNullOrEmpty(com.Descripcion) && com.Descripcion.ToLower().Contains(dto.PalabraClave.ToLower())
+                com => !string.IsNullOrEmpty(com.Descripcion) && com.Descripcion.ToLower().Contains(palabraClave.ToLower())
             ))
             .Select(e => MapperEnvio.ToDtoEnvio(e)) 
             .ToList();

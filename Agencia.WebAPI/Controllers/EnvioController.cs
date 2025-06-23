@@ -104,14 +104,15 @@ namespace Agencia.WebAPI.Controllers
             }
         }
 
-        [HttpPost("buscar-por-comentario")]
-        public IActionResult GetByComentario([FromBody] DTOBuscarEnvioPorComentario dto)
+        [HttpGet("buscar-por-comentario")]
+        [Authorize(Roles = "Cliente")]
+        public IActionResult GetByComentario([FromQuery] string palabraClave)
         {
             string EmailLogueado = EmailDelUsuario();
 
             try
             {
-                var resultado = _cuObtenerEnviosPorComentario.Ejecutar(dto, EmailLogueado);
+                var resultado = _cuObtenerEnviosPorComentario.Ejecutar(palabraClave, EmailLogueado);
                 return Ok(resultado);
             }
             catch (NoHayEnviosException e)
