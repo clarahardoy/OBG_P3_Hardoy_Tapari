@@ -27,7 +27,7 @@ public class CUObtenerEnviosPorComentario : ICUObtenerEnviosPorComentario
             .Select(e => MapperEnvio.ToDtoEnvio(e)) 
             .ToList();
 
-        if (contienenPalabraClave == null)
+        if (contienenPalabraClave == null || contienenPalabraClave.Count == 0)
         {
             throw new NoHayEnviosException("No se encontraron envíos.");
         }
