@@ -9,8 +9,8 @@ using System.Security.Claims;
 
 namespace Agencia.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ClienteController : ControllerBase
     {
         private ICUActualizarContrasenia _cuActualizarContrasenia;

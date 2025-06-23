@@ -9,8 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 namespace Agencia.WebAPI.Controllers
 
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private ICULogin _cuLogin;

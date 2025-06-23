@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Agencia.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class EnvioController : ControllerBase
     {
         public ICUObtenerEnvioNroTracking _cUObtenerEnvioNroTracking;

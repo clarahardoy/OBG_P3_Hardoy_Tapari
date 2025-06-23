@@ -63,6 +63,12 @@ namespace Agencia.WebAPI
             builder.Services.AddScoped<ICUObtenerFuncionarios, CUObtenerFuncionarios>();
             builder.Services.AddScoped<ICUObtenerUsuario, CUObtenerUsuario>();
 
+
+            // Agrega servicios necesarios API
+            builder.Services.AddControllers();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -73,10 +79,7 @@ namespace Agencia.WebAPI
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();
