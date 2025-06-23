@@ -3,7 +3,6 @@ using Agencia.LogicaAplicacion.CasosUso.CUUsuario;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
 using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -20,7 +19,7 @@ namespace Agencia.WebAPI.Controllers
         }
 
         [HttpPut("actualizar")]
-        [Authorize(Roles = "Cliente")] // Con esto bastaba?
+        [Authorize(Roles = "Cliente")]
         public IActionResult UpdatePass([FromBody] DTOActualizarContrasenia dto)
         {
             string EmailLogueado = EmailUser();

@@ -5,7 +5,6 @@ using Agencia.LogicaAplicacion.ICasosUso.ICUAgencia;
 using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
 using Agencia.LogicaNegocio.CustomException.EnvioExceptions;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Agencia.WebAPI.Controllers
@@ -56,7 +55,7 @@ namespace Agencia.WebAPI.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{porFechas}")]
         [Authorize(Roles = "Cliente")]
         public IActionResult GetByFechas(DateTime f1, DateTime f2)
         {
@@ -108,18 +107,17 @@ namespace Agencia.WebAPI.Controllers
         public IActionResult GetByComentario([FromBody] DTOBuscarEnvioPorComentario dto)
         {
             string EmailLogueado = EmailDelUsuario();
-            
+
             try
             {
                 var resultado = _cuObtenerEnviosPorComentario.Ejecutar(dto, EmailLogueado);
-                return Ok(resultado); 
+                return Ok(resultado);
             }
             catch (Exception ex)
             {
                 return BadRequest(new { mensaje = ex.Message });
             }
         }
-
 
         private string EmailDelUsuario()
         {
