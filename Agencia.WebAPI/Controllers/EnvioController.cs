@@ -17,14 +17,18 @@ namespace Agencia.WebAPI.Controllers
         public ICUObtenerEnvioNroTracking _cUObtenerEnvioNroTracking;
         public ICUObtenerEnviosDeClienteOrdFecha _cUObtenerEnviosDeClienteOrdFecha;
         public ICUObtenerEnviosPorFechasDeCliente _cUObtenerEnviosPorFechaDeCliente;
+        public ICUObtenerEnviosPorComentario _cuObtenerEnviosPorComentario;
 
         public EnvioController(ICUObtenerEnvioNroTracking cUObtenerEnvioNroTracking,
-                               ICUObtenerEnviosDeClienteOrdFecha cUObtenerEnviosDeClienteOrdFecha,
-                               ICUObtenerEnviosPorFechasDeCliente cUObtenerEnviosPorFechaDeCliente)
+            ICUObtenerEnviosDeClienteOrdFecha cUObtenerEnviosDeClienteOrdFecha,
+            ICUObtenerEnviosPorFechasDeCliente cUObtenerEnviosPorFechaDeCliente,
+            ICUObtenerEnviosPorComentario cuObtenerEnviosPorComentario)
+
         {
             _cUObtenerEnvioNroTracking = cUObtenerEnvioNroTracking;
             _cUObtenerEnviosDeClienteOrdFecha = cUObtenerEnviosDeClienteOrdFecha;
             _cUObtenerEnviosPorFechaDeCliente = cUObtenerEnviosPorFechaDeCliente;
+            _cuObtenerEnviosPorComentario = cuObtenerEnviosPorComentario;
         }
 
         [HttpGet]
@@ -36,6 +40,7 @@ namespace Agencia.WebAPI.Controllers
             {
                 return Unauthorized();
             }
+
             try
             {
                 List<DTOEnvio> ret = _cUObtenerEnviosDeClienteOrdFecha.Ejecutar(EmailLogueado);
@@ -60,10 +65,12 @@ namespace Agencia.WebAPI.Controllers
             {
                 return Unauthorized();
             }
+
             if (f1 == null || f2 == null)
             {
                 return BadRequest("Las fechas no pueden ser nulas.");
             }
+
             try
             {
                 List<DTOEnvio> ret = _cUObtenerEnviosPorFechaDeCliente.Ejecutar(EmailLogueado, f1, f2);
@@ -97,6 +104,23 @@ namespace Agencia.WebAPI.Controllers
             }
         }
 
+        [HttpPost("buscar-por-comentario")]
+        public IActionResult GetByComentario([FromBody] DTOBuscarEnvioPorComentario dto)
+        {
+            string EmailLogueado = EmailDelUsuario();
+            
+            try
+            {
+                var resultado = _cuObtenerEnviosPorComentario.Ejecutar(dto, EmailLogueado);
+                return Ok(resultado); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensaje = ex.Message });
+            }
+        }
+
+
         private string EmailDelUsuario()
         {
             string email = null;
@@ -107,6 +131,7 @@ namespace Agencia.WebAPI.Controllers
                 var emailClaim = claimsIdentity.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Email);
                 email = emailClaim.Value;
             }
+
             return email;
         }
     }
