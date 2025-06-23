@@ -108,11 +108,15 @@ namespace Agencia.WebAPI.Controllers
         public IActionResult GetByComentario([FromBody] DTOBuscarEnvioPorComentario dto)
         {
             string EmailLogueado = EmailDelUsuario();
-            
+
             try
             {
                 var resultado = _cuObtenerEnviosPorComentario.Ejecutar(dto, EmailLogueado);
-                return Ok(resultado); 
+                return Ok(resultado);
+            }
+            catch (NoHayEnviosException e)
+            {
+                return NotFound(e.Message);
             }
             catch (Exception ex)
             {

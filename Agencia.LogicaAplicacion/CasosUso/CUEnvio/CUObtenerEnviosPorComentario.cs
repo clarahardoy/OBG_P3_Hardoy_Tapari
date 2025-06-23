@@ -1,6 +1,7 @@
 using Agencia.DTOs.DTOs.EnvioDTO;
 using Agencia.DTOs.Mappers;
 using Agencia.LogicaAplicacion.ICasosUso.ICUEnvio;
+using Agencia.LogicaNegocio.CustomException.EnvioExceptions;
 using Agencia.LogicaNegocio.Entidades;
 using Agencia.LogicaNegocio.InterfacesRepositorios;
 
@@ -25,6 +26,11 @@ public class CUObtenerEnviosPorComentario : ICUObtenerEnviosPorComentario
             ))
             .Select(e => MapperEnvio.ToDtoEnvio(e)) 
             .ToList();
+
+        if (contienenPalabraClave == null)
+        {
+            throw new NoHayEnviosException("No se encontraron envíos.");
+        }
         
         return contienenPalabraClave; 
 
