@@ -30,6 +30,25 @@ namespace Agencia.WebAPI.Controllers
             _cuObtenerEnviosPorComentario = cuObtenerEnviosPorComentario;
         }
 
+        [HttpGet("tracking/{nroTracking}")]
+        public IActionResult GetByNroTracking(string nroTracking)
+        {
+            try
+            {
+                DTOEnvio dto = _cUObtenerEnvioNroTracking.Ejecutar(nroTracking);
+                return Ok(dto);
+            }
+            catch (EnvioNoEncontradoException e)
+            {
+                return NotFound(e.Message);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Error inesperado, intente más tarde.");
+            }
+        }
+
+
         [HttpGet]
         [Authorize(Roles = "Cliente")]
         public IActionResult GetAll()
@@ -55,7 +74,7 @@ namespace Agencia.WebAPI.Controllers
             }
         }
 
-        [HttpGet("{porFechas}")]
+        [HttpGet("fechas/{f1}/{f2}")]
         [Authorize(Roles = "Cliente")]
         public IActionResult GetByFechas(DateTime f1, DateTime f2)
         {
@@ -76,24 +95,6 @@ namespace Agencia.WebAPI.Controllers
                 return Ok(ret);
             }
             catch (NoHayEnviosException e)
-            {
-                return NotFound(e.Message);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500, "Error inesperado, intente más tarde.");
-            }
-        }
-
-        [HttpGet("{nroTracking}")]
-        public IActionResult GetByNroTracking(string nroTracking)
-        {
-            try
-            {
-                DTOEnvio dto = _cUObtenerEnvioNroTracking.Ejecutar(nroTracking);
-                return Ok(dto);
-            }
-            catch (EnvioNoEncontradoException e)
             {
                 return NotFound(e.Message);
             }

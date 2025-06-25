@@ -81,9 +81,16 @@ public class UsuarioController : Controller
         try
         {
             DTOUsuario b = _CULogin.VerificarDatosParaLogin(dto);
-            HttpContext.Session.SetInt32("LogueadoId", (int)b.Id);
-            HttpContext.Session.SetString("LogueadoRol", b.Rol.ToString());
-            return RedirectToAction("Index", "Home");
+            if (b.Rol == "Cliente")
+            {
+                throw new AccesoDenegadoException("Acceso Denegado");
+            }
+            else
+            {
+                HttpContext.Session.SetInt32("LogueadoId", (int)b.Id);
+                HttpContext.Session.SetString("LogueadoRol", b.Rol.ToString());
+                return RedirectToAction("Index", "Home");
+            }
         }
         catch (CredencialesInvalidasException ex)
         {

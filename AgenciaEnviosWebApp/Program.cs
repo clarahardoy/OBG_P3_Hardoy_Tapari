@@ -32,6 +32,13 @@ builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
 builder.Services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
 builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
+//DI - REPOSITORIOS :
+builder.Services.AddScoped<IRepositorioAuditoria, RepositorioAuditoria>();
+builder.Services.AddScoped<IRepositorioComentario, RepositorioComentario>();
+builder.Services.AddScoped<IRepositorioEnvio, RepositorioEnvio>();
+builder.Services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
+builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
+
 //DI - Casos de Uso : 
 
 // Comentario : 
@@ -44,6 +51,7 @@ builder.Services.AddScoped<ICUObtenerEnvio, CUObtenerEnvio>();
 builder.Services.AddScoped<ICUObtenerEnvioNroTracking, CUObtenerEnvioNroTracking>();
 builder.Services.AddScoped<ICUObtenerEnviosDeClienteOrdFecha, CUObtenerEnviosDeClienteOrdFecha>();
 builder.Services.AddScoped<ICUObtenerEnviosEnProceso, CUObtenerEnviosEnProceso>();
+builder.Services.AddScoped<ICUObtenerEnviosPorComentario, CUObtenerEnviosPorComentario>();
 builder.Services.AddScoped<ICUObtenerEnviosPorFechasDeCliente, CUObtenerEnviosPorFechasDeCliente>();
 
 // Sucursal:

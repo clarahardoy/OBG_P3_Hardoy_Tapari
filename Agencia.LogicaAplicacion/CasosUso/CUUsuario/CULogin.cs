@@ -25,13 +25,8 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         {
             var usuario = _repositorioUsuario.FindByEmail(dto.Email);
             if (!usuario.Activo)
-            {
                 throw new UsuarioInactivoException("Usuario inactivo. No puede acceder.");
-            }
-            if(usuario.Rol == RolUsuario.Cliente)
-            {
-                throw new AccesoDenegadoException("");
-            }
+
             if (usuario is null)
                 throw new CredencialesInvalidasException("Email o contraseña incorrectos");
 
@@ -42,7 +37,9 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
             return new DTOUsuario
             {
                 Id = usuario.Id,
-                Rol = usuario.Rol.ToString()
+                Email = usuario.Email,
+                Rol = usuario.Rol.ToString(),
+                Activo = usuario.Activo
             };
         }
     }

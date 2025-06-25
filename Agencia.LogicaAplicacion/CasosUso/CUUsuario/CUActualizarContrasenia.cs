@@ -21,10 +21,13 @@ namespace Agencia.LogicaAplicacion.CasosUso.CUUsuario
         }
         public void Ejecutar(DTOActualizarContrasenia dto)
         {
+            if (dto.NewPassword == dto.OldPassword)
+                throw new ContraseniaIncorrectaException("La nueva contraseña no puede ser igual a la anterior.");
+
             Usuario uBuscado = _repoUsuario.FindByEmail(dto.Email);
             if (uBuscado == null) throw new EmailNoValidoException("Email no válido.");
 
-            // Validar que la nueva contraseña no sea igual a la anterior
+            // Validar que la oldPassword sea igual a la que está gurdada
             if (!(Utilidades.Crypto.VerifyPasswordConBcrypt(dto.OldPassword, uBuscado.Password)))
             {
                 throw new ContraseniaIncorrectaException("La contraseña anterior es incorrecta.");

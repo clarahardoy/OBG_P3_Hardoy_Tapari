@@ -6,7 +6,7 @@ namespace Agencia.DTOs.DTOs.UsuarioDTO
     public class DTOActualizarContrasenia
     {
         [JsonIgnore]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         public string OldPassword { get; set; }

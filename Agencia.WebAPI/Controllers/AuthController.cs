@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Agencia.DTOs.DTOs.UsuarioDTO;
 using Agencia.LogicaAplicacion.ICasosUso.ICUUsuario;
+using Agencia.LogicaNegocio.CustomException.UsuarioExceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -14,10 +15,13 @@ namespace Agencia.WebAPI.Controllers
     public class AuthController : ControllerBase
     {
         private ICULogin _cuLogin;
+        private readonly IConfiguration _config; // acceso a JwtKey en appsettings
 
-        public AuthController(ICULogin cuLogin)
+        public AuthController(ICULogin cuLogin, 
+                              IConfiguration config)
         {
             _cuLogin = cuLogin;
+            _config = config;
         }
 
         //LOG IN 
@@ -32,8 +36,10 @@ namespace Agencia.WebAPI.Controllers
 
                 DTOUsuario usuario = _cuLogin.VerificarDatosParaLogin(dtoUsuarioALoggear);
 
-                var clave =
-                    "UTzl^7yPl$5xrT6&{7RZCSG&O42MEK89$CW1XXRrN(>XqIp{W4s2S5$>KT$6CG!2M]'ZlrqH-t%eI4.X9W~u#qO+oXÂ£+[?7QDAa";
+                if(usuario.Rol != "Cliente")
+                    throw new AccesoDenegadoException("Acceso denegado. Solo los clientes pueden iniciar sesión.");
+
+                string clave = _config["JwtKey"];
                 var claveCodificada = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(clave));
 
                 List<Claim> claims =
@@ -44,8 +50,11 @@ namespace Agencia.WebAPI.Controllers
 
                 var credenciales = new SigningCredentials(claveCodificada, SecurityAlgorithms.HmacSha512Signature);
 
-                var TOKEN = new JwtSecurityToken(claims: claims, signingCredentials: credenciales,
+                var TOKEN = new JwtSecurityToken(
+                    claims: claims, 
+                    signingCredentials: credenciales,
                     expires: DateTime.Now.AddDays(1));
+
                 var jwt = new JwtSecurityTokenHandler().WriteToken(TOKEN);
 
                 return Ok(new { token = jwt });
